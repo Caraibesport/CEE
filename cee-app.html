@@ -164,63 +164,62 @@ tr.detail-row td{padding:0;border-bottom:1px solid var(--s3)}
 .debug-panel summary{padding:.3rem .5rem;cursor:pointer;color:var(--ink3);font-family:'JetBrains Mono',monospace;font-size:.6rem;user-select:none}
 .debug-panel pre{padding:.5rem;background:var(--s2);max-height:120px;overflow-y:auto;font-size:.6rem;white-space:pre-wrap;word-break:break-all;color:var(--ink2);border-top:1px solid var(--s3)}
 
-/* ── MODAL ── */
+/* ── MODAL (PDF viewer only) ── */
 .modal-bg{position:fixed;inset:0;background:rgba(0,20,14,.55);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem}
 .modal-bg.hidden{display:none}
-.modal{background:var(--s);border-radius:var(--r);box-shadow:0 8px 32px rgba(0,0,0,.2);width:100%;max-width:900px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
-.modal-hdr{padding:.85rem 1.1rem;border-bottom:1px solid var(--s3);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.modal-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:600}
+.modal{background:var(--s);border-radius:var(--r);box-shadow:0 8px 32px rgba(0,0,0,.2);width:100%;max-width:560px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-hdr{padding:.75rem 1rem;border-bottom:1px solid var(--s3);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.modal-title{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:600}
 .modal-close{background:none;border:none;font-size:1.1rem;cursor:pointer;color:var(--ink3);padding:.2rem .4rem;border-radius:var(--rs)}
 .modal-close:hover{color:var(--ink);background:var(--s2)}
-.modal-body{display:flex;flex:1;overflow:hidden;min-height:0}
-.modal-pdf{width:45%;border-right:1px solid var(--s3);display:flex;flex-direction:column;flex-shrink:0}
+.modal-pdf-full{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
 .pdf-view{flex:1;display:flex;align-items:center;justify-content:center;background:var(--s2)}
 .pdf-view embed{width:100%;height:100%;border:none}
-.pdf-placeholder{text-align:center;color:var(--ink3);font-size:.75rem;padding:1.5rem}
+.pdf-placeholder{text-align:center;color:var(--ink3);font-size:.75rem;padding:2rem}
 .pdf-placeholder svg{display:block;margin:0 auto .5rem;opacity:.35}
-.drop-zone{margin:.75rem;border:2px dashed var(--s3);border-radius:var(--r);padding:1.5rem 1rem;text-align:center;cursor:pointer;transition:border-color .15s,background .15s}
+.drop-zone{margin:.65rem;border:2px dashed var(--s3);border-radius:var(--r);padding:1.2rem 1rem;text-align:center;cursor:pointer;transition:border-color .15s,background .15s}
 .drop-zone:hover,.drop-zone.drag{border-color:var(--a);background:var(--al)}
 .drop-zone input{display:none}
 .dz-ico{font-size:1.5rem;margin-bottom:.4rem;opacity:.5}
 .dz-lbl{font-size:.72rem;color:var(--ink2)}
 .dz-sub{font-size:.62rem;color:var(--ink3);margin-top:.15rem}
-.modal-form{flex:1;overflow-y:auto;padding:.85rem 1.1rem;display:flex;flex-direction:column;gap:.75rem}
-.form-section{display:flex;flex-direction:column;gap:.45rem}
-.form-section-title{font-size:.6rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink3);padding-bottom:.25rem;border-bottom:1px solid var(--s2)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
-.form-field{display:flex;flex-direction:column;gap:.2rem}
-.form-field.full{grid-column:1/-1}
-.form-label{font-size:.62rem;color:var(--ink2);font-weight:500}
-.form-label .req{color:var(--w)}
-.form-input{font-family:'Inter',sans-serif;font-size:.73rem;padding:.3rem .5rem;border:1.5px solid var(--s3);border-radius:var(--rs);background:var(--s2);color:var(--ink);outline:none;transition:border-color .12s}
-.form-input:focus{border-color:var(--a);background:var(--s)}
-.form-input.mono{font-family:'JetBrains Mono',monospace;font-size:.68rem}
-.form-input.invalid{border-color:var(--w)}
-select.form-input{cursor:pointer}
-.fiche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
-.fiche-row{display:flex;flex-direction:column;gap:.2rem;background:var(--s2);border-radius:var(--rs);padding:.4rem .5rem}
-.fiche-code-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:500;color:var(--a2)}
-.fiche-check{display:flex;align-items:center;gap:.3rem;cursor:pointer;font-size:.65rem;color:var(--ink2)}
-.fiche-check input[type=checkbox]{accent-color:var(--a);width:12px;height:12px}
-.fiche-val-inp{margin-top:.2rem;display:none}
-.fiche-val-inp.show{display:block}
-.cfg-checks{display:grid;grid-template-columns:1fr 1fr;gap:.3rem}
-.cfg-check{display:flex;align-items:center;gap:.3rem;font-size:.65rem;color:var(--ink2);cursor:pointer}
-.cfg-check input[type=checkbox]{accent-color:var(--a)}
-.modal-footer{padding:.65rem 1.1rem;border-top:1px solid var(--s3);display:flex;align-items:center;justify-content:flex-end;gap:.5rem;flex-shrink:0}
+.modal-footer-simple{padding:.55rem 1rem;border-top:1px solid var(--s3);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:.5rem}
 .extract-note{font-size:.62rem;color:var(--ink3);flex:1}
+.debug-panel-inline{font-size:.6rem;flex:1}
+.debug-panel-inline summary{cursor:pointer;color:var(--ink3);font-family:'JetBrains Mono',monospace;font-size:.6rem;user-select:none}
+.debug-panel-inline pre{margin-top:.3rem;padding:.4rem;background:var(--s2);max-height:100px;overflow-y:auto;font-size:.58rem;white-space:pre-wrap;word-break:break-all;color:var(--ink2);border:1px solid var(--s3);border-radius:var(--rs)}
 .btn-accent{background:var(--a);color:#fff}
 .btn-accent:hover{opacity:.88}
 .btn-neutral{background:var(--s2);color:var(--ink2)}
 .btn-neutral:hover{background:var(--s3)}
-.match-banner{background:rgba(0,150,100,.07);border:1.5px solid var(--a);border-radius:var(--rs);padding:.55rem .75rem;display:flex;gap:.6rem;align-items:flex-start}
-.match-banner-ico{color:var(--a);font-size:.9rem;margin-top:.05rem;flex-shrink:0}
-.match-banner-body{flex:1;min-width:0}
-.match-banner-lbl{font-size:.57rem;text-transform:uppercase;letter-spacing:.09em;color:var(--a);margin-bottom:.15rem}
-.match-banner-name{font-size:.73rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.match-banner-radios{display:flex;gap:.75rem;margin-top:.35rem}
-.match-radio{display:flex;align-items:center;gap:.25rem;font-size:.65rem;color:var(--ink2);cursor:pointer}
-.match-radio input{accent-color:var(--a)}
+
+/* ── DETAIL ROW — édition inline ── */
+.de-edit{padding:.85rem 1.1rem;background:var(--s2)}
+.de-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:800px){.de-cols{grid-template-columns:1fr}}
+.de-col{display:flex;flex-direction:column;gap:.5rem}
+.de-sect-title{font-size:.58rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink3);padding-bottom:.2rem;border-bottom:1px solid var(--s3)}
+.de-row2{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.de-field{display:flex;flex-direction:column;gap:.18rem}
+.de-lbl{font-size:.6rem;color:var(--ink3);font-weight:500}
+.de-inp{font-family:'Inter',sans-serif;font-size:.72rem;padding:.28rem .45rem;border:1.5px solid var(--s3);border-radius:var(--rs);background:var(--s);color:var(--ink);outline:none;transition:border-color .12s;width:100%}
+.de-inp:focus{border-color:var(--a);background:var(--s)}
+.de-inp.mono{font-family:'JetBrains Mono',monospace;font-size:.67rem}
+.de-sel{cursor:pointer}
+.de-ta{resize:vertical;min-height:56px;font-size:.68rem!important;line-height:1.4}
+.de-fiches{display:flex;flex-direction:column;gap:.3rem}
+.de-fiche-row{display:flex;align-items:center;gap:.5rem;padding:.3rem .45rem;background:var(--s);border-radius:var(--rs);border:1px solid var(--s3)}
+.de-fiche-lbl{display:flex;align-items:center;gap:.35rem;cursor:pointer;flex:1;min-width:0}
+.de-fiche-lbl input[type=checkbox]{accent-color:var(--a);width:12px;height:12px;flex-shrink:0}
+.de-fiche-code{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:600;color:var(--a2);flex-shrink:0}
+.de-fiche-desc{font-size:.63rem;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.de-fiche-val{width:70px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:.2rem .35rem;border:1.5px solid var(--s3);border-radius:var(--rs);background:var(--s2);color:var(--ink);outline:none}
+.de-fiche-val:focus{border-color:var(--a)}
+.de-cfgs{display:grid;grid-template-columns:1fr 1fr;gap:.25rem}
+.de-cfg-lbl{display:flex;align-items:center;gap:.3rem;font-size:.63rem;color:var(--ink2);cursor:pointer}
+.de-cfg-lbl input[type=checkbox]{accent-color:var(--a);width:12px;height:12px}
+.de-actions{display:flex;gap:.5rem;margin-top:.75rem;padding-top:.65rem;border-top:1px solid var(--s3)}
+.de-del{color:var(--w)!important;border:1px solid var(--wb)!important}
 
 /* ── VIGILANCE indicator ── */
 .vigi-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--w);margin:0 auto}
@@ -250,7 +249,8 @@ select.form-input{cursor:pointer}
     </div>
     <div class="hdr-actions">
       <button class="btn btn-ghost" id="btnExport">⬇ Exporter CSV</button>
-      <button class="btn btn-primary" id="btnAdd">+ Nouveau document</button>
+      <button class="btn btn-ghost" id="btnAdd">📄 Importer PDF</button>
+      <button class="btn btn-primary" id="btnNewRow">+ Nouvelle ligne</button>
     </div>
   </div>
 </header>
@@ -294,133 +294,32 @@ select.form-input{cursor:pointer}
 </main>
 
 <!-- UPLOAD MODAL -->
-<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal-bg hidden" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
     <div class="modal-hdr">
-      <span class="modal-title" id="modalTitle">Nouveau document de certification</span>
-      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
-    </div>
-    <div class="modal-body">
-      <!-- PDF PANEL -->
-      <div class="modal-pdf">
-        <div class="pdf-view" id="pdfView"><embed src="blob:https://69357df2-e75d-402d-a55a-0c62573e6e70.frame.claudeusercontent.com/aa2cdb9d-0a80-41c2-8253-d620b55b67f1#toolbar=1&amp;navpanes=0" type="application/pdf" style="width:100%;height:100%;border:none"></div>
-        <div class="drop-zone" id="dropZone">
-          <input type="file" id="fileInput" accept="application/pdf" multiple="">
-          <div class="dz-ico">📄</div>
-          <div class="dz-lbl">Glisser un ou plusieurs documents PDF</div>
-          <div class="dz-sub">ACERMI · ATec · DTA · ETA · CSTB · Fiche technique (sélection multiple)</div>
-        </div>
+      <span class="modal-title" id="modalTitle">Document de certification</span>
+      <div style="display:flex;align-items:center;gap:.4rem">
+        <span id="queueBadge" style="display:none;font-family:'JetBrains Mono',monospace;font-size:.62rem;background:var(--al);color:var(--a);padding:.2rem .55rem;border-radius:999px"></span>
+        <button class="btn btn-neutral btn-sm" id="modalSkip" style="display:none">Suivant →</button>
+        <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
       </div>
-      <!-- FORM PANEL -->
-      <form class="modal-form" id="addForm" novalidate="">
-        <div id="matchBanner" style="display:none" class="match-banner">
-          <span class="match-banner-ico">↔</span>
-          <div class="match-banner-body">
-            <div class="match-banner-lbl">Produit correspondant trouvé dans le référentiel</div>
-            <div class="match-banner-name" id="matchName"></div>
-            <div class="match-banner-radios">
-              <label class="match-radio"><input type="radio" name="saveMode" value="update" id="modeUpdate" checked=""> Mettre à jour ce produit</label>
-              <label class="match-radio"><input type="radio" name="saveMode" value="new" id="modeNew"> Ajouter comme nouveau</label>
-            </div>
-          </div>
-        </div>
-        <div class="form-section">
-          <div class="form-section-title">Certification</div>
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label" for="f_certtype">Type de document</label>
-              <select class="form-input" id="f_certtype">
-                <option value="ACERMI">ACERMI</option>
-                <option value="ATec">Avis Technique (ATec)</option>
-                <option value="DTA">DTA</option>
-                <option value="ETA">ETA (Agrément Technique Européen)</option>
-                <option value="ATEx">ATEx CSTB</option>
-                <option value="CSTB">Autre document CSTB</option>
-                <option value="FT">Fiche technique fabricant</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="f_val">Validité</label>
-              <input class="form-input mono" id="f_val" placeholder="JJ/MM/AAAA">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label" for="f_ref">Référence</label>
-              <input class="form-input mono" id="f_ref" placeholder="Ex : 02/016/132 · 3/17-889 · ETA-12/0352">
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="f_autres">Autres certifications</label>
-              <input class="form-input" id="f_autres" placeholder="Ex : ACERMI 02/016/132 · ATec 3/17-889">
-            </div>
-          </div>
-          <div class="form-field full">
-            <label class="form-label" for="f_mrq">Marque</label>
-            <input class="form-input" id="f_mrq" placeholder="Nom du fabricant">
-          </div>
-          <div class="form-field full">
-            <label class="form-label" for="f_des">Désignation produit</label>
-            <input class="form-input" id="f_des" placeholder="Désignation(s) commerciale(s)">
-          </div>
-        </div>
-        <div class="form-section">
-          <div class="form-section-title">Caractéristiques</div>
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label" for="f_nrm">Norme</label>
-              <select class="form-input" id="f_nrm">
-                <option value="">— sélectionner —</option>
-                <option value="EN 13162:2012+A1:2015">EN 13162 (laine minérale)</option>
-                <option value="EN 13163:2012+A1:2015">EN 13163 (EPS)</option>
-                <option value="EN 13164:2012+A1:2015">EN 13164 (XPS)</option>
-                <option value="EN 13165:2012+A1:2015">EN 13165 (PUR/PIR)</option>
-                <option value="EN 13166:2012+A1:2015">EN 13166 (phénolique)</option>
-                <option value="EN 13171:2012+A1:2015">EN 13171 (bois/liège)</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="f_lam">λD W/(m·K)</label>
-              <input class="form-input mono" id="f_lam" placeholder="0,040" type="text">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label" for="f_feu">Classement au feu</label>
-              <input class="form-input mono" id="f_feu" placeholder="A1 / A2-s1,d0 / F…">
-            </div>
-            <div class="form-field">
-              <label class="form-label" for="f_par">Parement</label>
-              <input class="form-input" id="f_par" placeholder="Aluminium / Kraft / Sans…">
-            </div>
-          </div>
-        </div>
-        <div class="form-section">
-          <div class="form-section-title">Éligibilité fiches CEE</div>
-          <div class="fiche-grid" id="ficheChecks"><div class="fiche-row"><span class="fiche-code-lbl">BAR-EN-106</span><label class="fiche-check"><input type="checkbox" id="fc_BAR-EN-106" data-fiche="BAR-EN-106"> Murs résidentiel</label><span style="font-size:.58rem;color:var(--ink3)">seuil R ≥ 1.5 m².K/W</span><input class="form-input mono fiche-val-inp" id="fv_BAR-EN-106" placeholder="1.5" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAT-EN-106</span><label class="fiche-check"><input type="checkbox" id="fc_BAT-EN-106" data-fiche="BAT-EN-106"> Murs tertiaire</label><span style="font-size:.58rem;color:var(--ink3)">seuil R ≥ 1.2 m².K/W</span><input class="form-input mono fiche-val-inp" id="fv_BAT-EN-106" placeholder="1.2" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAR-EN-109</span><label class="fiche-check"><input type="checkbox" id="fc_BAR-EN-109" data-fiche="BAR-EN-109"> Plancher résidentiel</label><span style="font-size:.58rem;color:var(--ink3)">seuil FS ≤ 0.03</span><input class="form-input mono fiche-val-inp" id="fv_BAR-EN-109" placeholder="0.03" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAT-EN-109</span><label class="fiche-check"><input type="checkbox" id="fc_BAT-EN-109" data-fiche="BAT-EN-109"> Plancher tertiaire</label><span style="font-size:.58rem;color:var(--ink3)">seuil FS ≤ 0.03</span><input class="form-input mono fiche-val-inp" id="fv_BAT-EN-109" placeholder="0.03" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAR-EN-107</span><label class="fiche-check"><input type="checkbox" id="fc_BAR-EN-107" data-fiche="BAR-EN-107"> Toiture/combles résidentiel</label><span style="font-size:.58rem;color:var(--ink3)">seuil R ≥ 0.5 m².K/W</span><input class="form-input mono fiche-val-inp" id="fv_BAR-EN-107" placeholder="0.5" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAT-EN-108</span><label class="fiche-check"><input type="checkbox" id="fc_BAT-EN-108" data-fiche="BAT-EN-108"> Toiture tertiaire</label><span style="font-size:.58rem;color:var(--ink3)">seuil R ≥ 1.2 m².K/W</span><input class="form-input mono fiche-val-inp" id="fv_BAT-EN-108" placeholder="1.2" style="margin-top:.25rem;display:none" type="text"></div></div>
-        </div>
-        <div class="form-section">
-          <div class="form-section-title">Configurations de pose validées</div>
-          <div class="cfg-checks" id="cfgChecks"><label class="cfg-check"><input type="checkbox" id="cc_combles" value="combles"> Isolation des combles</label><label class="cfg-check"><input type="checkbox" id="cc_solives" value="solives"> Entre solives plancher bois</label><label class="cfg-check"><input type="checkbox" id="cc_plafond_pp" value="plafond_pp"> Plafond plaque de plâtre</label><label class="cfg-check"><input type="checkbox" id="cc_couv_nerv" value="couv_nerv"> Couverture plaques nervurées</label><label class="cfg-check"><input type="checkbox" id="cc_rampant" value="rampant"> Rampant de toiture (int.)</label><label class="cfg-check"><input type="checkbox" id="cc_toiture_inc" value="toiture_inc"> Toiture inclinée</label><label class="cfg-check"><input type="checkbox" id="cc_mur_osbois" value="mur_osbois"> Mur ossature bois</label><label class="cfg-check"><input type="checkbox" id="cc_plancher_bas" value="plancher_bas"> Plancher bas</label></div>
-        </div>
-        <div class="form-section">
-          <div class="form-field full">
-            <label class="form-label" for="f_obs">Observations / Vigilance</label>
-            <textarea class="form-input" id="f_obs" rows="3" style="resize:vertical;font-size:.68rem"></textarea>
-          </div>
-          <details class="debug-panel" id="debugDetails" style="">
-            <summary>Texte brut extrait (diagnostic)</summary>
-            <pre id="debugText">  /CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo &lt;&lt;/Registry (Adobe) /Ordering (UCS) /Supplement 0 &gt;&gt; def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange &lt;0000&gt; &lt;FFFF&gt; endcodespacerange 1 beginbfrange &lt;0000&gt; &lt;FFFF&gt; &lt;0000&gt; endbfrange endcmap CMapName currentdict /CMap defineresource pop end end     /CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo &lt;&lt;/Registry (Adobe) /Ordering (UCS) /Supplement 0 &gt;&gt; def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange &lt;0000&gt; &lt;FFFF&gt; endcodespacerange 1 beginbfrange &lt;0000&gt; &lt;FFFF&gt; &lt;0000&gt; endbfrange endcmap CMapName currentdict /CMap defineresource pop end end     /CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo &lt;&lt;/Registry (Adobe) /Ordering (UCS) /Supplement 0 &gt;&gt; def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange &lt;0000&gt; &lt;FFFF&gt; endcodespacerange 1 beginbfrange &lt;0000&gt; &lt;FFFF&gt; &lt;0000&gt; endbfrange endcmap CMapName currentdict /CMap defineresource pop end end     /CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo &lt;&lt;/Registry (Adobe) /Ordering (UCS) /Supplement 0 &gt;&gt; def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange &lt;0000&gt; &lt;FFFF&gt; endcodespacerange 1 beginbfrange &lt;0000&gt; &lt;FFFF&gt; &lt;0000&gt; endbfrange endcmap CMapName currentdict /CMap defineresource pop end end     ÿØÿá  Exif  II*             ÿì  Ducky       P  ÿá !http://ns.adobe.com/xap/1.0/ &lt;?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?&gt; &lt;x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.0-c060 61.134342, 2010/01/10-18:06:43        "&gt; &lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt; &lt;rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" xmp:CreatorTool="Adobe Photoshop CS5" xmpMM:InstanceID="xmp.iid:A76E0BEDA71611E9B6D3EAF4D69238BB" xmpMM:DocumentID="xmp.did:A76E0BEEA71611E9B6D3EAF4D69238BB"&gt; &lt;xmpMM:DerivedFrom stRef:instanceID="xmp.iid:A76E0BEBA71611E9B6D3EAF4D69238BB" stRef:documentID="xmp.did:A76E0BECA71611E9B6D3EAF4D69238BB"/&gt; &lt;/rdf:Description&gt; &lt;/rdf:RDF&gt; &lt;/x:xmpmeta&gt; &lt;?xpacket end="r"?&gt;ÿî &amp;Adobe dÀ               U   Ô   Ã   âÿÛ                                                                                                                                    ÿÂ    s ú          ÿÄ Ê                                                                    @   0`                            !1 A" @Qaq   2B  #3  ` ¡ÁbrC$T0±ÑR¢Scs E                                      !1AQa@q   0 ð¡ P`±ñÁÿÚ            ûø                               ©6Á           q  Ü            8×fÕ            8Ï(¤  Ë.Å         0*%Xé  ¶yFé17 ß  I      1(¥`ã;GpØ  h£Ü&gt; $ UÊqÂn      &lt;£æ ÄZ ±f159Ô="K D8Ì  s; @     3Ê=C2  @6¹á (å6á°NÁ$        Äi³#" Q­ËÙ±Ì         AS5ág6! 8ÌÌÁ &amp;`                                        ÿÚ        øró+fÕ¶uÏwkq ü ×[^ÚØÄ_ Ö« Þ\{]K&amp;öÇ ³ª UîÖA</pre>
-          </details>
-        </div>
-      </form>
     </div>
-    <div class="modal-footer">
-      <span class="extract-note" id="extractNote" style="color: var(--a);">2 champs extraits — vérifiez</span>
-      <span id="queueBadge" style="display: none; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.62rem; background: var(--al); color: var(--a); padding: 0.2rem 0.55rem; border-radius: 999px; flex-shrink: 0;">1 / 6</span>
-      <button class="btn btn-neutral" id="modalCancel">Annuler</button>
-      <button class="btn btn-neutral" id="modalSkip" style="display: none;">Ignorer →</button>
-      <button class="btn btn-accent" id="modalSave">Ajouter au référentiel</button>
+    <div class="modal-pdf-full">
+      <div class="pdf-view" id="pdfView"><div class="pdf-placeholder"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Chargez un PDF pour prévisualiser</div></div>
+      <div class="drop-zone" id="dropZone">
+        <input type="file" id="fileInput" accept="application/pdf" multiple="">
+        <div class="dz-ico">📄</div>
+        <div class="dz-lbl">Glisser un ou plusieurs documents PDF</div>
+        <div class="dz-sub">ACERMI · ATec · DTA · ETA · CSTB (sélection multiple)</div>
+      </div>
+    </div>
+    <div class="modal-footer-simple">
+      <span class="extract-note" id="extractNote"></span>
+      <details class="debug-panel-inline" id="debugDetails" style="display:none">
+        <summary>Texte extrait (diagnostic)</summary>
+        <pre id="debugText"></pre>
+      </details>
+      <button class="btn btn-neutral btn-sm" id="modalCancel">Fermer</button>
     </div>
   </div>
 </div>
@@ -454,7 +353,6 @@ const BASE = [{"ref":"—","certType":"autre","autres":"Rapport essai n° 156-1 
 
 /* ── STATE ── */
 let extraProducts = [];
-let matchedProdKey = null;
 let activeFiche = 'ALL';
 let searchQ = '';
 let expanded = new Set();
@@ -469,6 +367,7 @@ function allProducts() {
   const extraKeys = new Set(extraProducts.map(p => rowKey(p)));
   return [...BASE.filter(p => !extraKeys.has(rowKey(p))), ...extraProducts];
 }
+function savedProducts() { return allProducts().filter(p => !p._new); }
 
 /* ── SORT / FILTER ── */
 function sorted() {
@@ -485,11 +384,11 @@ function sorted() {
 }
 
 /* ── RENDER ── */
-function rowKey(p) { return p.ref + '|' + p.des; }
+function rowKey(p) { return p._new ? '__new__' : p.ref + '|' + p.des; }
 
 function render() {
   const list = sorted();
-  const prods = allProducts();
+  const prods = savedProducts();
   const vigCount = prods.filter(p => p.vigi).length;
   const eligCount = activeFiche === 'ALL' ? prods.length : prods.filter(p => p.fiches[activeFiche]?.ok).length;
   document.getElementById('stTotal').textContent = prods.length;
@@ -549,7 +448,7 @@ function render() {
   }
   tbody.innerHTML = rows;
 
-  // wire buttons
+  // wire row expand/collapse
   tbody.querySelectorAll('.xbtn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
@@ -560,39 +459,131 @@ function render() {
   });
   tbody.querySelectorAll('tr[data-ref]').forEach(row => {
     row.addEventListener('click', e => {
-      if (e.target.closest('button')) return;
+      if (e.target.closest('button,.de-inp,.de-fiche-cb,.de-cfg-cb,.de-fiche-val,.de-sel,.de-ta')) return;
       const k = row.dataset.ref;
       if (expanded.has(k)) expanded.delete(k); else expanded.add(k);
       render();
     });
   });
+
+  // wire inline edit: save
+  tbody.querySelectorAll('.de-save').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); saveProductInline(btn.dataset.key); });
+  });
+
+  // wire inline edit: delete / cancel new
+  tbody.querySelectorAll('.de-del').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const k = btn.dataset.key;
+      if (k === '__new__') {
+        extraProducts = extraProducts.filter(p => rowKey(p) !== '__new__');
+        expanded.delete('__new__');
+        render();
+        return;
+      }
+      if (!confirm('Supprimer ce produit du référentiel ?')) return;
+      extraProducts = extraProducts.filter(p => rowKey(p) !== k);
+      expanded.delete(k);
+      saveExtra();
+      render();
+    });
+  });
+
+  // wire fiche checkboxes: toggle value input enabled state
+  tbody.querySelectorAll('.de-fiche-cb').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const valInp = cb.closest('.de-fiche-row')?.querySelector('.de-fiche-val');
+      if (valInp) valInp.disabled = !cb.checked;
+    });
+  });
+}
+
+function inp(id, val, placeholder, cls) {
+  return '<input class="de-inp'+(cls?' '+cls:'')+'" data-f="'+id+'" value="'+esc(val||'')+'" placeholder="'+esc(placeholder||'')+'">';
+}
+function sel(id, val, opts) {
+  return '<select class="de-inp de-sel" data-f="'+id+'">'+
+    opts.map(([v,l]) => '<option value="'+esc(v)+'"'+(val===v?' selected':'')+'>'+esc(l)+'</option>').join('')+
+  '</select>';
 }
 
 function detailHTML(p) {
-  const cfgChips = (p.cfgs||[]).map(id => {
-    const c = CONFIGS.find(c => c.id===id);
-    return '<span class="cfg-chip">'+(c?c.label:id)+'</span>';
+  const key = rowKey(p);
+  const isNew = p._new === true;
+  const fichesHTML = FICHES.map(fc => {
+    const fd = p.fiches[fc.code] || {ok:false,v:null};
+    const seuil = fc.type==='FS' ? 'FS ≤ '+fc.thr : 'R ≥ '+fc.thr+' '+fc.unit;
+    return '<div class="de-fiche-row">'+
+      '<label class="de-fiche-lbl">'+
+        '<input type="checkbox" class="de-fiche-cb" data-code="'+fc.code+'"'+(fd.ok?' checked':'')+'>'+
+        '<span class="de-fiche-code">'+fc.code+'</span>'+
+        '<span class="de-fiche-desc">'+esc(fc.desc)+'</span>'+
+      '</label>'+
+      '<input class="de-fiche-val" data-code="'+fc.code+'" type="text" value="'+esc(fd.v!=null?String(fd.v):'')+'" placeholder="'+esc(String(fc.thr))+'" '+(fd.ok?'':'disabled')+' title="'+esc(seuil)+'">'+
+    '</div>';
   }).join('');
-  const todoHTML = (p.todo||[]).map(t => '<p class="todo-i">'+esc(t)+'</p>').join('');
-  const vigiHTML = p.vigi
-    ? '<div class="dl"><div class="dl-head">Vigilance</div><div class="vbox"><p class="vtag">⚠ Point de vigilance</p><p class="obs-p">'+esc(p.obs_vigi||p.todo?.[0]||'Voir observations')+'</p></div></div>'
-    : '';
-  return '<div class="detail-inner">'+
-    '<div class="dl"><div class="dl-head">Certification</div>'+
-      '<div class="dl-item"><code>'+esc(p.certType||'ACERMI')+'</code> <code>'+esc(p.ref||'—')+'</code></div>'+
-      (p.autres?'<div class="dl-item">Autres <code>'+esc(p.autres)+'</code></div>':'')+
-      '<div class="dl-item">Validité <code>'+esc(p.val||'—')+'</code></div>'+
+
+  const cfgsHTML = CONFIGS.map(c =>
+    '<label class="de-cfg-lbl">'+
+      '<input type="checkbox" class="de-cfg-cb" data-cfg="'+c.id+'"'+((p.cfgs||[]).includes(c.id)?' checked':'')+'>'+
+      esc(c.label)+
+    '</label>'
+  ).join('');
+
+  const nrmOpts = [
+    ['','— non renseignée'],
+    ['EN 13162:2012+A1:2015','EN 13162 (laine de verre)'],
+    ['EN 13163:2012+A1:2015','EN 13163 (polystyrène expansé)'],
+    ['EN 13164:2012+A1:2015','EN 13164 (polystyrène extrudé)'],
+    ['EN 13165:2012+A1:2015','EN 13165 (polyuréthane)'],
+    ['EN 13166:2012+A1:2015','EN 13166 (phénolique)'],
+    ['EN 13171:2012+A1:2015','EN 13171 (fibre de bois)'],
+  ];
+  const certOpts = [
+    ['ACERMI','ACERMI'],['ATec','Avis Technique'],['DTA','DTA'],
+    ['ETA','ETA'],['ATEx','ATEx'],['CSTB','CSTB'],['FT','Fiche Technique'],
+  ];
+
+  return '<div class="de-edit" data-key="'+esc(key)+'">'+
+    '<div class="de-cols">'+
+      '<div class="de-col">'+
+        '<div class="de-sect-title">Identification</div>'+
+        '<div class="de-field"><span class="de-lbl">Marque</span>'+inp('mrq',p.mrq,'ex. ISOVER')+'</div>'+
+        '<div class="de-field"><span class="de-lbl">Désignation produit</span>'+inp('des',p.des,'ex. ISOCONFORT 35')+'</div>'+
+        '<div class="de-sect-title" style="margin-top:.5rem">Certification</div>'+
+        '<div class="de-row2">'+
+          '<div class="de-field"><span class="de-lbl">Type</span>'+sel('certtype',p.certType||'ACERMI',certOpts)+'</div>'+
+          '<div class="de-field"><span class="de-lbl">Référence</span>'+inp('ref',p.ref,'xx/xxx/xxx','mono')+'</div>'+
+        '</div>'+
+        '<div class="de-row2">'+
+          '<div class="de-field"><span class="de-lbl">Validité</span>'+inp('val',p.val,'jj/mm/aaaa','mono')+'</div>'+
+          '<div class="de-field"><span class="de-lbl">Autres certifications</span>'+inp('autres',p.autres,'ATec, DTA…')+'</div>'+
+        '</div>'+
+        '<div class="de-sect-title" style="margin-top:.5rem">Caractéristiques</div>'+
+        '<div class="de-row2">'+
+          '<div class="de-field"><span class="de-lbl">Norme</span>'+sel('nrm',p.nrm||'',nrmOpts)+'</div>'+
+          '<div class="de-field"><span class="de-lbl">λD W/(m·K)</span>'+inp('lam',p.lam,'0,032','mono')+'</div>'+
+        '</div>'+
+        '<div class="de-row2">'+
+          '<div class="de-field"><span class="de-lbl">Classement feu</span>'+inp('feu',p.feu,'ex. A2-s1,d0')+'</div>'+
+          '<div class="de-field"><span class="de-lbl">Parement</span>'+inp('par',p.par,'ex. papier kraft')+'</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="de-col">'+
+        '<div class="de-sect-title">Fiches CEE</div>'+
+        '<div class="de-fiches">'+fichesHTML+'</div>'+
+        '<div class="de-sect-title" style="margin-top:.6rem">Configurations de pose</div>'+
+        '<div class="de-cfgs">'+cfgsHTML+'</div>'+
+        '<div class="de-sect-title" style="margin-top:.6rem">Observations</div>'+
+        '<div class="de-field"><textarea class="de-inp de-ta" data-f="obs" rows="3" placeholder="Recommandations fabricant, points de vigilance…">'+esc(p.obs||'')+'</textarea></div>'+
+      '</div>'+
     '</div>'+
-    '<div class="dl"><div class="dl-head">Caractéristiques</div>'+
-      '<div class="dl-item">Norme <code>'+esc(p.nrm||'—')+'</code></div>'+
-      '<div class="dl-item">Feu <code>'+esc(p.feu||'—')+'</code></div>'+
-      '<div class="dl-item">Parement <code>'+esc(p.par||'— à compléter')+'</code></div>'+
-      '<div class="dl-item">λD <code>'+esc(p.lam||'—')+' W/(m·K)</code></div>'+
+    '<div class="de-actions">'+
+      '<button class="btn btn-accent de-save" data-key="'+esc(key)+'">Enregistrer</button>'+
+      (!isNew?'<button class="btn btn-sm btn-neutral de-del" data-key="'+esc(key)+'" style="margin-left:auto">Supprimer</button>':
+               '<button class="btn btn-sm btn-neutral de-del" data-key="'+esc(key)+'" style="margin-left:auto">Annuler</button>')+
     '</div>'+
-    (cfgChips?'<div class="dl"><div class="dl-head">Configurations de pose</div><div class="cfg-list">'+cfgChips+'</div></div>':'') +
-    (vigiHTML||'') +
-    (todoHTML?'<div class="dl"><div class="dl-head">À compléter</div><div class="todo">'+todoHTML+'</div></div>':'') +
-    '<div class="dl"><div class="dl-head">Observations</div><p class="obs-p">'+esc(p.obs||'—')+'</p></div>'+
   '</div>';
 }
 
@@ -676,75 +667,36 @@ document.getElementById('btnExport').addEventListener('click', exportCSV);
 let pdfQueue = [];
 let pdfQueueIdx = 0;
 
-/* ── MODAL BUILDERS ── */
-function buildFicheChecks() {
-  const el = document.getElementById('ficheChecks');
-  el.innerHTML = FICHES.map(f => {
-    const isFS = f.type==='FS';
-    const seuil = isFS ? 'FS ≤ '+f.thr : 'R ≥ '+f.thr+' '+f.unit;
-    return '<div class="fiche-row">'+
-      '<span class="fiche-code-lbl">'+f.code+'</span>'+
-      '<label class="fiche-check"><input type="checkbox" id="fc_'+f.code+'" data-fiche="'+f.code+'"> '+f.desc+'</label>'+
-      '<span style="font-size:.58rem;color:var(--ink3)">seuil '+seuil+'</span>'+
-      '<input class="form-input mono fiche-val-inp" id="fv_'+f.code+'" placeholder="'+f.thr+'" style="margin-top:.25rem;display:none" type="text">'+
-    '</div>';
-  }).join('');
-  el.querySelectorAll('[type=checkbox]').forEach(cb => {
-    cb.addEventListener('change', () => {
-      const inp = document.getElementById('fv_'+cb.dataset.fiche);
-      if (inp) inp.style.display = cb.checked ? 'block' : 'none';
-    });
-  });
-}
-function buildCfgChecks() {
-  const el = document.getElementById('cfgChecks');
-  el.innerHTML = CONFIGS.map(c =>
-    '<label class="cfg-check"><input type="checkbox" id="cc_'+c.id+'" value="'+c.id+'"> '+c.label+'</label>'
-  ).join('');
-}
-buildFicheChecks();
-buildCfgChecks();
-
 let pdfBlobUrl = null;
 
-function resetModalForm() {
-  document.getElementById('addForm').reset();
-  FICHES.forEach(f => { const inp = document.getElementById('fv_'+f.code); if (inp) inp.style.display='none'; });
+function resetModalState() {
   const note = document.getElementById('extractNote');
-  note.textContent = '';
-  note.style.color = '';
-  document.querySelectorAll('.form-input.invalid').forEach(el => el.classList.remove('invalid'));
-  document.getElementById('debugDetails').style.display = 'none';
-  document.getElementById('debugText').textContent = '';
-  matchedProdKey = null;
-  document.getElementById('matchBanner').style.display = 'none';
-  document.getElementById('modalSave').textContent = 'Ajouter au référentiel';
-  const modeUpdate = document.getElementById('modeUpdate');
-  if (modeUpdate) modeUpdate.checked = true;
+  if (note) { note.textContent = ''; note.style.color = ''; }
+  const dbg = document.getElementById('debugDetails');
+  if (dbg) dbg.style.display = 'none';
+  const dbgT = document.getElementById('debugText');
+  if (dbgT) dbgT.textContent = '';
 }
 
 function updateQueueUI() {
   const total = pdfQueue.length;
   const badge = document.getElementById('queueBadge');
   const skipBtn = document.getElementById('modalSkip');
-  const saveBtn = document.getElementById('modalSave');
   const title = document.getElementById('modalTitle');
   if (total > 1) {
     badge.textContent = (pdfQueueIdx+1)+' / '+total;
     badge.style.display = 'inline';
     skipBtn.style.display = (pdfQueueIdx < total-1) ? 'inline-flex' : 'none';
-    saveBtn.textContent = pdfQueueIdx < total-1 ? 'Ajouter et suivant →' : 'Ajouter au référentiel';
-    title.textContent = 'Document de certification — '+pdfQueue[pdfQueueIdx].name;
+    title.textContent = 'Document — '+pdfQueue[pdfQueueIdx].name;
   } else {
     badge.style.display = 'none';
     skipBtn.style.display = 'none';
-    saveBtn.textContent = 'Ajouter au référentiel';
-    title.textContent = 'Nouveau document de certification';
+    title.textContent = pdfQueue[0] ? 'Document de certification — '+pdfQueue[0].name : 'Document de certification';
   }
 }
 
 function loadQueueItem(idx) {
-  resetModalForm();
+  resetModalState();
   pdfQueueIdx = idx;
   updateQueueUI();
   const file = pdfQueue[idx];
@@ -752,15 +704,27 @@ function loadQueueItem(idx) {
   if (pdfBlobUrl) { URL.revokeObjectURL(pdfBlobUrl); pdfBlobUrl = null; }
   pdfBlobUrl = URL.createObjectURL(file);
   document.getElementById('pdfView').innerHTML = '<embed src="'+pdfBlobUrl+'#toolbar=1&navpanes=0" type="application/pdf" style="width:100%;height:100%;border:none">';
-  document.getElementById('extractNote').textContent = 'Extraction en cours…';
+  const note = document.getElementById('extractNote');
+  note.textContent = 'Analyse en cours…';
   const reader = new FileReader();
   reader.onload = async e => {
     try {
       const fields = await extractPDFFields(e.target.result);
-      populateForm(fields);
+      const counted = ['ref','val','lam','feu','mrq','des','certType','nrm'].filter(k => fields[k]).length;
+      if (counted > 0) {
+        note.textContent = counted + ' champ'+(counted>1?'s':'')+' identifié'+(counted>1?'s':'')+' — saisissez les résultats dans le tableau';
+        note.style.color = 'var(--a)';
+      } else {
+        note.textContent = 'Aucune donnée structurée — PDF peut-être scanné';
+        note.style.color = 'var(--w)';
+      }
+      if (fields._raw) {
+        document.getElementById('debugDetails').style.display = '';
+        document.getElementById('debugText').textContent = fields._raw;
+      }
     } catch(err) {
-      document.getElementById('extractNote').textContent = 'Extraction échouée — remplissez manuellement';
-      document.getElementById('extractNote').style.color = 'var(--w)';
+      note.textContent = 'Analyse échouée';
+      note.style.color = 'var(--w)';
     }
   };
   reader.readAsArrayBuffer(file);
@@ -770,7 +734,7 @@ function openModal(files) {
   const pdfs = files ? Array.from(files).filter(f => f.type === 'application/pdf') : [];
   pdfQueue = pdfs;
   pdfQueueIdx = 0;
-  resetModalForm();
+  resetModalState();
   if (pdfs.length === 0) {
     document.getElementById('pdfView').innerHTML = '<div class="pdf-placeholder"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Chargez un PDF pour prévisualiser</div>';
     updateQueueUI();
@@ -1031,66 +995,6 @@ async function extractPDFFields(buf) {
   return f;
 }
 
-function populateForm(f) {
-  const set = (id, v) => { if (v) { const el = document.getElementById(id); if (el) el.value = v; } };
-  set('f_ref', f.ref);
-  set('f_val', f.val);
-  set('f_lam', f.lam);
-  set('f_feu', f.feu);
-  set('f_mrq', f.mrq);
-  set('f_des', f.des);
-  if (f.certType) {
-    const sel = document.getElementById('f_certtype');
-    if (sel) {
-      // Check if option exists; if not, keep current value
-      const opt = [...sel.options].find(o => o.value === f.certType);
-      if (opt) sel.value = f.certType;
-    }
-  }
-  if (f.nrm) {
-    const sel = document.getElementById('f_nrm');
-    if (sel) for (const opt of sel.options) { if (opt.value === f.nrm) { sel.value = f.nrm; break; } }
-  }
-  // ── Auto-match existing product by reference ──
-  matchedProdKey = null;
-  if (f.ref && f.ref !== '—') {
-    const cands = allProducts().filter(p => p.ref === f.ref);
-    if (cands.length) {
-      let best = cands[0];
-      if (f.des && cands.length > 1) {
-        const fdesLow = f.des.toLowerCase().slice(0, 12);
-        best = cands.find(p => p.des.toLowerCase().includes(fdesLow)) || cands[0];
-      }
-      matchedProdKey = rowKey(best);
-      const label = (best.mrq ? best.mrq + ' — ' : '') + best.des;
-      document.getElementById('matchName').textContent = label;
-      document.getElementById('matchBanner').style.display = '';
-      document.getElementById('modalSave').textContent = 'Mettre à jour le produit';
-    } else {
-      document.getElementById('matchBanner').style.display = 'none';
-      document.getElementById('modalSave').textContent = 'Ajouter au référentiel';
-    }
-  } else {
-    document.getElementById('matchBanner').style.display = 'none';
-    document.getElementById('modalSave').textContent = 'Ajouter au référentiel';
-  }
-
-  const counted = ['ref','val','lam','feu','mrq','des','certType','nrm'].filter(k => f[k]).length;
-  const note = document.getElementById('extractNote');
-  if (counted > 0) {
-    note.textContent = counted + ' champ' + (counted > 1 ? 's' : '') + ' extrait' + (counted > 1 ? 's' : '') + (matchedProdKey ? ' — produit identifié' : ' — vérifiez');
-    note.style.color = 'var(--a)';
-  } else {
-    note.textContent = 'Aucune donnée extraite — le PDF est peut-être scanné ou protégé';
-    note.style.color = 'var(--w)';
-  }
-
-  // Debug panel
-  if (f._raw) {
-    document.getElementById('debugDetails').style.display = '';
-    document.getElementById('debugText').textContent = f._raw;
-  }
-}
 
 /* ── FILE DRAG & DROP ── */
 const dropZone = document.getElementById('dropZone');
@@ -1109,95 +1013,94 @@ dropZone.addEventListener('drop', e => {
   if (e.dataTransfer.files.length) openModal(e.dataTransfer.files);
 });
 
-/* ── SAVE PRODUCT ── */
-document.getElementById('modalSave').addEventListener('click', async () => {
-  const ref      = document.getElementById('f_ref').value.trim();
-  const mrq      = document.getElementById('f_mrq').value.trim();
-  const des      = document.getElementById('f_des').value.trim();
-  const val      = document.getElementById('f_val').value.trim();
-  const certType = document.getElementById('f_certtype').value;
-  const autres   = document.getElementById('f_autres').value.trim();
-  const nrm      = document.getElementById('f_nrm').value;
-  const feu      = document.getElementById('f_feu').value.trim();
-  const par      = document.getElementById('f_par').value.trim();
-  const lam      = document.getElementById('f_lam').value.trim();
-  const obs      = document.getElementById('f_obs').value.trim();
+/* ── SAVE PRODUCT (inline) ── */
+async function saveProductInline(key) {
+  const row = document.querySelector('.de-edit[data-key="'+key+'"]');
+  if (!row) return;
+  const g = id => row.querySelector('[data-f="'+id+'"]');
+  const val = id => { const el = g(id); return el ? el.value.trim() : ''; };
+
+  const ref      = val('ref');
+  const mrq      = val('mrq');
+  const des      = val('des');
+  const valDate  = val('val');
+  const certType = val('certtype');
+  const autres   = val('autres');
+  const nrm      = val('nrm');
+  const feu      = val('feu');
+  const par      = val('par');
+  const lam      = val('lam');
+  const obs      = val('obs');
 
   const fiches = {};
   FICHES.forEach(fc => {
-    const cb = document.getElementById('fc_'+fc.code);
-    const vInp = document.getElementById('fv_'+fc.code);
-    const ok = cb && cb.checked;
-    const v = ok && vInp ? parseFloat(vInp.value.replace(',','.')) || null : null;
+    const cb  = row.querySelector('.de-fiche-cb[data-code="'+fc.code+'"]');
+    const inp = row.querySelector('.de-fiche-val[data-code="'+fc.code+'"]');
+    const ok  = cb ? cb.checked : false;
+    const v   = ok && inp ? parseFloat(inp.value.replace(',','.')) || null : null;
     fiches[fc.code] = {ok, v};
   });
-  const fichesHasOk = Object.values(fiches).some(f => f.ok);
 
   const cfgs = CONFIGS.map(c => c.id).filter(id => {
-    const cb = document.getElementById('cc_'+id);
+    const cb = row.querySelector('.de-cfg-cb[data-cfg="'+id+'"]');
     return cb && cb.checked;
   });
 
-  const saveMode = document.querySelector('input[name="saveMode"]:checked')?.value || 'new';
-
-  if (matchedProdKey && saveMode === 'update') {
-    // Build overlay: merge original data with extracted fields (non-empty wins)
-    const origProd = allProducts().find(p => rowKey(p) === matchedProdKey);
-    if (origProd) {
-      const overlay = {
-        ...origProd,
-        certType: certType || origProd.certType,
-        val:      val      || origProd.val,
-        nrm:      nrm      || origProd.nrm,
-        feu:      feu      || origProd.feu,
-        par:      par      || origProd.par,
-        lam:      lam      || origProd.lam,
-        autres:   autres   || origProd.autres,
-        obs:      obs      || origProd.obs,
-        mrq:      mrq      || origProd.mrq,
-        _updated: Date.now(),
-      };
-      if (ref && ref !== '—') overlay.ref = ref;
-      if (fichesHasOk) overlay.fiches = fiches;
-      if (cfgs.length > 0) overlay.cfgs = cfgs;
-      // Recalculate vigi
-      overlay.vigi = /euroclasse\s*f\b|\bm[34]\b/i.test(overlay.feu||'') || overlay.ref === '—';
-      // Remove previous overlay for same key
-      extraProducts = extraProducts.filter(p => rowKey(p) !== matchedProdKey);
-      extraProducts.push(overlay);
-      saveExtra();
-    }
-  } else {
-    // Add as new product — accept even with partial data
+  const isNew = key === '__new__';
+  if (isNew) {
+    extraProducts = extraProducts.filter(p => !p._new);
     const newP = {
-      ref: ref || '—', certType, autres, mrq, des, val, nrm, feu, par, lam,
-      fiches: fichesHasOk ? fiches : Object.fromEntries(
-        FICHES.map(fc => [fc.code, {ok: false, v: null}])
-      ),
-      cfgs, vigi: !ref || ref === '—', todo: [], obs,
+      ref: ref||'—', certType: certType||'ACERMI', autres, mrq, des,
+      val: valDate, nrm, feu, par, lam,
+      fiches, cfgs, vigi: !ref||ref==='—', todo: [], obs,
     };
     extraProducts.push(newP);
-    saveExtra();
+    expanded.delete('__new__');
+  } else {
+    const origProd = allProducts().find(p => rowKey(p) === key);
+    if (!origProd) return;
+    const updated = {
+      ...origProd,
+      ref: ref||origProd.ref, certType: certType||origProd.certType,
+      autres, mrq: mrq||origProd.mrq, des: des||origProd.des,
+      val: valDate||origProd.val, nrm: nrm||origProd.nrm,
+      feu: feu||origProd.feu, par, lam: lam||origProd.lam, obs,
+      fiches, cfgs,
+      vigi: /euroclasse\s*f\b|\bm[34]\b/i.test(feu||'') || !ref||ref==='—',
+      _updated: Date.now(),
+    };
+    extraProducts = extraProducts.filter(p => rowKey(p) !== key);
+    extraProducts.push(updated);
   }
+  saveExtra();
 
-  const actionLabel = (matchedProdKey && saveMode === 'update') ? 'Produit mis à jour' : 'Produit ajouté';
   try {
     const artifact = await claude.use('artifact');
-    if (artifact) {
-      await publishUpdated(allProducts());
-      toast(actionLabel + ' et référentiel publié');
-    } else { toast(actionLabel + ' (sauvegardé localement)'); }
+    if (artifact) { await publishUpdated(savedProducts()); toast('Enregistré et publié'); }
+    else toast('Enregistré localement');
   } catch(e) {
-    if (e.code === 'not_writer' || e.code === 'not_granted') {
-      toast(actionLabel + ' (sauvegardé localement)');
-    } else {
-      toast(actionLabel + ' — publication échouée');
-    }
+    toast(e.code==='not_writer'||e.code==='not_granted' ? 'Enregistré localement' : 'Enregistré (publication échouée)');
   }
-
-  advanceQueue();
   render();
-});
+}
+
+function addNewRow() {
+  const dummy = {
+    ref:'', certType:'ACERMI', autres:'', mrq:'', des:'Nouveau produit',
+    val:'', nrm:'', feu:'', par:'', lam:'', obs:'',
+    fiches: Object.fromEntries(FICHES.map(fc=>[fc.code,{ok:false,v:null}])),
+    cfgs:[], vigi:true, todo:[],
+  };
+  // Add a placeholder sentinel row that shows inline edit immediately
+  expanded.add('__new__');
+  extraProducts = extraProducts.filter(p => rowKey(p) !== '__new__');
+  dummy._new = true;
+  extraProducts.push(dummy);
+  render();
+  // Scroll to bottom
+  setTimeout(() => document.querySelector('.de-edit[data-key="__new__"]')?.scrollIntoView({behavior:'smooth',block:'center'}), 50);
+}
+document.getElementById('btnNewRow').addEventListener('click', addNewRow);
 
 /* ── ARTIFACT PUBLISH ── */
 async function publishUpdated(products) {
