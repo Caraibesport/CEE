@@ -29,8 +29,8 @@ Le fichier principal est `Referentiel_produits_2026_corrige.csv` (séparateur `;
 | BAT-EN-106 | R ≥ 1,2 m².K/W | Isolation toiture tertiaire |
 | BAR-EN-109 | FS ≤ 0,03 (≤ 0,02 à Mayotte) | Réduction apports solaires toiture — France d'outre-mer résidentiel |
 | BAT-EN-109 | FS ≤ 0,03 (≤ 0,02 à Mayotte) | Réduction apports solaires toiture — France d'outre-mer tertiaire |
-| BAR-EN-107 | R ≥ 0,5 m².K/W | Isolation toiture résidentiel (rampants) |
-| BAT-EN-108 | R ≥ 1,2 m².K/W | Isolation toiture tertiaire |
+| BAR-EN-107 | R ≥ 0,5 m².K/W | Isolation des murs résidentiel (DOM) — doublage façade/pignon |
+| BAT-EN-108 | R ≥ 1,2 m².K/W | Isolation des murs tertiaire (DOM) ≤ 10 000 m² — doublage façade/pignon |
 
 ## Documents sources attendus par produit
 

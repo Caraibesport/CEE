@@ -339,13 +339,14 @@ tr.detail-row td{padding:0;border-bottom:1px solid var(--s3)}
 // cfgDomains : configurations de pose qui valident l'éligibilité à la fiche
 // Un produit n'est éligible que si son domaine d'emploi ACERMI couvre au moins une cfg de la liste
 const TOITURE_CFGS = ['combles','solives','plafond_pp','couv_nerv','rampant','toiture_inc'];
+const MUR_CFGS     = ['mur_facade','mur_osbois'];
 const FICHES = [
-  {code:'BAR-EN-106',type:'R',thr:1.5,  unit:'m².K/W',desc:'Toiture résidentiel',       cfgDomains:TOITURE_CFGS},
-  {code:'BAT-EN-106',type:'R',thr:1.2,  unit:'m².K/W',desc:'Toiture tertiaire',          cfgDomains:TOITURE_CFGS},
-  {code:'BAR-EN-109',type:'FS',thr:0.03,unit:'',       desc:'Toiture DOM-TOM résidentiel',note:'FS ≤ 0,02 à Mayotte',cfgDomains:TOITURE_CFGS},
-  {code:'BAT-EN-109',type:'FS',thr:0.03,unit:'',       desc:'Toiture DOM-TOM tertiaire',  note:'FS ≤ 0,02 à Mayotte',cfgDomains:TOITURE_CFGS},
-  {code:'BAR-EN-107',type:'R',thr:0.5,  unit:'m².K/W',desc:'Rampants résidentiel',        cfgDomains:['rampant']},
-  {code:'BAT-EN-108',type:'R',thr:1.2,  unit:'m².K/W',desc:'Toiture tertiaire',          cfgDomains:['couv_nerv','toiture_inc','rampant']},
+  {code:'BAR-EN-106',type:'R',thr:1.5,  unit:'m².K/W',desc:'Isolation combles/toiture résidentiel (DOM)',cfgDomains:TOITURE_CFGS},
+  {code:'BAT-EN-106',type:'R',thr:1.2,  unit:'m².K/W',desc:'Isolation toiture tertiaire (DOM)',          cfgDomains:TOITURE_CFGS},
+  {code:'BAR-EN-109',type:'FS',thr:0.03,unit:'',       desc:'Réduction apports solaires toiture résidentiel (DOM)',note:'FS ≤ 0,02 à Mayotte',cfgDomains:TOITURE_CFGS},
+  {code:'BAT-EN-109',type:'FS',thr:0.03,unit:'',       desc:'Réduction apports solaires toiture tertiaire (DOM)',  note:'FS ≤ 0,02 à Mayotte — bureaux/commerces neufs Martinique+Guadeloupe exclus',cfgDomains:TOITURE_CFGS},
+  {code:'BAR-EN-107',type:'R',thr:0.5,  unit:'m².K/W',desc:'Isolation des murs résidentiel (DOM)',       cfgDomains:MUR_CFGS},
+  {code:'BAT-EN-108',type:'R',thr:1.2,  unit:'m².K/W',desc:'Isolation des murs tertiaire (DOM)',         cfgDomains:MUR_CFGS},
 ];
 const CONFIGS = [
   {id:'combles',      label:'Isolation des combles'},
@@ -354,6 +355,7 @@ const CONFIGS = [
   {id:'couv_nerv',    label:'Couverture plaques nervurées'},
   {id:'rampant',      label:'Rampant de toiture (int.)'},
   {id:'toiture_inc',  label:'Toiture inclinée'},
+  {id:'mur_facade',   label:'Doublage mur façade/pignon'},
   {id:'mur_osbois',   label:'Mur ossature bois'},
   {id:'plancher_bas', label:'Plancher bas'},
 ];
