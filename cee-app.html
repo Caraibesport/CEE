@@ -768,13 +768,16 @@ function loadQueueItem(idx) {
       const fields = await extractPDFFields(e.target.result);
       const counted = ['ref','val','lam','feu','mrq','des','certType','nrm'].filter(k => fields[k]).length;
       if (counted > 0) {
-        let msg = counted + ' champ'+(counted>1?'s':'')+' identifié'+(counted>1?'s':'')+' — saisissez les résultats dans le tableau';
+        let msg = counted + ' champ'+(counted>1?'s':'')+' identifié'+(counted>1?'s':'');
         if (fields._desRefs) msg += '\nRéférences : ' + fields._desRefs.slice(0, 120) + (fields._desRefs.length > 120 ? '…' : '');
+        if (fields.cfgs && fields.cfgs.length) msg += '\nConfigurations : ' + fields.cfgs.join(', ');
+        msg += '\n→ Ligne mise à jour dans le tableau — vérifiez puis Enregistrer';
         note.textContent = msg;
         note.style.color = 'var(--a)';
         note.style.whiteSpace = 'pre-wrap';
+        applyToRow(fields);
       } else {
-        note.textContent = 'Aucune donnée structurée — PDF peut-être scanné';
+        note.textContent = 'Aucune donnée structurée — PDF peut-être scanné ou protégé';
         note.style.color = 'var(--w)';
       }
       if (fields._raw) {
@@ -1079,9 +1082,88 @@ async function extractPDFFields(buf) {
     f.feu = 'M1';
   }
 
+  // ── Domaine d'emploi → configurations de pose ──
+  const domaineBlock = fullText.match(/domaine\s+d[''']?emploi[^:]*:([\s\S]{10,1000}?)(?:\n{3,}|\bclassement\b|\bcertificat\b|\bvalable\b)/i);
+  const domTxt = (domaineBlock ? domaineBlock[1] : fullText);
+  const cfgs = [];
+  if (/combles?\s+(perdus?|am[eé]nag[eé]s?|habitables?)|soufflage.{0,20}combles?|isolation.{0,20}combles/i.test(domTxt)) cfgs.push('combles');
+  if (/entre\s+solives?|plancher\s+(?:en\s+)?bois|solives?\s+de\s+plancher/i.test(domTxt)) cfgs.push('solives');
+  if (/plafond\s+(?:en\s+)?plaque\s+de\s+pl[âa]tre|plafond\s+suspendu|sous\s+plafond/i.test(domTxt)) cfgs.push('plafond_pp');
+  if (/nervur[eé]|t[ôo]le|couverture\s+en\s+plaques?/i.test(domTxt)) cfgs.push('couv_nerv');
+  if (/rampant|entre\s+et\s+sous\s+chevron|int[eé]rieur.{0,20}inclin/i.test(domTxt)) cfgs.push('rampant');
+  if (/toiture\s+inclin[eé]e?\s+avec|toiture\s+inclin.{0,20}associ/i.test(domTxt)) cfgs.push('toiture_inc');
+  if (/ossature\s+bois|mur\s+[àa]\s+ossature/i.test(domTxt)) cfgs.push('mur_osbois');
+  if (/plancher\s+bas|dalle\s+bass|sous\s+dalle/i.test(domTxt)) cfgs.push('plancher_bas');
+  if (cfgs.length) f.cfgs = cfgs;
+
   return f;
 }
 
+
+/* ── APPLY EXTRACTED DATA TO TABLE ROW ── */
+function applyToRow(fields) {
+  const dataKeys = ['ref','val','lam','feu','mrq','des','nrm'];
+  if (!fields || !dataKeys.some(k => fields[k])) return;
+
+  // Find matching product by ref ACERMI (same ref may cover multiple products — take first)
+  let targetKey = null;
+  if (fields.ref && fields.ref !== '—') {
+    const match = allProducts().find(p => p.ref === fields.ref && !p._new);
+    if (match) targetKey = rowKey(match);
+  }
+
+  if (targetKey) {
+    expanded.add(targetKey);
+    render();
+  } else {
+    addNewRow(); // creates __new__ sentinel, expands, renders
+    targetKey = '__new__';
+  }
+
+  setTimeout(() => {
+    // Use dataset traversal to avoid CSS escape issues with | / . in key
+    let row = null;
+    document.querySelectorAll('.de-edit').forEach(el => { if (el.dataset.key === targetKey) row = el; });
+    if (!row) return;
+
+    const setV = (f, v) => { if (!v) return; const el = row.querySelector('[data-f="'+f+'"]'); if (el) el.value = String(v); };
+
+    setV('mrq', fields.mrq);
+    setV('des', fields.des);
+    setV('ref', fields.ref);
+    setV('val', fields.val);
+    setV('lam', fields.lam);
+    setV('feu', fields.feu);
+
+    const nrmSel  = row.querySelector('[data-f="nrm"]');
+    if (nrmSel && fields.nrm) nrmSel.value = fields.nrm;
+    const certSel = row.querySelector('[data-f="certtype"]');
+    if (certSel && fields.certType) certSel.value = fields.certType;
+
+    // Auto-compute R min for all R-type fiches from λD
+    const lamVal = row.querySelector('[data-f="lam"]')?.value.trim();
+    if (lamVal) {
+      FICHES.forEach(fc => {
+        if (fc.type !== 'R') return;
+        const cb  = row.querySelector('.de-fiche-cb[data-code="'+fc.code+'"]');
+        const inp = row.querySelector('.de-fiche-val[data-code="'+fc.code+'"]');
+        if (!cb || !inp) return;
+        const r = calcMinR(lamVal, fc.thr);
+        if (r !== null) { inp.value = String(r).replace('.', ','); inp.disabled = false; cb.checked = true; }
+      });
+    }
+
+    // Check configurations validated by the document
+    if (fields.cfgs && fields.cfgs.length) {
+      fields.cfgs.forEach(cfgId => {
+        const cb = row.querySelector('.de-cfg-cb[data-cfg="'+cfgId+'"]');
+        if (cb) cb.checked = true;
+      });
+    }
+
+    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 100);
+}
 
 /* ── FILE DRAG & DROP ── */
 const dropZone = document.getElementById('dropZone');
