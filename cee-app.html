@@ -1,0 +1,1232 @@
+<!doctype html><html data-theme="light" style="color-scheme: light;"><head><!-- frame-runtime --><base href="/_f/1787771334-71a8/"><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.YODCk0yK.js","assets":"assets.DBUJcvq_.js","comments":"comments.GLuHR3zP.js","db":"db.CRhVHzSt.js","downloads":"downloads.C3GSvEDP.js","embed":"embed.CxGAyc-v.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","permissions":"permissions.BNySkLV5.js","room":"room.BMMoe2BY.js","sample":"sample.BW2Uysoh.js","self":"artifact.YODCk0yK.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.CQm3TZ9K.js","comments":"_comments.PBVy184F.js","translate":"_translate.5HCW4BJh.js"}</script><script>(function(){"use strict";var J=["light","dark","system"],Q=/^[A-Za-z0-9_-]{1,64}$/,H=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ee=new Set(["class","hidden","value","checked"]);function te(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||ee.has(t)}var Me="http://www.w3.org/1999/xhtml",re="http://www.w3.org/2000/svg",ne=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),oe=new Set(["script","style"]);function se(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!ne.has(t):e.namespaceURI===re?!oe.has(t):!1}var ae=new Set(["html","head","body","frameset"]);function ie(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&ae.has(e.localName)}function ce(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!Q.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[r,n]of Object.entries(t.attrsSet))if(!H.test(r)||typeof n!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const r of t.attrsRemoved)if(typeof r!="string"||!H.test(r))return!1}return!0}function le(e,t){if(e===null||typeof e!="object")return!1;const{seq:r,elements:n}=e;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let s=0;s<n.length;s++)if(!t(n[s]))return!1;return!0}function ue(e){return e===null||typeof e!="object"?!1:le(e.__frame_patch,ce)}function fe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function pe(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function de(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const r=t.theme;return typeof r=="string"&&J.includes(r)}var A=/^[\w.-]+\.js$/;function me(e,t,r){return r?"inert":typeof t=="string"&&A.test(t)?e?[t]:"inert":e?"inert":"framed"}function he(){return{post(e,t){parent.postMessage(e,t)},on(e){const t=r=>{r.source===parent&&e(r.data,r.origin)};return addEventListener("message",t),()=>removeEventListener("message",t)}}}function _e(){return{post:()=>{},on:()=>()=>{}}}var O="__frame_scroll",ve=150,ye=310,we=160,be=3e4;function Ee(){let e=0,t=!1,r=!1,n=!1,s=0,a=null;const l=i=>{try{sessionStorage.setItem(O,JSON.stringify({y:i}))}catch{}},d=()=>{if(clearTimeout(e),a===null)return;const i=a;a=null,l(i)},v=()=>{if(t){t=!1;return}r=!0,a=scrollY,clearTimeout(e),e=setTimeout(d,ve)};try{addEventListener("scroll",v,{passive:!0}),addEventListener("pagehide",d)}catch{}const y=()=>{let i;try{i=sessionStorage.getItem(O)}catch{return null}if(i===null)return null;let m;try{m=JSON.parse(i)}catch{m=null}const u=m?.y;if(!(typeof u=="number"&&Number.isFinite(u)&&u>=0)){try{sessionStorage.removeItem(O)}catch{}return null}return u};let S=!1;const h=i=>{try{const m=scrollY;scrollTo({top:i,left:0,behavior:"instant"}),s=i,n=!0,clearTimeout(e),a=null,l(i);const u=scrollY;u!==m&&(t=!0),u!==i&&!S&&(S=!0,addEventListener("load",()=>{try{if(scrollY===u){const k=y();h(k!==null?k:s)}}catch{}},{once:!0}))}catch{}},w=()=>{try{return!!location.hash}catch{return!0}};let o=!1;const f=()=>{try{if(o||innerWidth>ye||innerHeight>we)return;o=!0;const i=Date.now(),m=()=>{try{removeEventListener("resize",m)}catch{}if(Date.now()-i>be||r||w())return;const u=y();h(u!==null?u:s)};addEventListener("resize",m)}catch{}};let _=!1,b=!1;return{restore(){if(_||(_=!0,w()))return;const i=y();i!==null&&(h(i),f())},promoted(){if(b||(b=!0,w()))return;const i=y();i!==null?(h(i),f()):n&&h(s)}}}function ge(e,t,r,n){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:v=>v})??null}catch{}const a=window.Worker,l=a?.prototype,d=Object.freeze({Worker:a,workerOn:l?.addEventListener,workerPost:l?.postMessage,workerTerminate:l?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,policy:s,origins:t});r(e).then(v=>v?.bootTopLevel?v.bootTopLevel(d,n):n.settle()).catch(()=>n.settle())}var Oe="modulepreload",Ce=function(e){return"/"+e},je={},Ae=function(t,r,n){let s=Promise.resolve();function a(l){const d=new Event("vite:preloadError",{cancelable:!0});if(d.payload=l,window.dispatchEvent(d),!d.defaultPrevented)throw l}return s.then(l=>{for(const d of l||[])d.status==="rejected"&&a(d.reason);return t().catch(a)})},Re=window===top,q=Object.getOwnPropertyDescriptor(window,"claude"),T=me(Re,window.__FRAME_PREAMBLE?.topLevel,q?.writable===!1),C=typeof T=="object"&&T[0],p=C?_e():he();(function(){const e=Object.defineProperty,t=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let s=0;s<r.length;s++){const a=r[s];try{e(t,a,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[a]}catch{}try{e(t,a,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[a]=="function"&&n++}if(n&&T==="framed")try{p.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Se=1e4,W=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function $(e){for(const t of W)if(t.endsWith(":*"))try{const r=new URL(e);if(`${r.protocol}//${r.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var L=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),j=window.__FRAME_PREAMBLE?.transforms,N=window.__FRAME_PREAMBLE?.comments,I=window.__FRAME_PREAMBLE?.translate;function R(e){return Ae(()=>import("/_runtime/"+e),void 0)}function K(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:D,pipe:()=>({wrap:(r,n)=>(...s)=>{try{return n(...s)}catch(a){return Promise.reject(a)}}})}}var P=null,E=null;function Y(e,t,r){try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var B=!1;function ke(e,t){const r=[];for(const n of e.elements){const s=document.querySelector(`[data-id="${n.target}"]`);if(!s){p.post({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(n.attrsSet??{}),...n.attrsRemoved??[]].some(a=>!te(a))){p.post({__frame_patch_miss:{seq:e.seq}},t);return}if(n.text!==void 0&&(!se(s)||ie(s))){p.post({__frame_patch_miss:{seq:e.seq}},t);return}for(const[a,l]of Object.entries(n.attrsSet??{}))if(!G(s,a)){try{s.setAttribute(a,l)}catch{}X(s,a,l)}for(const a of n.attrsRemoved??[])G(s,a)||(s.removeAttribute(a),X(s,a,null));typeof n.text=="string"&&(s.textContent=n.text),r.push(n.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:r}}))}catch{}}function X(e,t,r){if(!(e instanceof HTMLInputElement))return;const n=t.toLowerCase();n==="checked"?e.checked=r!==null:n==="value"&&e.type!=="file"&&(e.value=r??"")}function G(e,t){const r=t.toLowerCase(),n=e;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function V(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,B=!0):B&&(delete t.dataset.theme,t.style.colorScheme="",B=!1)}var M=new Map;function Te(){let e;const t={u:new Promise(r=>{e=r}),r:r=>{t.done=!0,e(r)},done:!1,nulled:!1};return t}function U(){for(const e of M.values())e.done||(e.nulled=!0,e.r(null))}var Le=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),D=(e,t)=>{const r=M.get(e);if(!r||r.done){r?.nulled&&E&&p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},E);return}const n=typeof t=="function"?Object.setPrototypeOf(t,Le):Object.assign(Object.create(null),t);typeof n.then=="function"&&delete n.then,r.r(Object.freeze(n))};function Z(){const e=q?.value??{};Y(window,"claude",e);for(const t of Object.keys(L)){if(e[t]!==void 0){Y(e,t,e[t]);continue}M.set(t,Te())}if(e.use===void 0){const t=r=>{if(typeof r!="string"||!Object.hasOwn(L,r))return Promise.resolve(null);const n=M.get(r);return n?n.u:Promise.resolve(e[r]??null)};try{Object.defineProperty(e,"use",{value:t,writable:!0,configurable:!0,enumerable:!1})}catch{}}}if(T==="framed"){const e=j&&A.test(j)?R(j).catch(()=>{}):Promise.resolve(void 0),t=o=>{if(o.type==="auxclick"&&o.button!==1)return;const f=o.target,_=f&&f.closest?f.closest("a[href],area[href]"):null;if(!_)return;const b=_.getAttribute("href");if(!b)return;let i;try{i=new URL(b,document.baseURI)}catch{return}if((i.protocol==="http:"||i.protocol==="https:")&&i.origin!==location.origin){o.preventDefault();const m=(_.getAttribute("target")??"").toLowerCase(),u=o.type==="auxclick"||o.metaKey||o.ctrlKey||o.shiftKey||o.altKey||!["","_self","_top","_parent"].includes(m);p.post({__frame_nav:!0,url:i.href,newTab:u},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const r={},n=o=>{o.isTrusted&&(r.pointer=!0)},s=o=>{o.isTrusted&&(r.click=!0)};addEventListener("pointermove",n,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0}),e.then(o=>{o?.wireNav&&(o.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",n,!0),removeEventListener("click",s,!0),o.wireEngagement?.(r))});let a=null;try{a=Ee()}catch{}Z();let l=null,d=null,v=0;const y=p.on((o,f)=>{$(f)&&fe(o)&&(l=o.__frame_init,E=f,y(),clearTimeout(v),d?.())});p.post({__frame_connect:!0},"*");const S=new Promise(o=>{d=o,v=setTimeout(()=>{y(),o()},Se)}),h=document.readyState==="loading"?new Promise(o=>document.addEventListener("DOMContentLoaded",()=>o(),{once:!0})):Promise.resolve();h.then(()=>{try{a?.restore()}catch{}});const w={cb:null};p.on((o,f)=>{if($(f)&&pe(o)){try{a?.promoted()}catch{}w.cb?.()}}),S.then(async()=>{if(!l||!E){U();return}V(l.theme);const o=E;let f=!1,_=!1;p.on((c,x)=>{if(x!==o)return;de(c)&&V(c.__frame_theme.theme),ue(c)&&ke(c.__frame_patch,o);const g=c?.__fc_mode;g&&typeof g=="object"&&!f&&N&&A.test(N)&&(f=!0,R(N).then(z=>z.install?.(o,g.on===!0)).catch(()=>{}));const F=c?.__ft_cmd;F&&typeof F=="object"&&!_&&I&&A.test(I)&&(_=!0,R(I).then(z=>z.install?.(o,F)).catch(()=>{}))});const b=Object.keys(l.capabilities??{}).filter(c=>Object.hasOwn(L,c)).map(c=>[c,L[c]]).filter(c=>typeof c[1]=="string"&&A.test(c[1])),i=await Promise.allSettled(b.map(([,c])=>R(c))),m=await e,u=E;if(m?.buildBoot||p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},u),m?.buildBoot)try{P=m.buildBoot(l,m.TRANSFORMS??{},{shellOrigin:u,mount:D},c=>p.post({__frame_cap_telemetry:c},u))}catch{p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},u),P=K(l,u)}else P=K(l,u);const k=c=>p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:c}},u),Pe=P;i.forEach((c,x)=>{const g=b[x][0];if(c.status!=="fulfilled"){k(g);return}try{c.value?.install?.(Pe)}catch{k(g)}}),U(),await h,p.post({__frame_ready:!0},E),e.then(c=>c?.installSizeReporter?.(u,w))})}else C&&(Z(),ge(C,W,R,{settle:U,mount:D}))})();</script><!-- /frame-runtime --><meta charset="utf8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Référentiel Isolants CEE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
+<style>
+/* ── TOKENS ── */
+:root {
+  --g:    #F2F6F4;
+  --s:    #FFFFFF;
+  --s2:   #EBF0EC;
+  --s3:   #D6E2DC;
+  --ink:  #172320;
+  --ink2: #4A5E57;
+  --ink3: #8A9E97;
+  --a:    #005C45;
+  --a2:   #1A7A5C;
+  --al:   #E0EFE9;
+  --ab:   #A8D4C2;
+  --w:    #C85C10;
+  --wl:   #FEF0E8;
+  --wb:   #F0B080;
+  --yb:   #D2EDE4;
+  --yi:   #084030;
+  --nb:   #E8EDEC;
+  --ni:   #5A6E68;
+  --r: 6px; --rs: 3px;
+  --sh: 0 1px 3px rgba(0,28,18,.07),0 1px 2px rgba(0,28,18,.04);
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme=light]){
+    --g:#0C1915;--s:#142420;--s2:#1C302A;--s3:#243C34;
+    --ink:#DFF0EB;--ink2:#8AB4A8;--ink3:#527068;
+    --a:#2EAE80;--a2:#50C89A;--al:#0A2820;--ab:#164535;
+    --w:#F08040;--wl:#1C1008;--wb:#6B3015;
+    --yb:#0C2E20;--yi:#50C89A;--nb:#182825;--ni:#7A9590;
+    --sh:0 1px 4px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme=dark]{
+  --g:#0C1915;--s:#142420;--s2:#1C302A;--s3:#243C34;
+  --ink:#DFF0EB;--ink2:#8AB4A8;--ink3:#527068;
+  --a:#2EAE80;--a2:#50C89A;--al:#0A2820;--ab:#164535;
+  --w:#F08040;--wl:#1C1008;--wb:#6B3015;
+  --yb:#0C2E20;--yi:#50C89A;--nb:#182825;--ni:#7A9590;
+  --sh:0 1px 4px rgba(0,0,0,.3);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:14px;-webkit-font-smoothing:antialiased}
+body{background:var(--g);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.5;min-height:100vh}
+
+/* ── HEADER ── */
+.hdr{background:var(--a);color:#fff;padding:1.5rem 1.5rem 1.25rem}
+.hdr-in{max-width:1400px;margin:0 auto;display:flex;align-items:flex-end;gap:1.5rem;flex-wrap:wrap}
+.hdr-left{flex:1;min-width:0}
+.hdr-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-bottom:.35rem}
+.hdr-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-.015em;line-height:1.15}
+.hdr-sub{font-size:.75rem;opacity:.7;margin-top:.25rem}
+.hdr-actions{display:flex;gap:.5rem;flex-shrink:0;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.35rem;font-family:'Inter',sans-serif;font-size:.73rem;font-weight:500;padding:.38rem .75rem;border-radius:var(--rs);border:none;cursor:pointer;transition:opacity .15s;line-height:1}
+.btn:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+.btn-primary{background:#fff;color:var(--a)}
+.btn-primary:hover{opacity:.88}
+.btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{background:rgba(255,255,255,.25)}
+.btn-sm{font-size:.68rem;padding:.28rem .55rem}
+
+/* ── STATS ── */
+.stats{background:var(--s);border-bottom:1px solid var(--s3);padding:.55rem 1.5rem}
+.stats-in{max-width:1400px;margin:0 auto;display:flex;gap:1.75rem;flex-wrap:wrap;align-items:center}
+.stat{display:flex;flex-direction:column;gap:.05rem}
+.sv{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:500;color:var(--a);line-height:1;font-variant-numeric:tabular-nums}
+.sl{font-size:.6rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em}
+
+/* ── CONTROLS ── */
+.ctrl{position:sticky;top:0;z-index:30;background:var(--s);border-bottom:1px solid var(--s3);padding:.55rem 1.5rem;box-shadow:var(--sh)}
+.ctrl-in{max-width:1400px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.ctrl-lbl{font-size:.6rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.chips{display:flex;gap:.3rem;flex-wrap:wrap}
+.chip{font-family:'JetBrains Mono',monospace;font-size:.65rem;padding:.25rem .6rem;border-radius:999px;background:var(--s2);color:var(--ink2);border:1.5px solid transparent;cursor:pointer;transition:background .12s,color .12s;user-select:none}
+.chip:hover{background:var(--al);color:var(--a)}
+.chip.on{background:var(--a);color:#fff}
+.chip:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+.srch{margin-left:auto;position:relative}
+.srch input{font-family:'Inter',sans-serif;font-size:.75rem;padding:.3rem .65rem .3rem 1.75rem;border:1.5px solid var(--s3);border-radius:var(--rs);background:var(--s2);color:var(--ink);width:175px;outline:none;transition:border-color .12s}
+.srch input::placeholder{color:var(--ink3)}
+.srch input:focus{border-color:var(--a);background:var(--s)}
+.srch-ic{position:absolute;left:.55rem;top:50%;transform:translateY(-50%);color:var(--ink3);pointer-events:none;font-size:.8rem}
+
+/* ── TABLE WRAP ── */
+.main{max-width:1400px;margin:0 auto;padding:1rem 1.5rem 3rem}
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--s3);box-shadow:var(--sh)}
+.info{font-size:.72rem;color:var(--ink3);margin-bottom:.65rem;min-height:1.1em}
+.info strong{color:var(--ink2)}
+
+/* ── TABLE ── */
+table{border-collapse:collapse;width:100%;background:var(--s);font-size:.73rem;min-width:1300px}
+thead{position:sticky;top:0;z-index:20}
+th{background:var(--s2);color:var(--ink2);font-weight:600;font-size:.6rem;text-transform:uppercase;letter-spacing:.07em;padding:.5rem .6rem;border-bottom:2px solid var(--s3);white-space:nowrap;user-select:none}
+th.fiche-hd{border-top:3px solid transparent;transition:border-color .15s,background .15s}
+th.fiche-hd.active{border-top-color:var(--a);background:var(--al);color:var(--a)}
+td{padding:.45rem .6rem;border-bottom:1px solid var(--s2);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:color-mix(in srgb,var(--s2) 60%,transparent)}
+tr.vigi td{border-left:3px solid var(--w)}
+tr.vigi:first-child td:first-child{border-radius:0}
+
+/* sticky cols */
+.s0{position:sticky;left:0;z-index:10;background:var(--s)}
+.s1{position:sticky;left:110px;z-index:10;background:var(--s)}
+thead .s0,thead .s1{z-index:25;background:var(--s2)}
+tr:hover .s0,tr:hover .s1{background:color-mix(in srgb,var(--s2) 80%,transparent)}
+tr.vigi .s0,tr.vigi .s1{background:color-mix(in srgb,var(--wl) 60%,var(--s))}
+
+/* col widths */
+.c-ref{width:110px;min-width:110px}
+.c-des{width:200px;min-width:180px}
+.c-mrq{width:110px}
+.c-val{width:85px}
+.c-lam{width:65px}
+.c-feu{width:145px}
+.c-fiche{width:96px;text-align:center}
+.c-vig{width:50px;text-align:center}
+.c-act{width:36px;text-align:center}
+
+/* cell content */
+.mono{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-size:.68rem}
+.ref-code{font-family:'JetBrains Mono',monospace;font-size:.67rem;color:var(--a2)}
+.des-text{font-weight:500;line-height:1.3;color:var(--ink);font-size:.72rem}
+.mrq-text{font-size:.65rem;color:var(--ink2)}
+.val-text{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--ink2)}
+
+/* fiche cell */
+.fc{display:inline-flex;align-items:center;justify-content:center;width:100%;gap:.2rem}
+.fc-yes{background:var(--yb);color:var(--yi);padding:.18rem .4rem;border-radius:var(--rs);font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:500;text-align:center;width:100%;display:flex;flex-direction:column;gap:0;line-height:1.2}
+.fc-no{color:var(--ink3);font-size:.68rem;font-weight:400}
+.fc-yes.hi{background:var(--yi);color:#fff}
+.fc-no.hi{color:var(--ink);font-weight:500}
+.fv{font-size:.58rem;opacity:.85;font-family:'JetBrains Mono',monospace}
+
+/* detail row */
+tr.detail-row td{padding:0;border-bottom:1px solid var(--s3)}
+.detail-inner{padding:.75rem 1rem;background:var(--s2);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
+.dl{display:flex;flex-direction:column;gap:.35rem}
+.dl-head{font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3)}
+.dl-item{font-size:.7rem;color:var(--ink2);display:flex;align-items:baseline;gap:.35rem}
+.dl-item code{font-family:'JetBrains Mono',monospace;font-size:.65rem;background:var(--s);padding:.06rem .3rem;border-radius:2px;color:var(--ink);flex-shrink:0}
+.cfg-list{display:flex;flex-wrap:wrap;gap:.3rem}
+.cfg-chip{font-size:.62rem;padding:.15rem .45rem;border-radius:var(--rs);background:var(--al);color:var(--a);border:1px solid var(--ab)}
+.obs-p{font-size:.68rem;color:var(--ink2);line-height:1.5}
+.vbox{background:var(--wl);border:1px solid var(--wb);border-left:3px solid var(--w);border-radius:var(--rs);padding:.5rem .7rem}
+.vtag{font-family:'JetBrains Mono',monospace;font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;color:var(--w);margin-bottom:.2rem}
+.todo{display:flex;flex-direction:column;gap:.2rem}
+.todo-i{font-size:.65rem;color:var(--ink2);padding-left:.6rem;border-left:2px solid var(--s3);line-height:1.4}
+
+/* expand btn */
+.xbtn{background:none;border:none;cursor:pointer;color:var(--ink3);font-size:.7rem;padding:.2rem .3rem;border-radius:var(--rs);transition:color .12s,background .12s}
+.xbtn:hover{color:var(--a);background:var(--al)}
+.xbtn.on{color:var(--a)}
+
+/* debug panel */
+.debug-panel{margin-top:.5rem;border:1px solid var(--s3);border-radius:var(--rs);font-size:.62rem}
+.debug-panel summary{padding:.3rem .5rem;cursor:pointer;color:var(--ink3);font-family:'JetBrains Mono',monospace;font-size:.6rem;user-select:none}
+.debug-panel pre{padding:.5rem;background:var(--s2);max-height:120px;overflow-y:auto;font-size:.6rem;white-space:pre-wrap;word-break:break-all;color:var(--ink2);border-top:1px solid var(--s3)}
+
+/* ── MODAL ── */
+.modal-bg{position:fixed;inset:0;background:rgba(0,20,14,.55);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem}
+.modal-bg.hidden{display:none}
+.modal{background:var(--s);border-radius:var(--r);box-shadow:0 8px 32px rgba(0,0,0,.2);width:100%;max-width:900px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-hdr{padding:.85rem 1.1rem;border-bottom:1px solid var(--s3);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.modal-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:600}
+.modal-close{background:none;border:none;font-size:1.1rem;cursor:pointer;color:var(--ink3);padding:.2rem .4rem;border-radius:var(--rs)}
+.modal-close:hover{color:var(--ink);background:var(--s2)}
+.modal-body{display:flex;flex:1;overflow:hidden;min-height:0}
+.modal-pdf{width:45%;border-right:1px solid var(--s3);display:flex;flex-direction:column;flex-shrink:0}
+.pdf-view{flex:1;display:flex;align-items:center;justify-content:center;background:var(--s2)}
+.pdf-view embed{width:100%;height:100%;border:none}
+.pdf-placeholder{text-align:center;color:var(--ink3);font-size:.75rem;padding:1.5rem}
+.pdf-placeholder svg{display:block;margin:0 auto .5rem;opacity:.35}
+.drop-zone{margin:.75rem;border:2px dashed var(--s3);border-radius:var(--r);padding:1.5rem 1rem;text-align:center;cursor:pointer;transition:border-color .15s,background .15s}
+.drop-zone:hover,.drop-zone.drag{border-color:var(--a);background:var(--al)}
+.drop-zone input{display:none}
+.dz-ico{font-size:1.5rem;margin-bottom:.4rem;opacity:.5}
+.dz-lbl{font-size:.72rem;color:var(--ink2)}
+.dz-sub{font-size:.62rem;color:var(--ink3);margin-top:.15rem}
+.modal-form{flex:1;overflow-y:auto;padding:.85rem 1.1rem;display:flex;flex-direction:column;gap:.75rem}
+.form-section{display:flex;flex-direction:column;gap:.45rem}
+.form-section-title{font-size:.6rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink3);padding-bottom:.25rem;border-bottom:1px solid var(--s2)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.form-field{display:flex;flex-direction:column;gap:.2rem}
+.form-field.full{grid-column:1/-1}
+.form-label{font-size:.62rem;color:var(--ink2);font-weight:500}
+.form-label .req{color:var(--w)}
+.form-input{font-family:'Inter',sans-serif;font-size:.73rem;padding:.3rem .5rem;border:1.5px solid var(--s3);border-radius:var(--rs);background:var(--s2);color:var(--ink);outline:none;transition:border-color .12s}
+.form-input:focus{border-color:var(--a);background:var(--s)}
+.form-input.mono{font-family:'JetBrains Mono',monospace;font-size:.68rem}
+.form-input.invalid{border-color:var(--w)}
+select.form-input{cursor:pointer}
+.fiche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem}
+.fiche-row{display:flex;flex-direction:column;gap:.2rem;background:var(--s2);border-radius:var(--rs);padding:.4rem .5rem}
+.fiche-code-lbl{font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:500;color:var(--a2)}
+.fiche-check{display:flex;align-items:center;gap:.3rem;cursor:pointer;font-size:.65rem;color:var(--ink2)}
+.fiche-check input[type=checkbox]{accent-color:var(--a);width:12px;height:12px}
+.fiche-val-inp{margin-top:.2rem;display:none}
+.fiche-val-inp.show{display:block}
+.cfg-checks{display:grid;grid-template-columns:1fr 1fr;gap:.3rem}
+.cfg-check{display:flex;align-items:center;gap:.3rem;font-size:.65rem;color:var(--ink2);cursor:pointer}
+.cfg-check input[type=checkbox]{accent-color:var(--a)}
+.modal-footer{padding:.65rem 1.1rem;border-top:1px solid var(--s3);display:flex;align-items:center;justify-content:flex-end;gap:.5rem;flex-shrink:0}
+.extract-note{font-size:.62rem;color:var(--ink3);flex:1}
+.btn-accent{background:var(--a);color:#fff}
+.btn-accent:hover{opacity:.88}
+.btn-neutral{background:var(--s2);color:var(--ink2)}
+.btn-neutral:hover{background:var(--s3)}
+.match-banner{background:rgba(0,150,100,.07);border:1.5px solid var(--a);border-radius:var(--rs);padding:.55rem .75rem;display:flex;gap:.6rem;align-items:flex-start}
+.match-banner-ico{color:var(--a);font-size:.9rem;margin-top:.05rem;flex-shrink:0}
+.match-banner-body{flex:1;min-width:0}
+.match-banner-lbl{font-size:.57rem;text-transform:uppercase;letter-spacing:.09em;color:var(--a);margin-bottom:.15rem}
+.match-banner-name{font-size:.73rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.match-banner-radios{display:flex;gap:.75rem;margin-top:.35rem}
+.match-radio{display:flex;align-items:center;gap:.25rem;font-size:.65rem;color:var(--ink2);cursor:pointer}
+.match-radio input{accent-color:var(--a)}
+
+/* ── VIGILANCE indicator ── */
+.vigi-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--w);margin:0 auto}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(4rem);background:var(--ink);color:#fff;padding:.55rem 1.1rem;border-radius:999px;font-size:.73rem;opacity:0;transition:opacity .2s,transform .2s;z-index:200;pointer-events:none}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:700px){
+  .hdr-in{gap:.75rem}
+  .modal-body{flex-direction:column}
+  .modal-pdf{width:100%;height:250px;border-right:none;border-bottom:1px solid var(--s3)}
+  .fiche-grid{grid-template-columns:1fr 1fr}
+  .modal{max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
+</style>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="hdr-left">
+      <p class="hdr-eyebrow">CEE · Isolation thermique · 2026</p>
+      <h1 class="hdr-title">Référentiel Isolants CEE</h1>
+      <p class="hdr-sub">Produits certifiés ACERMI / CSTB / ATec / DTA · éligibilité fiches BAR/BAT-EN-106/107/108/109</p>
+    </div>
+    <div class="hdr-actions">
+      <button class="btn btn-ghost" id="btnExport">⬇ Exporter CSV</button>
+      <button class="btn btn-primary" id="btnAdd">+ Nouveau document</button>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat"><span class="sv" id="stTotal">40</span><span class="sl">Produits</span></div>
+    <div class="stat"><span class="sv" id="stElig">1</span><span class="sl">Éligibles fiche active</span></div>
+    <div class="stat"><span class="sv">6</span><span class="sl">Fiches CEE</span></div>
+    <div class="stat"><span class="sv" id="stVigi">19</span><span class="sl">Points vigilance</span></div>
+  </div>
+</div>
+
+<div class="ctrl">
+  <div class="ctrl-in">
+    <span class="ctrl-lbl">Fiche</span>
+    <div class="chips" id="fiche-chips">
+      <button class="chip" data-f="ALL">Tous</button>
+      <button class="chip" data-f="BAR-EN-106">BAR-EN-106</button>
+      <button class="chip on" data-f="BAT-EN-106">BAT-EN-106</button>
+      <button class="chip" data-f="BAR-EN-109">BAR-EN-109</button>
+      <button class="chip" data-f="BAT-EN-109">BAT-EN-109</button>
+      <button class="chip" data-f="BAR-EN-107">BAR-EN-107</button>
+      <button class="chip" data-f="BAT-EN-108">BAT-EN-108</button>
+    </div>
+    <div class="srch">
+      <span class="srch-ic" aria-hidden="true">⌕</span>
+      <input type="search" id="srch" placeholder="Réf., désignation, marque…" aria-label="Rechercher">
+    </div>
+  </div>
+</div>
+
+<main class="main">
+  <p class="info" id="info" aria-live="polite"><strong>1</strong> produit éligible sur 40 — <strong>BAT-EN-106</strong> · Murs tertiaire · seuil ≥ 1.2 m².K/W</p>
+  <div class="tbl-wrap">
+    <table id="tbl" aria-label="Référentiel isolants CEE">
+      <thead id="thead"><tr><th class="c-ref s0">Référence</th><th class="c-des s1">Désignation</th><th class="c-mrq">Marque</th><th class="c-val">Validité</th><th class="c-lam">λD</th><th class="c-feu">Classement feu</th><th class="c-fiche fiche-hd" data-fiche="BAR-EN-106" title="Murs résidentiel">BAR-EN-106</th><th class="c-fiche fiche-hd active" data-fiche="BAT-EN-106" title="Murs tertiaire">BAT-EN-106</th><th class="c-fiche fiche-hd" data-fiche="BAR-EN-109" title="Plancher résidentiel">BAR-EN-109</th><th class="c-fiche fiche-hd" data-fiche="BAT-EN-109" title="Plancher tertiaire">BAT-EN-109</th><th class="c-fiche fiche-hd" data-fiche="BAR-EN-107" title="Toiture/combles résidentiel">BAR-EN-107</th><th class="c-fiche fiche-hd" data-fiche="BAT-EN-108" title="Toiture tertiaire">BAT-EN-108</th><th class="c-vig">Vigi.</th><th class="c-act"></th></tr></thead>
+      <tbody id="tbody"><tr class="vigi" data-ref="—|TOP AIR 4" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">TOP AIR 4</span></td><td class="c-mrq"><span class="mrq-text">ACTIS SA</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">Euroclasse E *données fabriquant</span></td><td class="c-fiche"><span class="fc-yes"><span>oui</span><span class="fv">3.00 m².K/W</span></span></td><td class="c-fiche"><span class="fc-yes hi"><span>oui</span><span class="fv">3.00 m².K/W</span></span></td><td class="c-fiche"><span class="fc-yes"><span>oui</span></span></td><td class="c-fiche"><span class="fc-yes"><span>oui</span></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|TOP AIR 4" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|METAL ISO" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">METAL ISO</span></td><td class="c-mrq"><span class="mrq-text">BIOMETAL</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">B-s1, d0</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|METAL ISO" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|METAL ISO PROTEC" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">METAL ISO PROTEC</span></td><td class="c-mrq"><span class="mrq-text">BIOMETAL</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|METAL ISO PROTEC" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|ALU ISO" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">ALU ISO</span></td><td class="c-mrq"><span class="mrq-text">BIOMETAL</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|ALU ISO" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="10/125/658|ISOLETANCHE EM20-Panneau" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">10/125/658</span></td><td class="s1 c-des"><span class="des-text">ISOLETANCHE EM20-Panneau</span></td><td class="c-mrq"><span class="mrq-text">CARAIBES INDUSTRIES</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">E</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="10/125/658|ISOLETANCHE EM20-Panneau" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="10/125/660|ISOLETANCHE FM 25 Polystyrène expansé" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">10/125/660</span></td><td class="s1 c-des"><span class="des-text">ISOLETANCHE FM 25 Polystyrène expansé</span></td><td class="c-mrq"><span class="mrq-text">CARAIBES INDUSTRIES</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">E</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="10/125/660|ISOLETANCHE FM 25 Polystyrène expansé" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|TOP AIR 4" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">TOP AIR 4</span></td><td class="c-mrq"><span class="mrq-text">GROUPE ORION</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">Euroclasse E *données fabriquant</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|TOP AIR 4" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="12/D/151/779|ISOCELL - F - ouate de cellulose" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">12/D/151/779</span></td><td class="s1 c-des"><span class="des-text">ISOCELL - F - ouate de cellulose</span></td><td class="c-mrq"><span class="mrq-text">ISOCELL</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="12/D/151/779|ISOCELL - F - ouate de cellulose" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|AIRFLEX" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">AIRFLEX</span></td><td class="c-mrq"><span class="mrq-text">Kdb ISOLATION</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">B-s1, d0</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|AIRFLEX" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="13/D/016/850|THERMO LOFT - Laine de verre à souffler" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">13/D/016/850</span></td><td class="s1 c-des"><span class="des-text">THERMO LOFT - Laine de verre à souffler</span></td><td class="c-mrq"><span class="mrq-text">KNAUF INSULATION</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A1</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="13/D/016/850|THERMO LOFT - Laine de verre à souffler" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="02/016/132|TI 312 - Laine de verre revêtu d'un pare-vapeur kraft aluminium" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/016/132</span></td><td class="s1 c-des"><span class="des-text">TI 312 - Laine de verre revêtu d'un pare-vapeur kraft aluminium</span></td><td class="c-mrq"><span class="mrq-text">KNAUF INSULATION</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A2-s1,d0 de 60 à 75mm</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="02/016/132|TI 312 - Laine de verre revêtu d'un pare-vapeur kraft aluminium" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|BARDATHERM - Panneau isolants" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">BARDATHERM - Panneau isolants</span></td><td class="c-mrq"><span class="mrq-text">PRONOVA</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|BARDATHERM - Panneau isolants" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|COVERTHERM 988" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">COVERTHERM 988</span></td><td class="c-mrq"><span class="mrq-text">PRONOVA</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|COVERTHERM 988" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|COVERTHERM 1045" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">COVERTHERM 1045</span></td><td class="c-mrq"><span class="mrq-text">PRONOVA</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|COVERTHERM 1045" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|FROGOTHERM" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">FROGOTHERM</span></td><td class="c-mrq"><span class="mrq-text">PRONOVA</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|FROGOTHERM" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="17/D/015/1195|JETROCK2 - Laine de roche nodulée à souffler" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">17/D/015/1195</span></td><td class="s1 c-des"><span class="des-text">JETROCK2 - Laine de roche nodulée à souffler</span></td><td class="c-mrq"><span class="mrq-text">ROCKWOOL</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A1</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="17/D/015/1195|JETROCK2 - Laine de roche nodulée à souffler" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|LOFT 470 - Laine de roche à souffler" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">LOFT 470 - Laine de roche à souffler</span></td><td class="c-mrq"><span class="mrq-text">ROCKWOOL</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|LOFT 470 - Laine de roche à souffler" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|ROCKPRIME 004" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span><br><span style="font-size:.55rem;color:var(--ink3);font-family:'JetBrains Mono',monospace">autre</span></td><td class="s1 c-des"><span class="des-text">ROCKPRIME 004</span></td><td class="c-mrq"><span class="mrq-text">ROCKWOOL</span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|ROCKPRIME 004" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="02/015/001|EASYROCK - Rouleau de laine de roche revêtue kraft" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/015/001</span></td><td class="s1 c-des"><span class="des-text">EASYROCK - Rouleau de laine de roche revêtue kraft</span></td><td class="c-mrq"><span class="mrq-text">ROCKWOOL</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="02/015/001|EASYROCK - Rouleau de laine de roche revêtue kraft" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="02/015/001|ROULROCK - Rouleau de laine de verre. Revêtue kraft" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/015/001</span></td><td class="s1 c-des"><span class="des-text">ROULROCK - Rouleau de laine de verre. Revêtue kraft</span></td><td class="c-mrq"><span class="mrq-text">ROCKWOOL</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="02/015/001|ROULROCK - Rouleau de laine de verre. Revêtue kraft" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="02/015/001|ROULROCK KRAFT - Rouleau laine de roche" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/015/001</span></td><td class="s1 c-des"><span class="des-text">ROULROCK KRAFT - Rouleau laine de roche</span></td><td class="c-mrq"><span class="mrq-text">ROCKWOOL</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)"></span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="02/015/001|ROULROCK KRAFT - Rouleau laine de roche" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="17/D/015/1195|ROCKPRIME - Laine de roche" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">17/D/015/1195</span></td><td class="s1 c-des"><span class="des-text">ROCKPRIME - Laine de roche</span></td><td class="c-mrq"><span class="mrq-text">ROCKWOOL</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A1</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="17/D/015/1195|ROCKPRIME - Laine de roche" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="02/018/050|IBR NU - Rouleau de laine de verre" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/018/050</span></td><td class="s1 c-des"><span class="des-text">IBR NU - Rouleau de laine de verre</span></td><td class="c-mrq"><span class="mrq-text">SAINT GOBIN ISOVER</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A1</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="02/018/050|IBR NU - Rouleau de laine de verre" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="02/018/062|FEUTRE TENDU ALU" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/018/062</span></td><td class="s1 c-des"><span class="des-text">FEUTRE TENDU ALU</span></td><td class="c-mrq"><span class="mrq-text">SAINT GOBIN ISOVER</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A2-s1,d0</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="02/018/062|FEUTRE TENDU ALU" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="03/018/340|ISOCONFORT 35 - Rouleau de laine de verre" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">03/018/340</span></td><td class="s1 c-des"><span class="des-text">ISOCONFORT 35 - Rouleau de laine de verre</span></td><td class="c-mrq"><span class="mrq-text">SAINT GOBIN ISOVER</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A2-s1,d0</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="03/018/340|ISOCONFORT 35 - Rouleau de laine de verre" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="17/018/1252|ISOCONFORT 35 NU" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">17/018/1252</span></td><td class="s1 c-des"><span class="des-text">ISOCONFORT 35 NU</span></td><td class="c-mrq"><span class="mrq-text">SAINT GOBIN ISOVER</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A1</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="17/018/1252|ISOCONFORT 35 NU" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="05/018/408|ISOCONFORT 35 REVETU KRAFT - Rouleau de laine de verre" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">05/018/408</span></td><td class="s1 c-des"><span class="des-text">ISOCONFORT 35 REVETU KRAFT - Rouleau de laine de verre</span></td><td class="c-mrq"><span class="mrq-text">SAINT GOBIN ISOVER</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--w)">F (Euroclasse F)</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="05/018/408|ISOCONFORT 35 REVETU KRAFT - Rouleau de laine de verre" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="05/D/018/404|ISOLENE 4 - Laine de verre" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">05/D/018/404</span></td><td class="s1 c-des"><span class="des-text">ISOLENE 4 - Laine de verre</span></td><td class="c-mrq"><span class="mrq-text">SAINT GOBIN ISOVER</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A1</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="05/D/018/404|ISOLENE 4 - Laine de verre" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="02/018/054|IBR revêtu alu - Rouleau laine de verre" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/018/054</span></td><td class="s1 c-des"><span class="des-text">IBR revêtu alu - Rouleau laine de verre</span></td><td class="c-mrq"><span class="mrq-text">SAINT GOBIN ISOVER</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A2-s1,d0</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="02/018/054|IBR revêtu alu - Rouleau laine de verre" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="02/018/062|FEUTRE TENDU ALU - Rouleau de laine de verre" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/018/062</span></td><td class="s1 c-des"><span class="des-text">FEUTRE TENDU ALU - Rouleau de laine de verre</span></td><td class="c-mrq"><span class="mrq-text">SAINT GOBIN ISOVER</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A2-s1,d0</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="02/018/062|FEUTRE TENDU ALU - Rouleau de laine de verre" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="04/058/341|MRA 40" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">04/058/341</span></td><td class="s1 c-des"><span class="des-text">MRA 40</span></td><td class="c-mrq"><span class="mrq-text">URSA</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A2-s1,d0</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="04/058/341|MRA 40" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="03/058/087|E-MRK 40 Laine de verre" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">03/058/087</span></td><td class="s1 c-des"><span class="des-text">E-MRK 40 Laine de verre</span></td><td class="c-mrq"><span class="mrq-text">URSA</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--w)">F (Euroclasse F)</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="03/058/087|E-MRK 40 Laine de verre" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="02/083/012|P-MLK 40" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/083/012</span></td><td class="s1 c-des"><span class="des-text">P-MLK 40</span></td><td class="c-mrq"><span class="mrq-text">URSA</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--w)">F (Euroclasse F)</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="02/083/012|P-MLK 40" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="02/083/012|P-PRK40" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/083/012</span></td><td class="s1 c-des"><span class="des-text">P-PRK40</span></td><td class="c-mrq"><span class="mrq-text">URSA</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--w)">F (Euroclasse F)</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="02/083/012|P-PRK40" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="02/020/008|F-MRK40" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/020/008</span></td><td class="s1 c-des"><span class="des-text">F-MRK40</span></td><td class="c-mrq"><span class="mrq-text">URSA</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--w)">F (Euroclasse F)</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="02/020/008|F-MRK40" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="02/020/008|F-MLK 40" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">02/020/008</span></td><td class="s1 c-des"><span class="des-text">F-MLK 40</span></td><td class="c-mrq"><span class="mrq-text">URSA</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--w)">F (Euroclasse F)</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="02/020/008|F-MLK 40" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="18/D/047/1326|F-PULS'47 Laine de verre a souffler" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">18/D/047/1326</span></td><td class="s1 c-des"><span class="des-text">F-PULS'47 Laine de verre a souffler</span></td><td class="c-mrq"><span class="mrq-text">URSA</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A1</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="18/D/047/1326|F-PULS'47 Laine de verre a souffler" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="14/D/058/950|PULS'R 47 - Laine de verre" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">14/D/058/950</span></td><td class="s1 c-des"><span class="des-text">PULS'R 47 - Laine de verre</span></td><td class="c-mrq"><span class="mrq-text">URSA</span></td><td class="c-val"><span class="val-text">31/12/2026</span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--ink2)">A1</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="14/D/058/950|PULS'R 47 - Laine de verre" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="" data-ref="—|EXPERT 50" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span></td><td class="s1 c-des"><span class="des-text">EXPERT 50</span></td><td class="c-mrq"><span class="mrq-text"></span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--w)">F (Euroclasse F)</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"></td><td class="c-act"><button class="xbtn" data-ref="—|EXPERT 50" aria-label="Détails" aria-expanded="false">▾</button></td></tr><tr class="vigi" data-ref="—|" style="cursor:pointer"><td class="s0 c-ref"><span class="ref-code">—</span></td><td class="s1 c-des"><span class="des-text"></span></td><td class="c-mrq"><span class="mrq-text"></span></td><td class="c-val"><span class="val-text"></span></td><td class="c-lam mono"></td><td class="c-feu"><span style="font-size:.65rem;color:var(--w)">F (Euroclasse F)</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no hi">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-fiche"><span class="fc-no">—</span></td><td class="c-vig"><span class="vigi-dot" title="Point de vigilance"></span></td><td class="c-act"><button class="xbtn" data-ref="—|" aria-label="Détails" aria-expanded="false">▾</button></td></tr></tbody>
+    </table>
+  </div>
+</main>
+
+<!-- UPLOAD MODAL -->
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-hdr">
+      <span class="modal-title" id="modalTitle">Nouveau document de certification</span>
+      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-body">
+      <!-- PDF PANEL -->
+      <div class="modal-pdf">
+        <div class="pdf-view" id="pdfView"><embed src="blob:https://69357df2-e75d-402d-a55a-0c62573e6e70.frame.claudeusercontent.com/aa2cdb9d-0a80-41c2-8253-d620b55b67f1#toolbar=1&amp;navpanes=0" type="application/pdf" style="width:100%;height:100%;border:none"></div>
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="fileInput" accept="application/pdf" multiple="">
+          <div class="dz-ico">📄</div>
+          <div class="dz-lbl">Glisser un ou plusieurs documents PDF</div>
+          <div class="dz-sub">ACERMI · ATec · DTA · ETA · CSTB · Fiche technique (sélection multiple)</div>
+        </div>
+      </div>
+      <!-- FORM PANEL -->
+      <form class="modal-form" id="addForm" novalidate="">
+        <div id="matchBanner" style="display:none" class="match-banner">
+          <span class="match-banner-ico">↔</span>
+          <div class="match-banner-body">
+            <div class="match-banner-lbl">Produit correspondant trouvé dans le référentiel</div>
+            <div class="match-banner-name" id="matchName"></div>
+            <div class="match-banner-radios">
+              <label class="match-radio"><input type="radio" name="saveMode" value="update" id="modeUpdate" checked=""> Mettre à jour ce produit</label>
+              <label class="match-radio"><input type="radio" name="saveMode" value="new" id="modeNew"> Ajouter comme nouveau</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Certification</div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="f_certtype">Type de document</label>
+              <select class="form-input" id="f_certtype">
+                <option value="ACERMI">ACERMI</option>
+                <option value="ATec">Avis Technique (ATec)</option>
+                <option value="DTA">DTA</option>
+                <option value="ETA">ETA (Agrément Technique Européen)</option>
+                <option value="ATEx">ATEx CSTB</option>
+                <option value="CSTB">Autre document CSTB</option>
+                <option value="FT">Fiche technique fabricant</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="f_val">Validité</label>
+              <input class="form-input mono" id="f_val" placeholder="JJ/MM/AAAA">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="f_ref">Référence</label>
+              <input class="form-input mono" id="f_ref" placeholder="Ex : 02/016/132 · 3/17-889 · ETA-12/0352">
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="f_autres">Autres certifications</label>
+              <input class="form-input" id="f_autres" placeholder="Ex : ACERMI 02/016/132 · ATec 3/17-889">
+            </div>
+          </div>
+          <div class="form-field full">
+            <label class="form-label" for="f_mrq">Marque</label>
+            <input class="form-input" id="f_mrq" placeholder="Nom du fabricant">
+          </div>
+          <div class="form-field full">
+            <label class="form-label" for="f_des">Désignation produit</label>
+            <input class="form-input" id="f_des" placeholder="Désignation(s) commerciale(s)">
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Caractéristiques</div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="f_nrm">Norme</label>
+              <select class="form-input" id="f_nrm">
+                <option value="">— sélectionner —</option>
+                <option value="EN 13162:2012+A1:2015">EN 13162 (laine minérale)</option>
+                <option value="EN 13163:2012+A1:2015">EN 13163 (EPS)</option>
+                <option value="EN 13164:2012+A1:2015">EN 13164 (XPS)</option>
+                <option value="EN 13165:2012+A1:2015">EN 13165 (PUR/PIR)</option>
+                <option value="EN 13166:2012+A1:2015">EN 13166 (phénolique)</option>
+                <option value="EN 13171:2012+A1:2015">EN 13171 (bois/liège)</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="f_lam">λD W/(m·K)</label>
+              <input class="form-input mono" id="f_lam" placeholder="0,040" type="text">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="f_feu">Classement au feu</label>
+              <input class="form-input mono" id="f_feu" placeholder="A1 / A2-s1,d0 / F…">
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="f_par">Parement</label>
+              <input class="form-input" id="f_par" placeholder="Aluminium / Kraft / Sans…">
+            </div>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Éligibilité fiches CEE</div>
+          <div class="fiche-grid" id="ficheChecks"><div class="fiche-row"><span class="fiche-code-lbl">BAR-EN-106</span><label class="fiche-check"><input type="checkbox" id="fc_BAR-EN-106" data-fiche="BAR-EN-106"> Murs résidentiel</label><span style="font-size:.58rem;color:var(--ink3)">seuil R ≥ 1.5 m².K/W</span><input class="form-input mono fiche-val-inp" id="fv_BAR-EN-106" placeholder="1.5" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAT-EN-106</span><label class="fiche-check"><input type="checkbox" id="fc_BAT-EN-106" data-fiche="BAT-EN-106"> Murs tertiaire</label><span style="font-size:.58rem;color:var(--ink3)">seuil R ≥ 1.2 m².K/W</span><input class="form-input mono fiche-val-inp" id="fv_BAT-EN-106" placeholder="1.2" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAR-EN-109</span><label class="fiche-check"><input type="checkbox" id="fc_BAR-EN-109" data-fiche="BAR-EN-109"> Plancher résidentiel</label><span style="font-size:.58rem;color:var(--ink3)">seuil FS ≤ 0.03</span><input class="form-input mono fiche-val-inp" id="fv_BAR-EN-109" placeholder="0.03" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAT-EN-109</span><label class="fiche-check"><input type="checkbox" id="fc_BAT-EN-109" data-fiche="BAT-EN-109"> Plancher tertiaire</label><span style="font-size:.58rem;color:var(--ink3)">seuil FS ≤ 0.03</span><input class="form-input mono fiche-val-inp" id="fv_BAT-EN-109" placeholder="0.03" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAR-EN-107</span><label class="fiche-check"><input type="checkbox" id="fc_BAR-EN-107" data-fiche="BAR-EN-107"> Toiture/combles résidentiel</label><span style="font-size:.58rem;color:var(--ink3)">seuil R ≥ 0.5 m².K/W</span><input class="form-input mono fiche-val-inp" id="fv_BAR-EN-107" placeholder="0.5" style="margin-top:.25rem;display:none" type="text"></div><div class="fiche-row"><span class="fiche-code-lbl">BAT-EN-108</span><label class="fiche-check"><input type="checkbox" id="fc_BAT-EN-108" data-fiche="BAT-EN-108"> Toiture tertiaire</label><span style="font-size:.58rem;color:var(--ink3)">seuil R ≥ 1.2 m².K/W</span><input class="form-input mono fiche-val-inp" id="fv_BAT-EN-108" placeholder="1.2" style="margin-top:.25rem;display:none" type="text"></div></div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Configurations de pose validées</div>
+          <div class="cfg-checks" id="cfgChecks"><label class="cfg-check"><input type="checkbox" id="cc_combles" value="combles"> Isolation des combles</label><label class="cfg-check"><input type="checkbox" id="cc_solives" value="solives"> Entre solives plancher bois</label><label class="cfg-check"><input type="checkbox" id="cc_plafond_pp" value="plafond_pp"> Plafond plaque de plâtre</label><label class="cfg-check"><input type="checkbox" id="cc_couv_nerv" value="couv_nerv"> Couverture plaques nervurées</label><label class="cfg-check"><input type="checkbox" id="cc_rampant" value="rampant"> Rampant de toiture (int.)</label><label class="cfg-check"><input type="checkbox" id="cc_toiture_inc" value="toiture_inc"> Toiture inclinée</label><label class="cfg-check"><input type="checkbox" id="cc_mur_osbois" value="mur_osbois"> Mur ossature bois</label><label class="cfg-check"><input type="checkbox" id="cc_plancher_bas" value="plancher_bas"> Plancher bas</label></div>
+        </div>
+        <div class="form-section">
+          <div class="form-field full">
+            <label class="form-label" for="f_obs">Observations / Vigilance</label>
+            <textarea class="form-input" id="f_obs" rows="3" style="resize:vertical;font-size:.68rem"></textarea>
+          </div>
+          <details class="debug-panel" id="debugDetails" style="">
+            <summary>Texte brut extrait (diagnostic)</summary>
+            <pre id="debugText">  /CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo &lt;&lt;/Registry (Adobe) /Ordering (UCS) /Supplement 0 &gt;&gt; def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange &lt;0000&gt; &lt;FFFF&gt; endcodespacerange 1 beginbfrange &lt;0000&gt; &lt;FFFF&gt; &lt;0000&gt; endbfrange endcmap CMapName currentdict /CMap defineresource pop end end     /CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo &lt;&lt;/Registry (Adobe) /Ordering (UCS) /Supplement 0 &gt;&gt; def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange &lt;0000&gt; &lt;FFFF&gt; endcodespacerange 1 beginbfrange &lt;0000&gt; &lt;FFFF&gt; &lt;0000&gt; endbfrange endcmap CMapName currentdict /CMap defineresource pop end end     /CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo &lt;&lt;/Registry (Adobe) /Ordering (UCS) /Supplement 0 &gt;&gt; def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange &lt;0000&gt; &lt;FFFF&gt; endcodespacerange 1 beginbfrange &lt;0000&gt; &lt;FFFF&gt; &lt;0000&gt; endbfrange endcmap CMapName currentdict /CMap defineresource pop end end     /CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo &lt;&lt;/Registry (Adobe) /Ordering (UCS) /Supplement 0 &gt;&gt; def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange &lt;0000&gt; &lt;FFFF&gt; endcodespacerange 1 beginbfrange &lt;0000&gt; &lt;FFFF&gt; &lt;0000&gt; endbfrange endcmap CMapName currentdict /CMap defineresource pop end end     ÿØÿá  Exif  II*             ÿì  Ducky       P  ÿá !http://ns.adobe.com/xap/1.0/ &lt;?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?&gt; &lt;x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.0-c060 61.134342, 2010/01/10-18:06:43        "&gt; &lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt; &lt;rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" xmp:CreatorTool="Adobe Photoshop CS5" xmpMM:InstanceID="xmp.iid:A76E0BEDA71611E9B6D3EAF4D69238BB" xmpMM:DocumentID="xmp.did:A76E0BEEA71611E9B6D3EAF4D69238BB"&gt; &lt;xmpMM:DerivedFrom stRef:instanceID="xmp.iid:A76E0BEBA71611E9B6D3EAF4D69238BB" stRef:documentID="xmp.did:A76E0BECA71611E9B6D3EAF4D69238BB"/&gt; &lt;/rdf:Description&gt; &lt;/rdf:RDF&gt; &lt;/x:xmpmeta&gt; &lt;?xpacket end="r"?&gt;ÿî &amp;Adobe dÀ               U   Ô   Ã   âÿÛ                                                                                                                                    ÿÂ    s ú          ÿÄ Ê                                                                    @   0`                            !1 A" @Qaq   2B  #3  ` ¡ÁbrC$T0±ÑR¢Scs E                                      !1AQa@q   0 ð¡ P`±ñÁÿÚ            ûø                               ©6Á           q  Ü            8×fÕ            8Ï(¤  Ë.Å         0*%Xé  ¶yFé17 ß  I      1(¥`ã;GpØ  h£Ü&gt; $ UÊqÂn      &lt;£æ ÄZ ±f159Ô="K D8Ì  s; @     3Ê=C2  @6¹á (å6á°NÁ$        Äi³#" Q­ËÙ±Ì         AS5ág6! 8ÌÌÁ &amp;`                                        ÿÚ        øró+fÕ¶uÏwkq ü ×[^ÚØÄ_ Ö« Þ\{]K&amp;öÇ ³ª UîÖA</pre>
+          </details>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <span class="extract-note" id="extractNote" style="color: var(--a);">2 champs extraits — vérifiez</span>
+      <span id="queueBadge" style="display: none; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.62rem; background: var(--al); color: var(--a); padding: 0.2rem 0.55rem; border-radius: 999px; flex-shrink: 0;">1 / 6</span>
+      <button class="btn btn-neutral" id="modalCancel">Annuler</button>
+      <button class="btn btn-neutral" id="modalSkip" style="display: none;">Ignorer →</button>
+      <button class="btn btn-accent" id="modalSave">Ajouter au référentiel</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ── CONSTANTS ── */
+const FICHES = [
+  {code:'BAR-EN-106',type:'R',thr:1.5,  unit:'m².K/W',desc:'Toiture résidentiel'},
+  {code:'BAT-EN-106',type:'R',thr:1.2,  unit:'m².K/W',desc:'Toiture tertiaire'},
+  {code:'BAR-EN-109',type:'FS',thr:0.03,unit:'',       desc:'Toiture DOM-TOM résidentiel',note:'FS ≤ 0,02 à Mayotte'},
+  {code:'BAT-EN-109',type:'FS',thr:0.03,unit:'',       desc:'Toiture DOM-TOM tertiaire',  note:'FS ≤ 0,02 à Mayotte'},
+  {code:'BAR-EN-107',type:'R',thr:0.5,  unit:'m².K/W',desc:'Toiture/combles résidentiel'},
+  {code:'BAT-EN-108',type:'R',thr:1.2,  unit:'m².K/W',desc:'Toiture tertiaire'},
+];
+const CONFIGS = [
+  {id:'combles',      label:'Isolation des combles'},
+  {id:'solives',      label:'Entre solives plancher bois'},
+  {id:'plafond_pp',   label:'Plafond plaque de plâtre'},
+  {id:'couv_nerv',    label:'Couverture plaques nervurées'},
+  {id:'rampant',      label:'Rampant de toiture (int.)'},
+  {id:'toiture_inc',  label:'Toiture inclinée'},
+  {id:'mur_osbois',   label:'Mur ossature bois'},
+  {id:'plancher_bas', label:'Plancher bas'},
+];
+const CSV_HEADER = 'MARQUE;DESIGNATION PRODUIT;REFERENCE ACERMI;DATE DE VALIDITE ACERMI;NORME;AUTRES CERTIFICATIONS;CLASSEMENT AU FEU;Parement;APPLICABLE EN BAR-EN-106 (R ≥ 1,5 m².K/W);R ATTENDU BAR-EN-106 (m².K/W);R PRODUIT BAR-EN-106 (m².K/W);EPAISSEUR BAR-EN-106 (mm);APPLICABLE EN BAT-EN-106 (R ≥ 1,2 m².K/W);R ATTENDU BAT-EN-106 (m².K/W);R PRODUIT BAT-EN-106 (m².K/W);APPLICABLE EN BAR-EN-109 (FS ≤ 0,03);FS ATTENDU BAR-EN-109;FS PRODUIT BAR-EN-109;APPLICABLE EN BAT-EN-109 (FS ≤ 0,03);FS ATTENDU BAT-EN-109;FS PRODUIT BAT-EN-109;Applicable BAR-EN-107 (R ≥ 0,5 m².K/W);R ATTENDU BAR-EN-107 (m².K/W);R PRODUIT BAR-EN-107 (m².K/W);Applicable BAT-EN-108 (R ≥ 1,2 m².K/W);R ATTENDU BAT-EN-108 (m².K/W);R PRODUIT BAT-EN-108 (m².K/W);Contre cloison plaques de plâtre;Charpentes métalliques (cloison);Contre-cloison en maçonnerie de petits éléments;mur à ossature bois;mur maçonné avec fixation du produit sur ossature bois ou similaire;Isolation des combles;Isolation entre solives de plancher bois;Isolant posé sur plafond plaque de plâtre;Charpentes métalliques (toiture);Isolant posé en rampant de toiture par l\'intérieur - entre et sous chevron;Isolant posé sur plafond plaque de plâtre (configuration 2);Isolation de couverture en plaques nervu rées issues de tôles d\'acier revêties;toiture inclinée avec isolation associée;Isolation thermique de combles par soufflage d\'isolant en vrac (laines minérales ou ouate de cellulose de papier);plancher sous combles perdus en bois;en plancher bas d\'une construction;en plancher intermédiaire;OBSERVATIONS - RECOMMANDATIONS FABRICANT';
+
+/* ── BASE DATA ── */
+const BASE = [{"ref":"—","certType":"autre","autres":"Rapport essai n° 156-1 SF/24U","mrq":"ACTIS SA","des":"TOP AIR 4","val":"","nrm":"EN ISO 22097: 2023","feu":"Euroclasse E *données fabriquant","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":true,"v":3},"BAT-EN-106":{"ok":true,"v":3},"BAR-EN-109":{"ok":true,"v":null},"BAT-EN-109":{"ok":true,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Rapport d'essai laboratoire (NF EN ISO/IEC 17025) — ne satisfait pas le critère 17065 (organisme de certification produit) visé par les fiches CEE. Obtenir ACERMI ou ETA pour sécuriser la preuve CEE."],"obs":""},{"ref":"—","certType":"autre","autres":"Rapport d'essai CSTB : DIR/HTO 2013-365-RB/LS","mrq":"BIOMETAL","des":"METAL ISO","val":"","nrm":"","feu":"B-s1, d0","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Rapport d'essai laboratoire (NF EN ISO/IEC 17025) — ne satisfait pas le critère 17065 (organisme de certification produit) visé par les fiches CEE. Obtenir ACERMI ou ETA pour sécuriser la preuve CEE.","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"—","certType":"autre","autres":"","mrq":"BIOMETAL","des":"METAL ISO PROTEC","val":"","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Aucune certification reconnue NF EN ISO/IEC 17065. Seule la voie 'document fabricant' est possible à défaut — valeur probante limitée pour CEE.","Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"—","certType":"autre","autres":"","mrq":"BIOMETAL","des":"ALU ISO","val":"","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Aucune certification reconnue NF EN ISO/IEC 17065. Seule la voie 'document fabricant' est possible à défaut — valeur probante limitée pour CEE.","Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"10/125/658","certType":"ACERMI","autres":"","mrq":"CARAIBES INDUSTRIES","des":"ISOLETANCHE EM20-Panneau","val":"31/12/2026","nrm":"EN 13163:2012+A2 : 2016","feu":"E","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":false,"todo":["Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"10/125/660","certType":"ACERMI","autres":"","mrq":"CARAIBES INDUSTRIES","des":"ISOLETANCHE FM 25 Polystyrène expansé","val":"31/12/2026","nrm":"EN 13163:2012+A2 : 2016","feu":"E","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":false,"todo":["Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"—","certType":"autre","autres":"Rapport essai n° 156-1 SF/24U","mrq":"GROUPE ORION","des":"TOP AIR 4","val":"","nrm":"","feu":"Euroclasse E *données fabriquant","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Rapport d'essai laboratoire (NF EN ISO/IEC 17025) — ne satisfait pas le critère 17065 (organisme de certification produit) visé par les fiches CEE. Obtenir ACERMI ou ETA pour sécuriser la preuve CEE.","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"12/D/151/779","certType":"ACERMI","autres":"AT/DTA 20/13-289","mrq":"ISOCELL","des":"ISOCELL - F - ouate de cellulose","val":"31/12/2026","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":false,"todo":["Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"—","certType":"ETA","autres":"ETA-18/0330 of 06/06/2018","mrq":"Kdb ISOLATION","des":"AIRFLEX","val":"","nrm":"EN 16012 : 2015","feu":"B-s1, d0","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":["toiture_inc"],"vigi":true,"todo":["Vérifier que ETA-18/0330 couvre explicitement l'usage en toiture inclinée pour les fiches BAR/BAT-EN-107/108","Éligibilité CEE à compléter — valeur R/FS non renseignée"],"obs":"le produit est toujours posé côté chaud d’une construction en association avec une isolation posée au préalable. (ETA) — ETA-18/0330 délivré par un TAB accrédité EA (accord multilatéral — NF EN ISO/IEC 17065) : satisfait le critère 'organisme 17065' visé par les fiches CEE. Pas de certification ACERMI — l'ETA tient lieu de document 17065."},{"ref":"13/D/016/850","certType":"ACERMI","autres":"Selon DTA en vigueur","mrq":"KNAUF INSULATION","des":"THERMO LOFT - Laine de verre à souffler","val":"31/12/2026","nrm":"EN 14064-1 : 2010","feu":"A1","par":"","lam":"0,042","fiches":{"BAR-EN-106":{"ok":true,"v":2.38},"BAT-EN-106":{"ok":true,"v":2.38},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":2.38},"BAT-EN-108":{"ok":true,"v":2.38}},"cfgs":["combles"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les configurations de pose"],"obs":"λD = 0,042 W/(m·K) (laine de verre à souffler KNAUF). R calculé à 100 mm : 2,38 m².K/W. Produit utilisé en complément d'une isolation existante selon AT/DTA en vigueur."},{"ref":"02/016/132","certType":"ACERMI","autres":"Selon DTA en vigueur","mrq":"KNAUF INSULATION","des":"TI 312 - Laine de verre revêtu d'un pare-vapeur kraft aluminium","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"A2-s1,d0 de 60 à 75mm","par":"","lam":"0,032","fiches":{"BAR-EN-106":{"ok":true,"v":1.88},"BAT-EN-106":{"ok":true,"v":1.41},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.41},"BAT-EN-108":{"ok":true,"v":1.41}},"cfgs":["combles","solives"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les épaisseurs et R certifiés"],"obs":"λD = 0,032 W/(m·K). R calculé à 45 mm : 1,41 m².K/W. Classement feu A2-s1,d0 applicable de 60 à 75 mm."},{"ref":"—","certType":"autre","autres":"","mrq":"PRONOVA","des":"BARDATHERM - Panneau isolants","val":"","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Aucune certification reconnue NF EN ISO/IEC 17065. Seule la voie 'document fabricant' est possible à défaut — valeur probante limitée pour CEE.","Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"—","certType":"autre","autres":"Rapport de calcul du facteur solaire RS0625AC-001 du 17/06/2025","mrq":"PRONOVA","des":"COVERTHERM 988","val":"","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Rapport de calcul fabricant (facteur solaire) — pas une certification 17065. Ne constitue pas un document d'organisme accrédité suffisant pour les fiches CEE.","Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"—","certType":"autre","autres":"Rapport de calcul du facteur solaire RS0625AC-002 du 17/06/2025","mrq":"PRONOVA","des":"COVERTHERM 1045","val":"","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Rapport de calcul fabricant (facteur solaire) — pas une certification 17065. Ne constitue pas un document d'organisme accrédité suffisant pour les fiches CEE.","Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"—","certType":"autre","autres":"","mrq":"PRONOVA","des":"FROGOTHERM","val":"","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Aucune certification reconnue NF EN ISO/IEC 17065. Seule la voie 'document fabricant' est possible à défaut — valeur probante limitée pour CEE.","Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"17/D/015/1195","certType":"ACERMI","autres":"AT 20/10-199","mrq":"ROCKWOOL","des":"JETROCK2 - Laine de roche nodulée à souffler","val":"31/12/2026","nrm":"EN 14064-1 : 2010","feu":"A1","par":"","lam":"0,038","fiches":{"BAR-EN-106":{"ok":true,"v":2.63},"BAT-EN-106":{"ok":true,"v":2.63},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":2.63},"BAT-EN-108":{"ok":true,"v":2.63}},"cfgs":["combles"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les épaisseurs et R certifiés"],"obs":"λD = 0,038 W/(m·K) (AT 20/10-199). R calculé à 100 mm : 2,63 m².K/W. Produit à souffler : R variable selon épaisseur appliquée."},{"ref":"—","certType":"autre","autres":"Rapport essai/ AT selon version","mrq":"ROCKWOOL","des":"LOFT 470 - Laine de roche à souffler","val":"","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Mention 'AT selon version' : si Avis Technique CSTB confirmé, vérifier que l'ATec couvre l'usage CEE visé. Rapport d'essai seul (17025) insuffisant pour le critère 17065 — importer le document AT pour confirmer.","Référence ACERMI à vérifier (LOFT 470 peut partager 17/D/015/1195 ou avoir cert propre)","Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"—","certType":"autre","autres":"","mrq":"ROCKWOOL","des":"ROCKPRIME 004","val":"","nrm":"","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Aucune certification reconnue NF EN ISO/IEC 17065. Seule la voie 'document fabricant' est possible à défaut — valeur probante limitée pour CEE.","Vérifier si ROCKPRIME 004 est couvert par cert ACERMI 17/D/015/1195 (ROCKPRIME) ou a une cert distincte","Classement au feu à compléter (PV requis)","Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"02/015/001","certType":"ACERMI","autres":"","mrq":"ROCKWOOL","des":"EASYROCK - Rouleau de laine de roche revêtue kraft","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":false,"todo":["Classement au feu à compléter (PV requis)","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"02/015/001","certType":"ACERMI","autres":"","mrq":"ROCKWOOL","des":"ROULROCK - Rouleau de laine de verre. Revêtue kraft","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":true,"v":1.5},"BAT-EN-106":{"ok":true,"v":1.25},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.25},"BAT-EN-108":{"ok":true,"v":1.25}},"cfgs":["combles","solives","plafond_pp"],"vigi":false,"todo":["Classement au feu à compléter (PV requis)","Importer le certificat ACERMI pour confirmer les R certifiés"],"obs":"λD = 0,040 W/(m·K). R calculé à 50 mm : 1,25 m².K/W."},{"ref":"02/015/001","certType":"ACERMI","autres":"","mrq":"ROCKWOOL","des":"ROULROCK KRAFT - Rouleau laine de roche","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":true,"v":1.5},"BAT-EN-106":{"ok":true,"v":1.25},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.25},"BAT-EN-108":{"ok":true,"v":1.25}},"cfgs":["combles","solives","plafond_pp"],"vigi":false,"todo":["Classement au feu à compléter (PV requis)","Importer le certificat ACERMI pour confirmer les R certifiés"],"obs":"λD = 0,040 W/(m·K). R calculé à 50 mm : 1,25 m².K/W."},{"ref":"17/D/015/1195","certType":"ACERMI","autres":"AT 20/10-199","mrq":"ROCKWOOL","des":"ROCKPRIME - Laine de roche","val":"31/12/2026","nrm":"EN 14064-1 : 2010","feu":"A1","par":"","lam":"0,038","fiches":{"BAR-EN-106":{"ok":true,"v":2.63},"BAT-EN-106":{"ok":true,"v":2.63},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":2.63},"BAT-EN-108":{"ok":true,"v":2.63}},"cfgs":["combles"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les configurations de pose"],"obs":"λD = 0,038 W/(m·K) (AT 20/10-199 — même certificat que JETROCK2). R calculé à 100 mm : 2,63 m².K/W. Configurations à confirmer par le certificat ACERMI."},{"ref":"02/018/050","certType":"ACERMI","autres":"DTA selon références","mrq":"SAINT GOBIN ISOVER","des":"IBR NU - Rouleau de laine de verre","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"A1","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":true,"v":1.5},"BAT-EN-106":{"ok":true,"v":1.25},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.25},"BAT-EN-108":{"ok":true,"v":1.25}},"cfgs":["combles"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les R certifiés et configurations"],"obs":"λD = 0,040 W/(m·K). R calculé à 50 mm : 1,25 m².K/W."},{"ref":"02/018/062","certType":"ACERMI","autres":"","mrq":"SAINT GOBIN ISOVER","des":"FEUTRE TENDU ALU","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"A2-s1,d0","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":true,"v":2.5},"BAT-EN-106":{"ok":true,"v":2.5},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":2.5},"BAT-EN-108":{"ok":true,"v":2.5}},"cfgs":["couv_nerv"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les R certifiés"],"obs":"λD = 0,040 W/(m·K). R calculé à 100 mm : 2,50 m².K/W. Application couverture plaques nervurées (résidentiel et tertiaire)."},{"ref":"03/018/340","certType":"ACERMI","autres":"DTA selon références","mrq":"SAINT GOBIN ISOVER","des":"ISOCONFORT 35 - Rouleau de laine de verre","val":"31/12/2026","nrm":"EN 13162:2012+A1:2015","feu":"A2-s1,d0","par":"","lam":"0,035","fiches":{"BAR-EN-106":{"ok":true,"v":1.57},"BAT-EN-106":{"ok":true,"v":1.29},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.29},"BAT-EN-108":{"ok":true,"v":1.29}},"cfgs":["solives","plafond_pp","rampant"],"vigi":false,"todo":["Norme produit à compléter","Importer le certificat ACERMI pour confirmer les valeurs R et configurations"],"obs":"λD = 0,035 W/(m·K) (valeur publique ACERMI ISOVER). Éligibilité calculée : à 45 mm R = 1,29 m².K/W. Importer le certificat ACERMI pour confirmer les épaisseurs certifiées et configurations de pose."},{"ref":"17/018/1252","certType":"ACERMI","autres":"","mrq":"SAINT GOBIN ISOVER","des":"ISOCONFORT 35 NU","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"A1","par":"","lam":"0,035","fiches":{"BAR-EN-106":{"ok":true,"v":1.57},"BAT-EN-106":{"ok":true,"v":1.29},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.29},"BAT-EN-108":{"ok":true,"v":1.29}},"cfgs":["solives","plafond_pp","rampant"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les valeurs R et configurations"],"obs":"λD = 0,035 W/(m·K) (valeur publique ACERMI ISOVER). Éligibilité calculée : à 45 mm R = 1,29 m².K/W. Importer le certificat ACERMI pour confirmer les épaisseurs certifiées et configurations de pose."},{"ref":"05/018/408","certType":"ACERMI","autres":"DTA selon références","mrq":"SAINT GOBIN ISOVER","des":"ISOCONFORT 35 REVETU KRAFT - Rouleau de laine de verre","val":"31/12/2026","nrm":"EN 13162:2012+A1:2015","feu":"F (Euroclasse F)","par":"","lam":"0,035","fiches":{"BAR-EN-106":{"ok":true,"v":1.57},"BAT-EN-106":{"ok":true,"v":1.29},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.29},"BAT-EN-108":{"ok":true,"v":1.29}},"cfgs":["plafond_pp","rampant"],"vigi":true,"todo":["Norme produit à compléter","Importer le certificat ACERMI pour confirmer les valeurs R et configurations"],"obs":"λD = 0,035 W/(m·K) (valeur publique ACERMI ISOVER). Éligibilité calculée : à 45 mm R = 1,29 m².K/W. Importer le certificat ACERMI pour confirmer les épaisseurs certifiées et configurations de pose."},{"ref":"05/D/018/404","certType":"ACERMI","autres":"Variable","mrq":"SAINT GOBIN ISOVER","des":"ISOLENE 4 - Laine de verre","val":"31/12/2026","nrm":"","feu":"A1","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":false,"todo":["Norme produit à compléter","Éligibilité CEE à vérifier — aucune fiche validée"],"obs":""},{"ref":"02/018/054","certType":"ACERMI","autres":"Oui selon application","mrq":"SAINT GOBIN ISOVER","des":"IBR revêtu alu - Rouleau laine de verre","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"A2-s1,d0","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":true,"v":1.5},"BAT-EN-106":{"ok":true,"v":1.25},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.25},"BAT-EN-108":{"ok":true,"v":1.25}},"cfgs":["combles","solives"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les R certifiés"],"obs":"λD = 0,040 W/(m·K). R calculé à 50 mm : 1,25 m².K/W."},{"ref":"02/018/062","certType":"ACERMI","autres":"Variable","mrq":"SAINT GOBIN ISOVER","des":"FEUTRE TENDU ALU - Rouleau de laine de verre","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"A2-s1,d0","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":true,"v":2.5},"BAT-EN-106":{"ok":true,"v":2.5},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":2.5},"BAT-EN-108":{"ok":true,"v":2.5}},"cfgs":["couv_nerv"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les R certifiés"],"obs":"λD = 0,040 W/(m·K). R calculé à 100 mm : 2,50 m².K/W. Application couverture plaques nervurées."},{"ref":"04/058/341","certType":"ACERMI","autres":"Selon DTA en vigueur","mrq":"URSA","des":"MRA 40","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"A2-s1,d0","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":true,"v":1.5},"BAT-EN-106":{"ok":true,"v":1.25},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.25},"BAT-EN-108":{"ok":true,"v":1.25}},"cfgs":["combles","plafond_pp"],"vigi":false,"todo":["Importer le certificat ACERMI pour confirmer les R certifiés"],"obs":"λD = 0,040 W/(m·K). R calculé à 50 mm : 1,25 m².K/W."},{"ref":"03/058/087","certType":"ACERMI","autres":"","mrq":"URSA","des":"E-MRK 40 Laine de verre","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"F (Euroclasse F)","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":true,"v":1.5},"BAT-EN-106":{"ok":true,"v":1.25},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":true,"v":1.25},"BAT-EN-108":{"ok":true,"v":1.25}},"cfgs":["combles","plafond_pp"],"vigi":true,"todo":["Importer le certificat ACERMI pour confirmer les R certifiés"],"obs":"λD = 0,040 W/(m·K). R calculé à 50 mm : 1,25 m².K/W. ⚠ Euroclasse F — vérifier conformité aux exigences locales."},{"ref":"02/083/012","certType":"ACERMI","autres":"","mrq":"URSA","des":"P-MLK 40","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"F (Euroclasse F)","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Configurations de pose à compléter (domaine d'emploi ACERMI requis)","Éligibilité CEE à vérifier après import ACERMI"],"obs":"λD = 0,040 W/(m·K). ⚠ Euroclasse F. Configurations de pose non renseignées — importer le certificat ACERMI."},{"ref":"02/083/012","certType":"ACERMI","autres":"","mrq":"URSA","des":"P-PRK40","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"F (Euroclasse F)","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Configurations de pose à compléter (domaine d'emploi ACERMI requis)","Éligibilité CEE à vérifier après import ACERMI"],"obs":"λD = 0,040 W/(m·K). ⚠ Euroclasse F. Configurations de pose non renseignées — importer le certificat ACERMI."},{"ref":"02/020/008","certType":"ACERMI","autres":"","mrq":"URSA","des":"F-MRK40","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"F (Euroclasse F)","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Configurations de pose à compléter (domaine d'emploi ACERMI requis)","Éligibilité CEE à vérifier après import ACERMI"],"obs":"λD = 0,040 W/(m·K). ⚠ Euroclasse F. Configurations de pose non renseignées — importer le certificat ACERMI."},{"ref":"02/020/008","certType":"ACERMI","autres":"","mrq":"URSA","des":"F-MLK 40","val":"31/12/2026","nrm":"EN 13162:2012+A1 : 2015","feu":"F (Euroclasse F)","par":"","lam":"0,040","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":["Configurations de pose à compléter (domaine d'emploi ACERMI requis)","Éligibilité CEE à vérifier après import ACERMI"],"obs":"λD = 0,040 W/(m·K). ⚠ Euroclasse F. Configurations de pose non renseignées — importer le certificat ACERMI."},{"ref":"18/D/047/1326","certType":"ACERMI","autres":"","mrq":"URSA","des":"F-PULS'47 Laine de verre a souffler","val":"31/12/2026","nrm":"EN 14064-1 : 2010","feu":"A1","par":"","lam":"0,047","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":false,"todo":["Configurations de pose à compléter (domaine d'emploi ACERMI requis)","Éligibilité CEE à vérifier après import ACERMI"],"obs":"λD = 0,047 W/(m·K). Produit à souffler. Configurations de pose non renseignées — importer le certificat ACERMI."},{"ref":"14/D/058/950","certType":"ACERMI","autres":"NF EN 14064-1","mrq":"URSA","des":"PULS'R 47 - Laine de verre","val":"31/12/2026","nrm":"EN 14064-1 : 2010.","feu":"A1","par":"","lam":"0,047","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":false,"todo":["Configurations de pose à compléter (domaine d'emploi ACERMI requis)","Éligibilité CEE à vérifier après import ACERMI"],"obs":"λD = 0,047 W/(m·K). Produit à souffler. Configurations de pose non renseignées — importer le certificat ACERMI."},{"ref":"—","certType":"ACERMI","autres":"","mrq":"","des":"EXPERT 50","val":"","nrm":"","feu":"F (Euroclasse F)","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":false,"todo":[],"obs":""},{"ref":"—","certType":"ACERMI","autres":"","mrq":"","des":"","val":"","nrm":"","feu":"F (Euroclasse F)","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":[],"obs":""},{"ref":"—","certType":"ACERMI","autres":"","mrq":"","des":"","val":"","nrm":"","feu":"F (Euroclasse F)","par":"","lam":"","fiches":{"BAR-EN-106":{"ok":false,"v":null},"BAT-EN-106":{"ok":false,"v":null},"BAR-EN-109":{"ok":false,"v":null},"BAT-EN-109":{"ok":false,"v":null},"BAR-EN-107":{"ok":false,"v":null},"BAT-EN-108":{"ok":false,"v":null}},"cfgs":[],"vigi":true,"todo":[],"obs":""}]; /* END_BASE */
+
+/* ── STATE ── */
+let extraProducts = [];
+let matchedProdKey = null;
+let activeFiche = 'ALL';
+let searchQ = '';
+let expanded = new Set();
+
+function loadExtra() {
+  try { extraProducts = JSON.parse(localStorage.getItem('cee_products') || '[]'); } catch(e) { extraProducts = []; }
+}
+function saveExtra() {
+  try { localStorage.setItem('cee_products', JSON.stringify(extraProducts)); } catch(e) {}
+}
+function allProducts() {
+  const extraKeys = new Set(extraProducts.map(p => rowKey(p)));
+  return [...BASE.filter(p => !extraKeys.has(rowKey(p))), ...extraProducts];
+}
+
+/* ── SORT / FILTER ── */
+function sorted() {
+  const q = searchQ.toLowerCase();
+  let list = allProducts().filter(p => !q || p.ref.toLowerCase().includes(q) || p.des.toLowerCase().includes(q) || p.mrq.toLowerCase().includes(q));
+  if (activeFiche !== 'ALL') {
+    list = [...list].sort((a,b) => {
+      const ae = a.fiches[activeFiche]?.ok ? 1 : 0;
+      const be = b.fiches[activeFiche]?.ok ? 1 : 0;
+      return be - ae;
+    });
+  }
+  return list;
+}
+
+/* ── RENDER ── */
+function rowKey(p) { return p.ref + '|' + p.des; }
+
+function render() {
+  const list = sorted();
+  const prods = allProducts();
+  const vigCount = prods.filter(p => p.vigi).length;
+  const eligCount = activeFiche === 'ALL' ? prods.length : prods.filter(p => p.fiches[activeFiche]?.ok).length;
+  document.getElementById('stTotal').textContent = prods.length;
+  document.getElementById('stElig').textContent = eligCount;
+  document.getElementById('stVigi').textContent = vigCount;
+
+  const info = document.getElementById('info');
+  if (activeFiche !== 'ALL') {
+    const f = FICHES.find(f => f.code === activeFiche);
+    const seuil = f.type === 'FS' ? 'FS ≤ '+f.thr : '≥ '+f.thr+' '+f.unit;
+    const n = list.filter(p => p.fiches[activeFiche]?.ok).length;
+    info.innerHTML = '<strong>'+n+'</strong> produit'+(n!==1?'s':'')+' éligible'+(n!==1?'s':'')+' sur '+list.length+' — <strong>'+activeFiche+'</strong> · '+f.desc+' · seuil '+seuil+(f.note?' <em>('+f.note+')</em>':'');
+  } else {
+    info.innerHTML = '<strong>'+list.length+'</strong> produit'+(list.length!==1?'s':'')+' au référentiel';
+  }
+
+  // thead
+  const thead = document.getElementById('thead');
+  const ficheHds = FICHES.map(f =>
+    '<th class="c-fiche fiche-hd'+(activeFiche===f.code?' active':'')+'" data-fiche="'+f.code+'" title="'+f.desc+'">'+f.code+'</th>'
+  ).join('');
+  thead.innerHTML = '<tr><th class="c-ref s0">Référence</th><th class="c-des s1">Désignation</th><th class="c-mrq">Marque</th><th class="c-val">Validité</th><th class="c-lam">λD</th><th class="c-feu">Classement feu</th>'+ficheHds+'<th class="c-vig">Vigi.</th><th class="c-act"></th></tr>';
+
+  // tbody
+  const tbody = document.getElementById('tbody');
+  let rows = '';
+  for (const p of list) {
+    const key = rowKey(p);
+    const isXp = expanded.has(key);
+    const ficheCells = FICHES.map(f => {
+      const fd = p.fiches[f.code];
+      const hi = activeFiche === f.code;
+      if (fd && fd.ok) {
+        const val = fd.v != null ? fd.v.toFixed(2) : '';
+        return '<td class="c-fiche"><span class="fc-yes'+(hi?' hi':'')+'"><span>oui</span>'+(val?'<span class="fv">'+val+' '+f.unit+'</span>':'')+'</span></td>';
+      } else {
+        return '<td class="c-fiche"><span class="fc-no'+(hi?' hi':'')+'">—</span></td>';
+      }
+    }).join('');
+    const certBadge = (p.certType && p.certType !== 'ACERMI')
+      ? '<br><span style="font-size:.55rem;color:var(--ink3);font-family:\'JetBrains Mono\',monospace">'+esc(p.certType)+'</span>'
+      : '';
+    rows += '<tr class="'+(p.vigi?'vigi':'')+'" data-ref="'+esc(key)+'" style="cursor:pointer">'+
+      '<td class="s0 c-ref"><span class="ref-code">'+esc(p.ref)+'</span>'+certBadge+'</td>'+
+      '<td class="s1 c-des"><span class="des-text">'+esc(p.des)+'</span></td>'+
+      '<td class="c-mrq"><span class="mrq-text">'+esc(p.mrq)+'</span></td>'+
+      '<td class="c-val"><span class="val-text">'+esc(p.val)+'</span></td>'+
+      '<td class="c-lam mono">'+esc(p.lam||'')+'</td>'+
+      '<td class="c-feu"><span style="font-size:.65rem;color:'+(p.feu&&p.feu.startsWith('F')?'var(--w)':'var(--ink2)')+'">'+esc(p.feu||'')+'</span></td>'+
+      ficheCells+
+      '<td class="c-vig">'+(p.vigi?'<span class="vigi-dot" title="Point de vigilance"></span>':'')+'</td>'+
+      '<td class="c-act"><button class="xbtn'+(isXp?' on':'')+'" data-ref="'+esc(key)+'" aria-label="Détails" aria-expanded="'+(isXp?'true':'false')+'">'+(isXp?'▴':'▾')+'</button></td>'+
+    '</tr>';
+    if (isXp) {
+      rows += '<tr class="detail-row"><td colspan="13">'+detailHTML(p)+'</td></tr>';
+    }
+  }
+  tbody.innerHTML = rows;
+
+  // wire buttons
+  tbody.querySelectorAll('.xbtn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const k = btn.dataset.ref;
+      if (expanded.has(k)) expanded.delete(k); else expanded.add(k);
+      render();
+    });
+  });
+  tbody.querySelectorAll('tr[data-ref]').forEach(row => {
+    row.addEventListener('click', e => {
+      if (e.target.closest('button')) return;
+      const k = row.dataset.ref;
+      if (expanded.has(k)) expanded.delete(k); else expanded.add(k);
+      render();
+    });
+  });
+}
+
+function detailHTML(p) {
+  const cfgChips = (p.cfgs||[]).map(id => {
+    const c = CONFIGS.find(c => c.id===id);
+    return '<span class="cfg-chip">'+(c?c.label:id)+'</span>';
+  }).join('');
+  const todoHTML = (p.todo||[]).map(t => '<p class="todo-i">'+esc(t)+'</p>').join('');
+  const vigiHTML = p.vigi
+    ? '<div class="dl"><div class="dl-head">Vigilance</div><div class="vbox"><p class="vtag">⚠ Point de vigilance</p><p class="obs-p">'+esc(p.obs_vigi||p.todo?.[0]||'Voir observations')+'</p></div></div>'
+    : '';
+  return '<div class="detail-inner">'+
+    '<div class="dl"><div class="dl-head">Certification</div>'+
+      '<div class="dl-item"><code>'+esc(p.certType||'ACERMI')+'</code> <code>'+esc(p.ref||'—')+'</code></div>'+
+      (p.autres?'<div class="dl-item">Autres <code>'+esc(p.autres)+'</code></div>':'')+
+      '<div class="dl-item">Validité <code>'+esc(p.val||'—')+'</code></div>'+
+    '</div>'+
+    '<div class="dl"><div class="dl-head">Caractéristiques</div>'+
+      '<div class="dl-item">Norme <code>'+esc(p.nrm||'—')+'</code></div>'+
+      '<div class="dl-item">Feu <code>'+esc(p.feu||'—')+'</code></div>'+
+      '<div class="dl-item">Parement <code>'+esc(p.par||'— à compléter')+'</code></div>'+
+      '<div class="dl-item">λD <code>'+esc(p.lam||'—')+' W/(m·K)</code></div>'+
+    '</div>'+
+    (cfgChips?'<div class="dl"><div class="dl-head">Configurations de pose</div><div class="cfg-list">'+cfgChips+'</div></div>':'') +
+    (vigiHTML||'') +
+    (todoHTML?'<div class="dl"><div class="dl-head">À compléter</div><div class="todo">'+todoHTML+'</div></div>':'') +
+    '<div class="dl"><div class="dl-head">Observations</div><p class="obs-p">'+esc(p.obs||'—')+'</p></div>'+
+  '</div>';
+}
+
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── FICHE FILTER ── */
+document.getElementById('fiche-chips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  activeFiche = chip.dataset.f;
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c===chip));
+  render();
+});
+
+document.getElementById('thead').addEventListener('click', e => {
+  const th = e.target.closest('[data-fiche]');
+  if (!th) return;
+  activeFiche = th.dataset.fiche;
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.dataset.f===activeFiche));
+  render();
+});
+
+document.getElementById('srch').addEventListener('input', e => { searchQ = e.target.value; render(); });
+
+/* ── CSV EXPORT ── */
+async function exportCSV() {
+  const rows = allProducts().map(p => {
+    const f106 = p.fiches['BAR-EN-106'] || {};
+    const t106 = p.fiches['BAT-EN-106'] || {};
+    const f109 = p.fiches['BAR-EN-109'] || {};
+    const t109 = p.fiches['BAT-EN-109'] || {};
+    const f107 = p.fiches['BAR-EN-107'] || {};
+    const t108 = p.fiches['BAT-EN-108'] || {};
+    const acermiRef = p.certType === 'ACERMI' ? p.ref : '';
+    const autresCerts = p.certType !== 'ACERMI'
+      ? [p.certType+' '+p.ref, p.autres].filter(Boolean).join(' / ')
+      : (p.autres || '');
+    const cols = [
+      p.mrq,p.des,acermiRef,p.val,p.nrm||'',autresCerts,p.feu||'',p.par||'',
+      f106.ok?'oui':'non','1,5',f106.ok&&f106.v?String(f106.v).replace('.',','):'','',
+      t106.ok?'oui':'non','1,2',t106.ok&&t106.v?String(t106.v).replace('.',','):'',
+      f109.ok?'oui':'non','0,03',f109.ok&&f109.v?String(f109.v).replace('.',','):'',
+      t109.ok?'oui':'non','0,03',t109.ok&&t109.v?String(t109.v).replace('.',','):'',
+      f107.ok?'oui':'non','0,5',f107.ok&&f107.v?String(f107.v).replace('.',','):'',
+      t108.ok?'oui':'non','1,2',t108.ok&&t108.v?String(t108.v).replace('.',','):'',
+      '','','','','',
+      (p.cfgs||[]).includes('combles')?'x':'',
+      (p.cfgs||[]).includes('solives')?'x':'',
+      (p.cfgs||[]).includes('plafond_pp')?'x':'',
+      '',
+      (p.cfgs||[]).includes('rampant')?'x':'',
+      '',
+      (p.cfgs||[]).includes('couv_nerv')?'x':'',
+      (p.cfgs||[]).includes('toiture_inc')?'x':'',
+      '','',
+      (p.cfgs||[]).includes('plancher_bas')?'x':'',
+      '',
+      p.obs||'',
+    ];
+    return cols.join(';');
+  });
+  const csv = CSV_HEADER + '\n' + rows.join('\n');
+  try {
+    const dl = await claude.use('downloads');
+    if (dl) {
+      await dl.save({filename:'Referentiel_isolants_CEE_2026.csv', data: csv});
+      return;
+    }
+  } catch(e) {}
+  const blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='Referentiel_isolants_CEE_2026.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('btnExport').addEventListener('click', exportCSV);
+
+/* ── QUEUE STATE ── */
+let pdfQueue = [];
+let pdfQueueIdx = 0;
+
+/* ── MODAL BUILDERS ── */
+function buildFicheChecks() {
+  const el = document.getElementById('ficheChecks');
+  el.innerHTML = FICHES.map(f => {
+    const isFS = f.type==='FS';
+    const seuil = isFS ? 'FS ≤ '+f.thr : 'R ≥ '+f.thr+' '+f.unit;
+    return '<div class="fiche-row">'+
+      '<span class="fiche-code-lbl">'+f.code+'</span>'+
+      '<label class="fiche-check"><input type="checkbox" id="fc_'+f.code+'" data-fiche="'+f.code+'"> '+f.desc+'</label>'+
+      '<span style="font-size:.58rem;color:var(--ink3)">seuil '+seuil+'</span>'+
+      '<input class="form-input mono fiche-val-inp" id="fv_'+f.code+'" placeholder="'+f.thr+'" style="margin-top:.25rem;display:none" type="text">'+
+    '</div>';
+  }).join('');
+  el.querySelectorAll('[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const inp = document.getElementById('fv_'+cb.dataset.fiche);
+      if (inp) inp.style.display = cb.checked ? 'block' : 'none';
+    });
+  });
+}
+function buildCfgChecks() {
+  const el = document.getElementById('cfgChecks');
+  el.innerHTML = CONFIGS.map(c =>
+    '<label class="cfg-check"><input type="checkbox" id="cc_'+c.id+'" value="'+c.id+'"> '+c.label+'</label>'
+  ).join('');
+}
+buildFicheChecks();
+buildCfgChecks();
+
+let pdfBlobUrl = null;
+
+function resetModalForm() {
+  document.getElementById('addForm').reset();
+  FICHES.forEach(f => { const inp = document.getElementById('fv_'+f.code); if (inp) inp.style.display='none'; });
+  const note = document.getElementById('extractNote');
+  note.textContent = '';
+  note.style.color = '';
+  document.querySelectorAll('.form-input.invalid').forEach(el => el.classList.remove('invalid'));
+  document.getElementById('debugDetails').style.display = 'none';
+  document.getElementById('debugText').textContent = '';
+  matchedProdKey = null;
+  document.getElementById('matchBanner').style.display = 'none';
+  document.getElementById('modalSave').textContent = 'Ajouter au référentiel';
+  const modeUpdate = document.getElementById('modeUpdate');
+  if (modeUpdate) modeUpdate.checked = true;
+}
+
+function updateQueueUI() {
+  const total = pdfQueue.length;
+  const badge = document.getElementById('queueBadge');
+  const skipBtn = document.getElementById('modalSkip');
+  const saveBtn = document.getElementById('modalSave');
+  const title = document.getElementById('modalTitle');
+  if (total > 1) {
+    badge.textContent = (pdfQueueIdx+1)+' / '+total;
+    badge.style.display = 'inline';
+    skipBtn.style.display = (pdfQueueIdx < total-1) ? 'inline-flex' : 'none';
+    saveBtn.textContent = pdfQueueIdx < total-1 ? 'Ajouter et suivant →' : 'Ajouter au référentiel';
+    title.textContent = 'Document de certification — '+pdfQueue[pdfQueueIdx].name;
+  } else {
+    badge.style.display = 'none';
+    skipBtn.style.display = 'none';
+    saveBtn.textContent = 'Ajouter au référentiel';
+    title.textContent = 'Nouveau document de certification';
+  }
+}
+
+function loadQueueItem(idx) {
+  resetModalForm();
+  pdfQueueIdx = idx;
+  updateQueueUI();
+  const file = pdfQueue[idx];
+  if (!file) return;
+  if (pdfBlobUrl) { URL.revokeObjectURL(pdfBlobUrl); pdfBlobUrl = null; }
+  pdfBlobUrl = URL.createObjectURL(file);
+  document.getElementById('pdfView').innerHTML = '<embed src="'+pdfBlobUrl+'#toolbar=1&navpanes=0" type="application/pdf" style="width:100%;height:100%;border:none">';
+  document.getElementById('extractNote').textContent = 'Extraction en cours…';
+  const reader = new FileReader();
+  reader.onload = async e => {
+    try {
+      const fields = await extractPDFFields(e.target.result);
+      populateForm(fields);
+    } catch(err) {
+      document.getElementById('extractNote').textContent = 'Extraction échouée — remplissez manuellement';
+      document.getElementById('extractNote').style.color = 'var(--w)';
+    }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function openModal(files) {
+  const pdfs = files ? Array.from(files).filter(f => f.type === 'application/pdf') : [];
+  pdfQueue = pdfs;
+  pdfQueueIdx = 0;
+  resetModalForm();
+  if (pdfs.length === 0) {
+    document.getElementById('pdfView').innerHTML = '<div class="pdf-placeholder"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Chargez un PDF pour prévisualiser</div>';
+    updateQueueUI();
+  } else {
+    updateQueueUI();
+    loadQueueItem(0);
+  }
+  document.getElementById('modalBg').classList.remove('hidden');
+}
+
+function advanceQueue() {
+  if (pdfQueueIdx < pdfQueue.length - 1) {
+    loadQueueItem(pdfQueueIdx + 1);
+  } else {
+    closeModal();
+  }
+}
+
+function closeModal() {
+  document.getElementById('modalBg').classList.add('hidden');
+  pdfQueue = []; pdfQueueIdx = 0;
+  if (pdfBlobUrl) { URL.revokeObjectURL(pdfBlobUrl); pdfBlobUrl = null; }
+}
+document.getElementById('btnAdd').addEventListener('click', () => openModal(null));
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalCancel').addEventListener('click', closeModal);
+document.getElementById('modalSkip').addEventListener('click', advanceQueue);
+document.getElementById('modalBg').addEventListener('click', e => { if (e.target===document.getElementById('modalBg')) closeModal(); });
+
+/* ── PDF EXTRACTION ── */
+
+/* Decompress a Uint8Array — tries deflate (zlib) then deflate-raw */
+async function decompress(data) {
+  for (const fmt of ['deflate', 'deflate-raw']) {
+    try {
+      const ds = new DecompressionStream(fmt);
+      const writer = ds.writable.getWriter();
+      writer.write(data);
+      writer.close();
+      const chunks = [];
+      const reader = ds.readable.getReader();
+      while (true) {
+        const {done, value} = await reader.read();
+        if (done) break;
+        chunks.push(value);
+      }
+      let len = 0; for (const c of chunks) len += c.length;
+      const out = new Uint8Array(len); let off = 0;
+      for (const c of chunks) { out.set(c, off); off += c.length; }
+      return out;
+    } catch(e) { /* try next */ }
+  }
+  return null;
+}
+
+/* Decode a PDF hex string — handles UTF-16BE (BOM FFFE/FEFF) */
+function decodeHexStr(hex) {
+  hex = hex.replace(/\s/g, '');
+  if (!hex.length) return '';
+  if (/^feff/i.test(hex)) {
+    let s = '';
+    for (let i = 4; i + 3 < hex.length; i += 4) {
+      const cp = parseInt(hex.substr(i, 4), 16);
+      if (!isNaN(cp) && cp >= 0x20 && cp !== 0xFFFD) s += String.fromCodePoint(cp);
+    }
+    return s;
+  }
+  if (/^fffe/i.test(hex)) {
+    let s = '';
+    for (let i = 4; i + 3 < hex.length; i += 4) {
+      const lo = parseInt(hex.substr(i, 2), 16);
+      const hi = parseInt(hex.substr(i+2, 2), 16);
+      const cp = (hi << 8) | lo;
+      if (!isNaN(cp) && cp >= 0x20 && cp !== 0xFFFD) s += String.fromCodePoint(cp);
+    }
+    return s;
+  }
+  let s = '';
+  for (let i = 0; i + 1 < hex.length; i += 2) {
+    const b = parseInt(hex.substr(i, 2), 16);
+    if (isNaN(b)) continue;
+    if (b >= 0x20 && b < 0x80) s += String.fromCharCode(b);
+    else if (b > 0x7F) s += ' ';
+  }
+  return s;
+}
+
+/* Decode a PDF literal string (escape sequences) */
+function decodeLiteral(s) {
+  return s
+    .replace(/\\n/g, ' ').replace(/\\r/g, ' ').replace(/\\t/g, ' ')
+    .replace(/\\\(/g, '(').replace(/\\\)/g, ')')
+    .replace(/\\\\/g, '\x00BKSL\x00')
+    .replace(/\\([0-7]{1,3})/g, (_, oct) => String.fromCharCode(parseInt(oct, 8)))
+    .replace(/\x00BKSL\x00/g, '\\');
+}
+
+/* Extract text from a PDF content stream — BT...ET blocks, Tj/TJ operators */
+function parseContentStream(raw) {
+  let text = '';
+  for (const m of raw.matchAll(/BT\s*([\s\S]*?)\s*ET/g)) {
+    const block = m[1];
+    // Literal strings: (text)Tj  (text)'  (text)"
+    for (const s of block.matchAll(/\(([^)\\]*(?:\\.[^)\\]*)*)\)\s*(?:Tj|'|")/g))
+      text += decodeLiteral(s[1]) + ' ';
+    // Hex strings: <hex>Tj
+    for (const s of block.matchAll(/<([0-9A-Fa-f\s]+)>\s*(?:Tj|'|")/g))
+      text += decodeHexStr(s[1]) + ' ';
+    // TJ arrays with literal and hex strings
+    for (const ta of block.matchAll(/\[([\s\S]*?)\]\s*TJ/g)) {
+      for (const sp of ta[1].matchAll(/\(([^)\\]*(?:\\.[^)\\]*)*)\)/g))
+        text += decodeLiteral(sp[1]) + ' ';
+      for (const sp of ta[1].matchAll(/<([0-9A-Fa-f\s]+)>/g))
+        text += decodeHexStr(sp[1]) + ' ';
+    }
+  }
+  // Fallback: outside BT...ET blocks
+  if (text.trim().length < 30) {
+    for (const s of raw.matchAll(/\(([^)\\]{2,}(?:\\.[^)\\]*)*)\)\s*Tj/g))
+      text += decodeLiteral(s[1]) + ' ';
+    for (const s of raw.matchAll(/<([0-9A-Fa-f\s]{4,})>\s*Tj/g))
+      text += decodeHexStr(s[1]) + ' ';
+  }
+  return text;
+}
+
+async function extractPDFFields(buf) {
+  const bytes = new Uint8Array(buf);
+
+  /* Step 1 — walk all stream objects */
+  let fullText = '';
+  let pdfLatin = '';
+  for (let i = 0; i < Math.min(bytes.length, 8_000_000); i++)
+    pdfLatin += String.fromCharCode(bytes[i]);
+
+  let pos = 0;
+  while (pos < pdfLatin.length) {
+    const sIdx = pdfLatin.indexOf('stream', pos);
+    if (sIdx === -1) break;
+    let dStart = sIdx + 6;
+    if (pdfLatin[dStart] === '\r') dStart++;
+    if (pdfLatin[dStart] === '\n') dStart++;
+    const eIdx = pdfLatin.indexOf('endstream', dStart);
+    if (eIdx === -1) break;
+
+    const streamBytes = bytes.slice(dStart, eIdx);
+    const headerSlice = pdfLatin.slice(Math.max(0, sIdx - 800), sIdx);
+    const isFlate = /\/FlateDecode|\/Fl\b/.test(headerSlice);
+
+    if (isFlate) {
+      const decompressed = await decompress(streamBytes);
+      if (decompressed) {
+        const decoded = new TextDecoder('latin1').decode(decompressed);
+        fullText += ' ' + parseContentStream(decoded) + ' ';
+        // Also include raw decoded text for pattern matching
+        fullText += decoded.replace(/[^\x20-\x7E\xA0-\xFF]/g, ' ') + ' ';
+      }
+    } else {
+      const decoded = new TextDecoder('latin1').decode(streamBytes);
+      fullText += ' ' + parseContentStream(decoded) + ' ';
+      fullText += decoded.replace(/[^\x20-\x7E\xA0-\xFF]/g, ' ') + ' ';
+    }
+    pos = eIdx + 9;
+  }
+
+  /* Step 2 — raw printable ASCII from entire file */
+  let run = '';
+  for (let i = 0; i < bytes.length; i++) {
+    const c = bytes[i];
+    if (c >= 0x20 && c < 0x7F) { run += String.fromCharCode(c); }
+    else { if (run.length >= 4) fullText += ' ' + run; run = ''; }
+  }
+  if (run.length >= 4) fullText += ' ' + run;
+
+  /* Step 3 — extract fields */
+  const f = { _raw: fullText.slice(0, 3000) };
+
+  // ── Document type detection ──
+  if (/\bACERMI\b/i.test(fullText)) f.certType = 'ACERMI';
+  else if (/\bAvis\s+Technique\b|\bATec\b/i.test(fullText)) f.certType = 'ATec';
+  else if (/\bDocument\s+Technique\s+d.Application\b|\bDTA\b/i.test(fullText)) f.certType = 'DTA';
+  else if (/Agr[eé]ment\s+Technique\s+Europ[eé]en|\bETA[\s\-]/i.test(fullText)) f.certType = 'ETA';
+  else if (/\bATEx\b/i.test(fullText)) f.certType = 'ATEx';
+  else if (/\bCSTB\b/i.test(fullText)) f.certType = 'CSTB';
+  else if (/[Ff]iche\s+[Tt]echnique/i.test(fullText)) f.certType = 'FT';
+
+  // ── Reference number ──
+  const acermiRef = fullText.match(/\b(\d{2}\/\d{3}\/\d{3})\b/);
+  const atecRef   = fullText.match(/\b(\d{1,2}\/\d{2}-\d{3,5})\b/);
+  const etaRef    = fullText.match(/\bETA[\s\-](\d{2}\/\d{4})\b/i);
+  const dtaRef    = fullText.match(/\bDTA[\s\-](\d{1,2}\/\d{2}-\d{3,4})\b/i);
+  if (acermiRef) { f.ref = acermiRef[1]; if (!f.certType) f.certType = 'ACERMI'; }
+  else if (etaRef)  { f.ref = 'ETA-'+etaRef[1]; if (!f.certType) f.certType = 'ETA'; }
+  else if (dtaRef)  { f.ref = dtaRef[1]; if (!f.certType) f.certType = 'DTA'; }
+  else if (atecRef) { f.ref = atecRef[1]; if (!f.certType) f.certType = 'ATec'; }
+
+  // ── Validity date ──
+  const valCtx = fullText.match(/(?:validit[eé]|valable\s+jusqu|expire|expir[ae])[^0-9]{0,25}(\d{2}[\/\-\.]\d{2}[\/\-\.]20\d{2})/i);
+  if (valCtx) {
+    f.val = valCtx[1].replace(/[-\.]/g, '/');
+  } else {
+    const dates = [...fullText.matchAll(/\b(\d{2}[\/\-]\d{2}[\/\-]20\d{2})\b/g)];
+    if (dates.length) f.val = dates[dates.length-1][1].replace(/-/g, '/');
+  }
+
+  // ── Lambda conductivity ──
+  const lamCtx = fullText.match(/(?:lambdaD|λD|lambda[\s_]?D|conductivit[eé]\s+thermique[^0-9]{0,40})\s*[=:]\s*(0[,\.]\d{3})/i)
+               || fullText.match(/\b(0[,\.]0(?:3[0-9]|4[0-9]|5[0-9]))\s*W/);
+  if (lamCtx) {
+    f.lam = lamCtx[1].replace('.', ',');
+  } else {
+    const lamFallback = fullText.match(/\b0[,\.]0([3-5]\d)\b/);
+    if (lamFallback) f.lam = '0,0'+lamFallback[1];
+  }
+
+  // ── Marque / Fabricant ──
+  const mrqPatterns = [
+    /(?:Titulaire\s+du\s+certificat|Titulaire)\s*[:\-\n]\s*([A-Z][A-Z0-9 &\-\.]{3,50}?)(?:\n|\r|  |\s{3})/,
+    /(?:Soci[eé]t[eé]|Fabricant|Marque)\s*[:\-]\s*([A-Z][A-Za-z0-9 &\-\.]{3,50}?)(?:\n|\r|  )/i,
+    /(?:Titulaire|Holder|Manufacturer)\s*:\s*([^\n\r,]{5,60})/i,
+  ];
+  for (const pat of mrqPatterns) {
+    const m = fullText.match(pat);
+    if (m) { f.mrq = m[1].trim(); break; }
+  }
+
+  // ── Désignation produit ──
+  const desPatterns = [
+    /(?:D[eé]signation\s+(?:du\s+)?produit|Produit[s]?\s+certifi[eé])\s*[:\-]?\s*([^\n\r]{5,100})/i,
+    /(?:Objet\s+du\s+(?:document|certificat))\s*[:\-]?\s*([^\n\r]{5,80})/i,
+    /(?:D[eé]nomination|Appellation)\s*[:\-]\s*([^\n\r]{5,80})/i,
+  ];
+  for (const pat of desPatterns) {
+    const m = fullText.match(pat);
+    if (m) { f.des = m[1].trim(); break; }
+  }
+
+  // ── Norme ──
+  if (fullText.match(/13162/)) f.nrm = 'EN 13162:2012+A1:2015';
+  else if (fullText.match(/13163/)) f.nrm = 'EN 13163:2012+A1:2015';
+  else if (fullText.match(/13164/)) f.nrm = 'EN 13164:2012+A1:2015';
+  else if (fullText.match(/13165/)) f.nrm = 'EN 13165:2012+A1:2015';
+  else if (fullText.match(/13166/)) f.nrm = 'EN 13166:2012+A1:2015';
+  else if (fullText.match(/13171/)) f.nrm = 'EN 13171:2012+A1:2015';
+
+  // ── Fire classification — most specific first ──
+  const feuM = fullText.match(/\b(A1|A2-s[123],d[012]|B-s[123],d[012]|C-s[123],d[012]|D-s[123],d[012]|E-d[012]|F)\b/);
+  if (feuM) {
+    f.feu = feuM[1] === 'F' ? 'F (Euroclasse F)' : feuM[1];
+  } else if (/Euroclasse\s*F/i.test(fullText)) {
+    f.feu = 'F (Euroclasse F)';
+  } else if (/class[eé]\s*[Mm]0/i.test(fullText)) {
+    f.feu = 'M0';
+  } else if (/class[eé]\s*[Mm]1/i.test(fullText)) {
+    f.feu = 'M1';
+  }
+
+  return f;
+}
+
+function populateForm(f) {
+  const set = (id, v) => { if (v) { const el = document.getElementById(id); if (el) el.value = v; } };
+  set('f_ref', f.ref);
+  set('f_val', f.val);
+  set('f_lam', f.lam);
+  set('f_feu', f.feu);
+  set('f_mrq', f.mrq);
+  set('f_des', f.des);
+  if (f.certType) {
+    const sel = document.getElementById('f_certtype');
+    if (sel) {
+      // Check if option exists; if not, keep current value
+      const opt = [...sel.options].find(o => o.value === f.certType);
+      if (opt) sel.value = f.certType;
+    }
+  }
+  if (f.nrm) {
+    const sel = document.getElementById('f_nrm');
+    if (sel) for (const opt of sel.options) { if (opt.value === f.nrm) { sel.value = f.nrm; break; } }
+  }
+  // ── Auto-match existing product by reference ──
+  matchedProdKey = null;
+  if (f.ref && f.ref !== '—') {
+    const cands = allProducts().filter(p => p.ref === f.ref);
+    if (cands.length) {
+      let best = cands[0];
+      if (f.des && cands.length > 1) {
+        const fdesLow = f.des.toLowerCase().slice(0, 12);
+        best = cands.find(p => p.des.toLowerCase().includes(fdesLow)) || cands[0];
+      }
+      matchedProdKey = rowKey(best);
+      const label = (best.mrq ? best.mrq + ' — ' : '') + best.des;
+      document.getElementById('matchName').textContent = label;
+      document.getElementById('matchBanner').style.display = '';
+      document.getElementById('modalSave').textContent = 'Mettre à jour le produit';
+    } else {
+      document.getElementById('matchBanner').style.display = 'none';
+      document.getElementById('modalSave').textContent = 'Ajouter au référentiel';
+    }
+  } else {
+    document.getElementById('matchBanner').style.display = 'none';
+    document.getElementById('modalSave').textContent = 'Ajouter au référentiel';
+  }
+
+  const counted = ['ref','val','lam','feu','mrq','des','certType','nrm'].filter(k => f[k]).length;
+  const note = document.getElementById('extractNote');
+  if (counted > 0) {
+    note.textContent = counted + ' champ' + (counted > 1 ? 's' : '') + ' extrait' + (counted > 1 ? 's' : '') + (matchedProdKey ? ' — produit identifié' : ' — vérifiez');
+    note.style.color = 'var(--a)';
+  } else {
+    note.textContent = 'Aucune donnée extraite — le PDF est peut-être scanné ou protégé';
+    note.style.color = 'var(--w)';
+  }
+
+  // Debug panel
+  if (f._raw) {
+    document.getElementById('debugDetails').style.display = '';
+    document.getElementById('debugText').textContent = f._raw;
+  }
+}
+
+/* ── FILE DRAG & DROP ── */
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+dropZone.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', () => {
+  if (fileInput.files.length) {
+    openModal(fileInput.files);
+    fileInput.value = '';
+  }
+});
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag');
+  if (e.dataTransfer.files.length) openModal(e.dataTransfer.files);
+});
+
+/* ── SAVE PRODUCT ── */
+document.getElementById('modalSave').addEventListener('click', async () => {
+  const ref      = document.getElementById('f_ref').value.trim();
+  const mrq      = document.getElementById('f_mrq').value.trim();
+  const des      = document.getElementById('f_des').value.trim();
+  const val      = document.getElementById('f_val').value.trim();
+  const certType = document.getElementById('f_certtype').value;
+  const autres   = document.getElementById('f_autres').value.trim();
+  const nrm      = document.getElementById('f_nrm').value;
+  const feu      = document.getElementById('f_feu').value.trim();
+  const par      = document.getElementById('f_par').value.trim();
+  const lam      = document.getElementById('f_lam').value.trim();
+  const obs      = document.getElementById('f_obs').value.trim();
+
+  const fiches = {};
+  FICHES.forEach(fc => {
+    const cb = document.getElementById('fc_'+fc.code);
+    const vInp = document.getElementById('fv_'+fc.code);
+    const ok = cb && cb.checked;
+    const v = ok && vInp ? parseFloat(vInp.value.replace(',','.')) || null : null;
+    fiches[fc.code] = {ok, v};
+  });
+  const fichesHasOk = Object.values(fiches).some(f => f.ok);
+
+  const cfgs = CONFIGS.map(c => c.id).filter(id => {
+    const cb = document.getElementById('cc_'+id);
+    return cb && cb.checked;
+  });
+
+  const saveMode = document.querySelector('input[name="saveMode"]:checked')?.value || 'new';
+
+  if (matchedProdKey && saveMode === 'update') {
+    // Build overlay: merge original data with extracted fields (non-empty wins)
+    const origProd = allProducts().find(p => rowKey(p) === matchedProdKey);
+    if (origProd) {
+      const overlay = {
+        ...origProd,
+        certType: certType || origProd.certType,
+        val:      val      || origProd.val,
+        nrm:      nrm      || origProd.nrm,
+        feu:      feu      || origProd.feu,
+        par:      par      || origProd.par,
+        lam:      lam      || origProd.lam,
+        autres:   autres   || origProd.autres,
+        obs:      obs      || origProd.obs,
+        mrq:      mrq      || origProd.mrq,
+        _updated: Date.now(),
+      };
+      if (ref && ref !== '—') overlay.ref = ref;
+      if (fichesHasOk) overlay.fiches = fiches;
+      if (cfgs.length > 0) overlay.cfgs = cfgs;
+      // Recalculate vigi
+      overlay.vigi = /euroclasse\s*f\b|\bm[34]\b/i.test(overlay.feu||'') || overlay.ref === '—';
+      // Remove previous overlay for same key
+      extraProducts = extraProducts.filter(p => rowKey(p) !== matchedProdKey);
+      extraProducts.push(overlay);
+      saveExtra();
+    }
+  } else {
+    // Add as new product — accept even with partial data
+    const newP = {
+      ref: ref || '—', certType, autres, mrq, des, val, nrm, feu, par, lam,
+      fiches: fichesHasOk ? fiches : Object.fromEntries(
+        FICHES.map(fc => [fc.code, {ok: false, v: null}])
+      ),
+      cfgs, vigi: !ref || ref === '—', todo: [], obs,
+    };
+    extraProducts.push(newP);
+    saveExtra();
+  }
+
+  const actionLabel = (matchedProdKey && saveMode === 'update') ? 'Produit mis à jour' : 'Produit ajouté';
+  try {
+    const artifact = await claude.use('artifact');
+    if (artifact) {
+      await publishUpdated(allProducts());
+      toast(actionLabel + ' et référentiel publié');
+    } else { toast(actionLabel + ' (sauvegardé localement)'); }
+  } catch(e) {
+    if (e.code === 'not_writer' || e.code === 'not_granted') {
+      toast(actionLabel + ' (sauvegardé localement)');
+    } else {
+      toast(actionLabel + ' — publication échouée');
+    }
+  }
+
+  advanceQueue();
+  render();
+});
+
+/* ── ARTIFACT PUBLISH ── */
+async function publishUpdated(products) {
+  const artifact = await claude.use('artifact');
+  if (!artifact) return;
+  const html = buildPageHTML(products);
+  await artifact.publish(html);
+}
+
+function buildPageHTML(products) {
+  const dataJSON = JSON.stringify(products);
+  let src = '<!doctype html>' + document.documentElement.outerHTML;
+  src = src.replace(/const BASE = \[[\s\S]*?\];\s*\/\* END_BASE \*\//, 'const BASE = '+dataJSON+'; /* END_BASE */');
+  return src;
+}
+
+/* ── TOAST ── */
+let toastTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+/* ── INIT ── */
+loadExtra();
+render();
+</script>
+
+</body></html>
