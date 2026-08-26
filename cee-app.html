@@ -154,10 +154,10 @@ tr.detail-row td{padding:0;border-bottom:1px solid var(--s3)}
 .todo{display:flex;flex-direction:column;gap:.2rem}
 .todo-i{font-size:.65rem;color:var(--ink2);padding-left:.6rem;border-left:2px solid var(--s3);line-height:1.4}
 
-/* expand btn */
-.xbtn{background:none;border:none;cursor:pointer;color:var(--ink3);font-size:.7rem;padding:.2rem .3rem;border-radius:var(--rs);transition:color .12s,background .12s}
-.xbtn:hover{color:var(--a);background:var(--al)}
-.xbtn.on{color:var(--a)}
+/* row action buttons */
+.row-edit-btn{background:none;border:none;cursor:pointer;color:var(--ink3);font-size:.8rem;padding:.2rem .35rem;border-radius:var(--rs);transition:color .12s,background .12s}
+.row-edit-btn:hover{color:var(--a);background:var(--al)}
+.row-edit-btn.on{color:var(--a)}
 /* row delete btn */
 .del-row-btn{background:none;border:none;cursor:pointer;color:var(--ink3);font-size:.65rem;padding:.2rem .3rem;border-radius:var(--rs);transition:color .12s,background .12s;opacity:.55}
 .del-row-btn:hover{color:#d03;background:color-mix(in srgb,#d03 12%,transparent);opacity:1}
@@ -382,8 +382,8 @@ function sorted() {
   let list = allProducts().filter(p => !q || p.ref.toLowerCase().includes(q) || p.des.toLowerCase().includes(q) || p.mrq.toLowerCase().includes(q));
   if (activeFiche !== 'ALL') {
     list = [...list].sort((a,b) => {
-      const ae = a.fiches[activeFiche]?.ok ? 1 : 0;
-      const be = b.fiches[activeFiche]?.ok ? 1 : 0;
+      const ae = effectiveFiches(a)[activeFiche]?.ok ? 1 : 0;
+      const be = effectiveFiches(b)[activeFiche]?.ok ? 1 : 0;
       return be - ae;
     });
   }
@@ -397,7 +397,7 @@ function render() {
   const list = sorted();
   const prods = savedProducts();
   const vigCount = prods.filter(p => p.vigi).length;
-  const eligCount = activeFiche === 'ALL' ? prods.length : prods.filter(p => p.fiches[activeFiche]?.ok).length;
+  const eligCount = activeFiche === 'ALL' ? prods.length : prods.filter(p => effectiveFiches(p)[activeFiche]?.ok).length;
   document.getElementById('stTotal').textContent = prods.length;
   document.getElementById('stElig').textContent = eligCount;
   document.getElementById('stVigi').textContent = vigCount;
@@ -406,7 +406,7 @@ function render() {
   if (activeFiche !== 'ALL') {
     const f = FICHES.find(f => f.code === activeFiche);
     const seuil = f.type === 'FS' ? 'FS ≤ '+f.thr : '≥ '+f.thr+' '+f.unit;
-    const n = list.filter(p => p.fiches[activeFiche]?.ok).length;
+    const n = list.filter(p => effectiveFiches(p)[activeFiche]?.ok).length;
     info.innerHTML = '<strong>'+n+'</strong> produit'+(n!==1?'s':'')+' éligible'+(n!==1?'s':'')+' sur '+list.length+' — <strong>'+activeFiche+'</strong> · '+f.desc+' · seuil '+seuil+(f.note?' <em>('+f.note+')</em>':'');
   } else {
     info.innerHTML = '<strong>'+list.length+'</strong> produit'+(list.length!==1?'s':'')+' au référentiel';
@@ -426,8 +426,9 @@ function render() {
     const key = rowKey(p);
     const isXp = expanded.has(key);
     const isExtra = extraProducts.some(ep => rowKey(ep) === key);
+    const ef = effectiveFiches(p);
     const ficheCells = FICHES.map(f => {
-      const fd = p.fiches[f.code];
+      const fd = ef[f.code];
       const hi = activeFiche === f.code;
       if (fd && fd.ok) {
         const val = fd.v != null ? fd.v.toFixed(2) : '';
@@ -439,7 +440,7 @@ function render() {
     const certBadge = (p.certType && p.certType !== 'ACERMI')
       ? '<br><span style="font-size:.55rem;color:var(--ink3);font-family:\'JetBrains Mono\',monospace">'+esc(p.certType)+'</span>'
       : '';
-    rows += '<tr class="'+(p.vigi?'vigi':'')+'" data-ref="'+esc(key)+'" style="cursor:pointer">'+
+    rows += '<tr class="'+(p.vigi?'vigi':'')+'" data-ref="'+esc(key)+'">'+
       '<td class="s0 c-ref"><span class="ref-code">'+esc(p.ref)+'</span>'+certBadge+'</td>'+
       '<td class="s1 c-des"><span class="des-text">'+esc(p.des)+'</span></td>'+
       '<td class="c-mrq"><span class="mrq-text">'+esc(p.mrq)+'</span></td>'+
@@ -449,8 +450,8 @@ function render() {
       ficheCells+
       '<td class="c-vig">'+(p.vigi?'<span class="vigi-dot" title="Point de vigilance"></span>':'')+'</td>'+
       '<td class="c-act">'+
-        '<button class="xbtn'+(isXp?' on':'')+'" data-ref="'+esc(key)+'" aria-label="Détails" aria-expanded="'+(isXp?'true':'false')+'">'+(isXp?'▴':'▾')+'</button>'+
-        (isExtra ? '<button class="del-row-btn" data-ref="'+esc(key)+'" title="Supprimer ce produit" aria-label="Supprimer">✕</button>' : '')+
+        '<button class="row-edit-btn'+(isXp?' on':'')+'" data-ref="'+esc(key)+'" title="Modifier" aria-label="Modifier" aria-expanded="'+(isXp?'true':'false')+'">✎</button>'+
+        (isExtra ? '<button class="del-row-btn" data-ref="'+esc(key)+'" title="Supprimer" aria-label="Supprimer">✕</button>' : '')+
       '</td>'+
     '</tr>';
     if (isXp) {
@@ -459,30 +460,34 @@ function render() {
   }
   tbody.innerHTML = rows;
 
-  // wire row expand/collapse
-  tbody.querySelectorAll('.xbtn').forEach(btn => {
+  // wire Modifier button (expand/collapse inline edit)
+  tbody.querySelectorAll('.row-edit-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
       const k = btn.dataset.ref;
-      if (expanded.has(k)) expanded.delete(k); else expanded.add(k);
-      render();
-    });
-  });
-  tbody.querySelectorAll('tr[data-ref]').forEach(row => {
-    row.addEventListener('click', e => {
-      if (e.target.closest('button,.de-inp,.de-fiche-cb,.de-cfg-cb,.de-fiche-val,.de-sel,.de-ta')) return;
-      const k = row.dataset.ref;
       if (expanded.has(k)) expanded.delete(k); else expanded.add(k);
       render();
     });
   });
 
-  // wire row-level delete button
+  // wire row-level delete button (double-click confirm — no confirm() dialog needed)
   tbody.querySelectorAll('.del-row-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
+      if (!btn.dataset.confirming) {
+        btn.dataset.confirming = '1';
+        btn.textContent = 'OK ?';
+        btn.style.cssText = 'color:#d03;opacity:1;font-size:.6rem';
+        setTimeout(() => {
+          if (btn.isConnected && btn.dataset.confirming) {
+            delete btn.dataset.confirming;
+            btn.textContent = '✕';
+            btn.style.cssText = '';
+          }
+        }, 2500);
+        return;
+      }
       const k = btn.dataset.ref;
-      if (!confirm('Supprimer ce produit du référentiel ?')) return;
       extraProducts = extraProducts.filter(p => rowKey(p) !== k);
       expanded.delete(k);
       saveExtra();
@@ -506,7 +511,20 @@ function render() {
         render();
         return;
       }
-      if (!confirm('Supprimer ce produit du référentiel ?')) return;
+      if (!btn.dataset.confirming) {
+        const orig = btn.textContent;
+        btn.dataset.confirming = '1';
+        btn.textContent = 'Confirmer ?';
+        btn.style.color = '#d03';
+        setTimeout(() => {
+          if (btn.isConnected && btn.dataset.confirming) {
+            delete btn.dataset.confirming;
+            btn.textContent = orig;
+            btn.style.color = '';
+          }
+        }, 2500);
+        return;
+      }
       extraProducts = extraProducts.filter(p => rowKey(p) !== k);
       expanded.delete(k);
       saveExtra();
@@ -665,6 +683,20 @@ function calcMinR(lamStr, seuil) {
   if (!lam || lam <= 0 || !seuil) return null;
   const e = Math.ceil(seuil * lam * 1000 / 5) * 5; // épaisseur min (mm), pas 5mm
   return Math.round(e / (lam * 1000) * 100) / 100;
+}
+
+// Compute effective fiche eligibility live from λD (overrides stored ok:false for R-type fiches)
+function effectiveFiches(p) {
+  const fd = {};
+  FICHES.forEach(fc => {
+    if (fc.type === 'R' && p.lam) {
+      const r = calcMinR(p.lam, fc.thr);
+      fd[fc.code] = r !== null ? { ok: true, v: r } : (p.fiches[fc.code] || { ok: false, v: null });
+    } else {
+      fd[fc.code] = p.fiches[fc.code] || { ok: false, v: null };
+    }
+  });
+  return fd;
 }
 
 /* ── FICHE FILTER ── */
