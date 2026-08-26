@@ -209,6 +209,10 @@ tr.detail-row td{padding:0;border-bottom:1px solid var(--s3)}
 .de-ta{resize:vertical;min-height:56px;font-size:.68rem!important;line-height:1.4}
 .de-fiches{display:flex;flex-direction:column;gap:.3rem}
 .de-fiche-row{display:flex;align-items:center;gap:.5rem;padding:.3rem .45rem;background:var(--s);border-radius:var(--rs);border:1px solid var(--s3)}
+.de-calc-bar{display:flex;align-items:center;gap:.5rem;margin-top:.35rem}
+.de-calc-hint{font-size:.6rem;color:var(--ink3)}
+.btn-outline{background:transparent;color:var(--a);border:1.5px solid var(--a);font-size:.65rem;padding:.22rem .5rem}
+.btn-outline:hover{background:var(--al)}
 .de-fiche-lbl{display:flex;align-items:center;gap:.35rem;cursor:pointer;flex:1;min-width:0}
 .de-fiche-lbl input[type=checkbox]{accent-color:var(--a);width:12px;height:12px;flex-shrink:0}
 .de-fiche-code{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:600;color:var(--a2);flex-shrink:0}
@@ -490,11 +494,52 @@ function render() {
     });
   });
 
-  // wire fiche checkboxes: toggle value input enabled state
+  // wire fiche checkboxes: toggle value input + auto-fill R from λD when checked
   tbody.querySelectorAll('.de-fiche-cb').forEach(cb => {
     cb.addEventListener('change', () => {
+      const row = cb.closest('.de-edit');
       const valInp = cb.closest('.de-fiche-row')?.querySelector('.de-fiche-val');
-      if (valInp) valInp.disabled = !cb.checked;
+      if (!valInp) return;
+      valInp.disabled = !cb.checked;
+      if (cb.checked && !valInp.value.trim()) {
+        const fc = FICHES.find(f => f.code === cb.dataset.code);
+        if (fc && fc.type === 'R') {
+          const lamVal = row?.querySelector('[data-f="lam"]')?.value.trim();
+          const r = calcMinR(lamVal, fc.thr);
+          if (r !== null) valInp.value = String(r).replace('.', ',');
+        }
+      }
+    });
+  });
+
+  // wire "R min depuis λD" button
+  tbody.querySelectorAll('.de-calc-r').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const key = btn.dataset.key;
+      const row = document.querySelector('.de-edit[data-key="'+key+'"]');
+      if (!row) return;
+      const lamVal = row.querySelector('[data-f="lam"]')?.value.trim();
+      if (!lamVal) {
+        btn.textContent = '⚠ λD requis';
+        setTimeout(() => { btn.textContent = '↻ R min depuis λD'; }, 1400);
+        return;
+      }
+      let filled = 0;
+      FICHES.forEach(fc => {
+        if (fc.type !== 'R') return;
+        const cb  = row.querySelector('.de-fiche-cb[data-code="'+fc.code+'"]');
+        const inp = row.querySelector('.de-fiche-val[data-code="'+fc.code+'"]');
+        if (!cb || !inp) return;
+        const r = calcMinR(lamVal, fc.thr);
+        if (r === null) return;
+        inp.value = String(r).replace('.', ',');
+        inp.disabled = false;
+        cb.checked = true;
+        filled++;
+      });
+      btn.textContent = filled ? '✓ '+filled+' R calculés' : '↻ R min depuis λD';
+      setTimeout(() => { btn.textContent = '↻ R min depuis λD'; }, 1600);
     });
   });
 }
@@ -573,6 +618,10 @@ function detailHTML(p) {
       '<div class="de-col">'+
         '<div class="de-sect-title">Fiches CEE</div>'+
         '<div class="de-fiches">'+fichesHTML+'</div>'+
+        '<div class="de-calc-bar">'+
+          '<button type="button" class="btn btn-sm btn-outline de-calc-r" data-key="'+esc(key)+'">↻ R min depuis λD</button>'+
+          '<span class="de-calc-hint">Épaisseur ACERMI minimale au seuil de chaque fiche</span>'+
+        '</div>'+
         '<div class="de-sect-title" style="margin-top:.6rem">Configurations de pose</div>'+
         '<div class="de-cfgs">'+cfgsHTML+'</div>'+
         '<div class="de-sect-title" style="margin-top:.6rem">Observations</div>'+
@@ -589,6 +638,13 @@ function detailHTML(p) {
 
 function esc(s) {
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function calcMinR(lamStr, seuil) {
+  const lam = parseFloat(String(lamStr || '').replace(',', '.'));
+  if (!lam || lam <= 0 || !seuil) return null;
+  const e = Math.ceil(seuil * lam * 1000 / 5) * 5; // épaisseur min (mm), pas 5mm
+  return Math.round(e / (lam * 1000) * 100) / 100;
 }
 
 /* ── FICHE FILTER ── */
