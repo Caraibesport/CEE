@@ -122,7 +122,7 @@ tr.vigi .s0,tr.vigi .s1{background:color-mix(in srgb,var(--wl) 60%,var(--s))}
 .c-feu{width:145px}
 .c-fiche{width:96px;text-align:center}
 .c-vig{width:50px;text-align:center}
-.c-act{width:36px;text-align:center}
+.c-act{width:64px;text-align:center}
 
 /* cell content */
 .mono{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-size:.68rem}
@@ -158,6 +158,9 @@ tr.detail-row td{padding:0;border-bottom:1px solid var(--s3)}
 .xbtn{background:none;border:none;cursor:pointer;color:var(--ink3);font-size:.7rem;padding:.2rem .3rem;border-radius:var(--rs);transition:color .12s,background .12s}
 .xbtn:hover{color:var(--a);background:var(--al)}
 .xbtn.on{color:var(--a)}
+/* row delete btn */
+.del-row-btn{background:none;border:none;cursor:pointer;color:var(--ink3);font-size:.65rem;padding:.2rem .3rem;border-radius:var(--rs);transition:color .12s,background .12s;opacity:.55}
+.del-row-btn:hover{color:#d03;background:color-mix(in srgb,#d03 12%,transparent);opacity:1}
 
 /* debug panel */
 .debug-panel{margin-top:.5rem;border:1px solid var(--s3);border-radius:var(--rs);font-size:.62rem}
@@ -422,6 +425,7 @@ function render() {
   for (const p of list) {
     const key = rowKey(p);
     const isXp = expanded.has(key);
+    const isExtra = extraProducts.some(ep => rowKey(ep) === key);
     const ficheCells = FICHES.map(f => {
       const fd = p.fiches[f.code];
       const hi = activeFiche === f.code;
@@ -444,7 +448,10 @@ function render() {
       '<td class="c-feu"><span style="font-size:.65rem;color:'+(p.feu&&p.feu.startsWith('F')?'var(--w)':'var(--ink2)')+'">'+esc(p.feu||'')+'</span></td>'+
       ficheCells+
       '<td class="c-vig">'+(p.vigi?'<span class="vigi-dot" title="Point de vigilance"></span>':'')+'</td>'+
-      '<td class="c-act"><button class="xbtn'+(isXp?' on':'')+'" data-ref="'+esc(key)+'" aria-label="Détails" aria-expanded="'+(isXp?'true':'false')+'">'+(isXp?'▴':'▾')+'</button></td>'+
+      '<td class="c-act">'+
+        '<button class="xbtn'+(isXp?' on':'')+'" data-ref="'+esc(key)+'" aria-label="Détails" aria-expanded="'+(isXp?'true':'false')+'">'+(isXp?'▴':'▾')+'</button>'+
+        (isExtra ? '<button class="del-row-btn" data-ref="'+esc(key)+'" title="Supprimer ce produit" aria-label="Supprimer">✕</button>' : '')+
+      '</td>'+
     '</tr>';
     if (isXp) {
       rows += '<tr class="detail-row"><td colspan="13">'+detailHTML(p)+'</td></tr>';
@@ -466,6 +473,19 @@ function render() {
       if (e.target.closest('button,.de-inp,.de-fiche-cb,.de-cfg-cb,.de-fiche-val,.de-sel,.de-ta')) return;
       const k = row.dataset.ref;
       if (expanded.has(k)) expanded.delete(k); else expanded.add(k);
+      render();
+    });
+  });
+
+  // wire row-level delete button
+  tbody.querySelectorAll('.del-row-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const k = btn.dataset.ref;
+      if (!confirm('Supprimer ce produit du référentiel ?')) return;
+      extraProducts = extraProducts.filter(p => rowKey(p) !== k);
+      expanded.delete(k);
+      saveExtra();
       render();
     });
   });
@@ -1105,16 +1125,17 @@ function applyToRow(fields) {
   const dataKeys = ['ref','val','lam','feu','mrq','des','nrm'];
   if (!fields || !dataKeys.some(k => fields[k])) return;
 
-  // Build fiche eligibility from λD extracted
-  function buildFiches(existing) {
+  // Build fiche eligibility from λD — uses PDF-extracted lam if present, falls back to existing product lam
+  function buildFiches(existingFiches, existingLam) {
+    const lamStr = fields.lam || existingLam || '';
     const fd = {};
     FICHES.forEach(fc => {
-      if (fc.type === 'R' && fields.lam) {
-        const r = calcMinR(fields.lam, fc.thr);
-        fd[fc.code] = r !== null ? { ok: true, v: r } : (existing?.[fc.code] || { ok: false, v: null });
+      if (fc.type === 'R' && lamStr) {
+        const r = calcMinR(lamStr, fc.thr);
+        fd[fc.code] = r !== null ? { ok: true, v: r } : (existingFiches?.[fc.code] || { ok: false, v: null });
       } else {
         // FS fiches: keep existing value (requires separate FS measurement)
-        fd[fc.code] = existing?.[fc.code] || { ok: false, v: null };
+        fd[fc.code] = existingFiches?.[fc.code] || { ok: false, v: null };
       }
     });
     return fd;
@@ -1143,7 +1164,7 @@ function applyToRow(fields) {
         nrm:      fields.nrm      || existing.nrm,
         feu:      fields.feu      || existing.feu,
         lam:      fields.lam      || existing.lam,
-        fiches:   buildFiches(existing.fiches),
+        fiches:   buildFiches(existing.fiches, existing.lam),
         cfgs:     mergeCfgs(existing.cfgs, fields.cfgs),
         _updated: Date.now(),
       };
@@ -1165,7 +1186,7 @@ function applyToRow(fields) {
       par:      '',
       lam:      fields.lam      || '',
       obs:      '',
-      fiches:   buildFiches(null),
+      fiches:   buildFiches(null, fields.lam),
       cfgs:     fields.cfgs     || [],
       vigi:     false,
       todo:     [],
