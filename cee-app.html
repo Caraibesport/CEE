@@ -771,7 +771,7 @@ function loadQueueItem(idx) {
         let msg = counted + ' champ'+(counted>1?'s':'')+' identifié'+(counted>1?'s':'');
         if (fields._desRefs) msg += '\nRéférences : ' + fields._desRefs.slice(0, 120) + (fields._desRefs.length > 120 ? '…' : '');
         if (fields.cfgs && fields.cfgs.length) msg += '\nConfigurations : ' + fields.cfgs.join(', ');
-        msg += '\n→ Ligne mise à jour dans le tableau — vérifiez puis Enregistrer';
+        msg += '\n→ Référentiel mis à jour automatiquement — vérifiez dans le tableau';
         note.textContent = msg;
         note.style.color = 'var(--a)';
         note.style.whiteSpace = 'pre-wrap';
@@ -1100,69 +1100,91 @@ async function extractPDFFields(buf) {
 }
 
 
-/* ── APPLY EXTRACTED DATA TO TABLE ROW ── */
+/* ── APPLY EXTRACTED DATA TO TABLE ROW (auto-save) ── */
 function applyToRow(fields) {
   const dataKeys = ['ref','val','lam','feu','mrq','des','nrm'];
   if (!fields || !dataKeys.some(k => fields[k])) return;
 
-  // Find matching product by ref ACERMI (same ref may cover multiple products — take first)
-  let targetKey = null;
-  if (fields.ref && fields.ref !== '—') {
-    const match = allProducts().find(p => p.ref === fields.ref && !p._new);
-    if (match) targetKey = rowKey(match);
+  // Build fiche eligibility from λD extracted
+  function buildFiches(existing) {
+    const fd = {};
+    FICHES.forEach(fc => {
+      if (fc.type === 'R' && fields.lam) {
+        const r = calcMinR(fields.lam, fc.thr);
+        fd[fc.code] = r !== null ? { ok: true, v: r } : (existing?.[fc.code] || { ok: false, v: null });
+      } else {
+        // FS fiches: keep existing value (requires separate FS measurement)
+        fd[fc.code] = existing?.[fc.code] || { ok: false, v: null };
+      }
+    });
+    return fd;
   }
 
-  if (targetKey) {
-    expanded.add(targetKey);
-    render();
-  } else {
-    addNewRow(); // creates __new__ sentinel, expands, renders
-    targetKey = '__new__';
+  function mergeCfgs(a, b) {
+    const s = new Set([...(a || []), ...(b || [])]);
+    return [...s];
   }
+
+  // Find ALL products with this ACERMI ref (one cert often covers multiple products)
+  const matches = fields.ref && fields.ref !== '—'
+    ? allProducts().filter(p => p.ref === fields.ref && !p._new)
+    : [];
+
+  let firstKey = null;
+
+  if (matches.length > 0) {
+    // Update all matched products with the extracted technical data
+    matches.forEach(existing => {
+      const updated = {
+        ...existing,
+        // Overwrite only technical fields from certificate — keep ref/mrq/des/obs as-is
+        certType: fields.certType || existing.certType,
+        val:      fields.val      || existing.val,
+        nrm:      fields.nrm      || existing.nrm,
+        feu:      fields.feu      || existing.feu,
+        lam:      fields.lam      || existing.lam,
+        fiches:   buildFiches(existing.fiches),
+        cfgs:     mergeCfgs(existing.cfgs, fields.cfgs),
+        _updated: Date.now(),
+      };
+      extraProducts = extraProducts.filter(p => rowKey(p) !== rowKey(existing));
+      extraProducts.push(updated);
+      if (!firstKey) firstKey = rowKey(updated);
+    });
+  } else {
+    // New product: create from extracted data
+    const newProd = {
+      ref:      fields.ref      || '—',
+      certType: fields.certType || 'ACERMI',
+      autres:   '',
+      mrq:      fields.mrq      || '',
+      des:      fields.des      || 'Nouveau produit',
+      val:      fields.val      || '',
+      nrm:      fields.nrm      || '',
+      feu:      fields.feu      || '',
+      par:      '',
+      lam:      fields.lam      || '',
+      obs:      '',
+      fiches:   buildFiches(null),
+      cfgs:     fields.cfgs     || [],
+      vigi:     false,
+      todo:     [],
+      _updated: Date.now(),
+    };
+    extraProducts = extraProducts.filter(p => !p._new);
+    extraProducts.push(newProd);
+    firstKey = rowKey(newProd);
+  }
+
+  if (firstKey) expanded.add(firstKey);
+  saveExtra();
+  render();
 
   setTimeout(() => {
-    // Use dataset traversal to avoid CSS escape issues with | / . in key
-    let row = null;
-    document.querySelectorAll('.de-edit').forEach(el => { if (el.dataset.key === targetKey) row = el; });
-    if (!row) return;
-
-    const setV = (f, v) => { if (!v) return; const el = row.querySelector('[data-f="'+f+'"]'); if (el) el.value = String(v); };
-
-    setV('mrq', fields.mrq);
-    setV('des', fields.des);
-    setV('ref', fields.ref);
-    setV('val', fields.val);
-    setV('lam', fields.lam);
-    setV('feu', fields.feu);
-
-    const nrmSel  = row.querySelector('[data-f="nrm"]');
-    if (nrmSel && fields.nrm) nrmSel.value = fields.nrm;
-    const certSel = row.querySelector('[data-f="certtype"]');
-    if (certSel && fields.certType) certSel.value = fields.certType;
-
-    // Auto-compute R min for all R-type fiches from λD
-    const lamVal = row.querySelector('[data-f="lam"]')?.value.trim();
-    if (lamVal) {
-      FICHES.forEach(fc => {
-        if (fc.type !== 'R') return;
-        const cb  = row.querySelector('.de-fiche-cb[data-code="'+fc.code+'"]');
-        const inp = row.querySelector('.de-fiche-val[data-code="'+fc.code+'"]');
-        if (!cb || !inp) return;
-        const r = calcMinR(lamVal, fc.thr);
-        if (r !== null) { inp.value = String(r).replace('.', ','); inp.disabled = false; cb.checked = true; }
-      });
-    }
-
-    // Check configurations validated by the document
-    if (fields.cfgs && fields.cfgs.length) {
-      fields.cfgs.forEach(cfgId => {
-        const cb = row.querySelector('.de-cfg-cb[data-cfg="'+cfgId+'"]');
-        if (cb) cb.checked = true;
-      });
-    }
-
-    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 100);
+    let target = null;
+    document.querySelectorAll('[data-key]').forEach(el => { if (el.dataset.key === firstKey) target = el; });
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 80);
 }
 
 /* ── FILE DRAG & DROP ── */
