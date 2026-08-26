@@ -363,6 +363,7 @@ let extraProducts = [];
 let activeFiche = 'ALL';
 let searchQ = '';
 let expanded = new Set();
+let hiddenKeys = new Set();
 
 function loadExtra() {
   try { extraProducts = JSON.parse(localStorage.getItem('cee_products') || '[]'); } catch(e) { extraProducts = []; }
@@ -370,9 +371,18 @@ function loadExtra() {
 function saveExtra() {
   try { localStorage.setItem('cee_products', JSON.stringify(extraProducts)); } catch(e) {}
 }
+function loadHidden() {
+  try { hiddenKeys = new Set(JSON.parse(localStorage.getItem('cee_hidden') || '[]')); } catch(e) { hiddenKeys = new Set(); }
+}
+function saveHidden() {
+  try { localStorage.setItem('cee_hidden', JSON.stringify([...hiddenKeys])); } catch(e) {}
+}
 function allProducts() {
   const extraKeys = new Set(extraProducts.map(p => rowKey(p)));
-  return [...BASE.filter(p => !extraKeys.has(rowKey(p))), ...extraProducts];
+  return [
+    ...BASE.filter(p => !extraKeys.has(rowKey(p)) && !hiddenKeys.has(rowKey(p))),
+    ...extraProducts.filter(p => !hiddenKeys.has(rowKey(p)))
+  ];
 }
 function savedProducts() { return allProducts().filter(p => !p._new); }
 
@@ -451,7 +461,7 @@ function render() {
       '<td class="c-vig">'+(p.vigi?'<span class="vigi-dot" title="Point de vigilance"></span>':'')+'</td>'+
       '<td class="c-act">'+
         '<button class="row-edit-btn'+(isXp?' on':'')+'" data-ref="'+esc(key)+'" title="Modifier" aria-label="Modifier" aria-expanded="'+(isXp?'true':'false')+'">✎</button>'+
-        (isExtra ? '<button class="del-row-btn" data-ref="'+esc(key)+'" title="Supprimer" aria-label="Supprimer">✕</button>' : '')+
+        '<button class="del-row-btn" data-ref="'+esc(key)+'" title="Supprimer" aria-label="Supprimer">✕</button>'+
       '</td>'+
     '</tr>';
     if (isXp) {
@@ -489,8 +499,10 @@ function render() {
       }
       const k = btn.dataset.ref;
       extraProducts = extraProducts.filter(p => rowKey(p) !== k);
+      hiddenKeys.add(k);
       expanded.delete(k);
       saveExtra();
+      saveHidden();
       render();
     });
   });
@@ -526,8 +538,10 @@ function render() {
         return;
       }
       extraProducts = extraProducts.filter(p => rowKey(p) !== k);
+      hiddenKeys.add(k);
       expanded.delete(k);
       saveExtra();
+      saveHidden();
       render();
     });
   });
@@ -1373,6 +1387,7 @@ function toast(msg) {
 
 /* ── INIT ── */
 loadExtra();
+loadHidden();
 render();
 </script>
 
