@@ -712,8 +712,11 @@ function loadQueueItem(idx) {
       const fields = await extractPDFFields(e.target.result);
       const counted = ['ref','val','lam','feu','mrq','des','certType','nrm'].filter(k => fields[k]).length;
       if (counted > 0) {
-        note.textContent = counted + ' champ'+(counted>1?'s':'')+' identifié'+(counted>1?'s':'')+' — saisissez les résultats dans le tableau';
+        let msg = counted + ' champ'+(counted>1?'s':'')+' identifié'+(counted>1?'s':'')+' — saisissez les résultats dans le tableau';
+        if (fields._desRefs) msg += '\nRéférences : ' + fields._desRefs.slice(0, 120) + (fields._desRefs.length > 120 ? '…' : '');
+        note.textContent = msg;
         note.style.color = 'var(--a)';
+        note.style.whiteSpace = 'pre-wrap';
       } else {
         note.textContent = 'Aucune donnée structurée — PDF peut-être scanné';
         note.style.color = 'var(--w)';
@@ -936,25 +939,43 @@ async function extractPDFFields(buf) {
   if (valCtx) {
     f.val = valCtx[1].replace(/[-\.]/g, '/');
   } else {
-    const dates = [...fullText.matchAll(/\b(\d{2}[\/\-]\d{2}[\/\-]20\d{2})\b/g)];
-    if (dates.length) f.val = dates[dates.length-1][1].replace(/-/g, '/');
+    // Text date: "31 décembre 2026" (FR) or "december 31th 2026" (EN)
+    const MOIS = {'janvier':'01','f\xe9vrier':'02','fevrier':'02','mars':'03','avril':'04','mai':'05','juin':'06','juillet':'07','ao\xfbt':'08','aout':'08','septembre':'09','octobre':'10','novembre':'11','d\xe9cembre':'12','decembre':'12','january':'01','february':'02','march':'03','april':'04','june':'06','july':'07','august':'08','september':'09','october':'10','november':'11','december':'12'};
+    const moisLookup = w => MOIS[w] || MOIS[w.normalize('NFD').replace(/[̀-ͯ]/g,'')];
+    // FR order: day month year — "valable jusqu'au 31 décembre 2026"
+    const tdFR = fullText.match(/valable\s+jusqu.{0,4}\s+au\s+(\d{1,2})\s+(\S+)\s+(\d{4})/i);
+    // EN order: month day year — "valid until december 31th 2026"
+    const tdEN = fullText.match(/valid\s+until\s+(\S+)\s+(\d{1,2})(?:st|nd|rd|th)?\s+(\d{4})/i);
+    if (tdFR) {
+      const d = tdFR[1].padStart(2,'0'), m = moisLookup(tdFR[2].toLowerCase()), y = tdFR[3];
+      if (m) f.val = d+'/'+m+'/'+y;
+    } else if (tdEN) {
+      const m = moisLookup(tdEN[1].toLowerCase()), d = tdEN[2].padStart(2,'0'), y = tdEN[3];
+      if (m) f.val = d+'/'+m+'/'+y;
+    } else {
+      const dates = [...fullText.matchAll(/\b(\d{2}[\/\-]\d{2}[\/\-]20\d{2})\b/g)];
+      if (dates.length) f.val = dates[dates.length-1][1].replace(/-/g, '/');
+    }
   }
 
   // ── Lambda conductivity ──
-  const lamCtx = fullText.match(/(?:lambdaD|λD|lambda[\s_]?D|conductivit[eé]\s+thermique[^0-9]{0,40})\s*[=:]\s*(0[,\.]\d{3})/i)
-               || fullText.match(/\b(0[,\.]0(?:3[0-9]|4[0-9]|5[0-9]))\s*W/);
+  // Try: explicit label (handles λ or lambda or conductivité thermique ... =)
+  const lamCtx = fullText.match(/(?:lambdaD|λD|lambda[\s_]?D|conductivit[eé]\s+thermique[^=:0-9]{0,60})[=:]\s*(0[,\.]\d{3})/i)
+              || fullText.match(/\b(0[,\.]0(?:3[0-9]|4[0-9]|5[0-9]))\s*W[\/(]/);  // "0.040 W/(m.K)" or "0,040 W/m"
   if (lamCtx) {
     f.lam = lamCtx[1].replace('.', ',');
   } else {
-    const lamFallback = fullText.match(/\b0[,\.]0([3-5]\d)\b/);
-    if (lamFallback) f.lam = '0,0'+lamFallback[1];
+    // Broader: any "0.0XX" in typical thermal range appearing in context of conductivity
+    const lamFallback = fullText.match(/[=:]\s*(0[,\.]0[2-6]\d)\b/);
+    if (lamFallback) f.lam = lamFallback[1].replace('.', ',');
   }
 
   // ── Marque / Fabricant ──
   const mrqPatterns = [
+    /(?:Raison\s+sociale)\s*[:\-]\s*([^\n\r,]{3,60})/i,
     /(?:Titulaire\s+du\s+certificat|Titulaire)\s*[:\-\n]\s*([A-Z][A-Z0-9 &\-\.]{3,50}?)(?:\n|\r|  |\s{3})/,
     /(?:Soci[eé]t[eé]|Fabricant|Marque)\s*[:\-]\s*([A-Z][A-Za-z0-9 &\-\.]{3,50}?)(?:\n|\r|  )/i,
-    /(?:Titulaire|Holder|Manufacturer)\s*:\s*([^\n\r,]{5,60})/i,
+    /(?:Titulaire|Holder|Manufacturer|Company)\s*:\s*([^\n\r,]{5,60})/i,
   ];
   for (const pat of mrqPatterns) {
     const m = fullText.match(pat);
@@ -970,6 +991,16 @@ async function extractPDFFields(buf) {
   for (const pat of desPatterns) {
     const m = fullText.match(pat);
     if (m) { f.des = m[1].trim(); break; }
+  }
+  // ACERMI: extract commercial references list as designation hint
+  if (!f.des) {
+    const refComm = fullText.match(/r[eé]f[eé]rences?\s+commerciales[^A-Z\-]{0,30}([A-Z][A-Z0-9 \-]{3,300}?)(?:\n{2,}|et\s+fabriqu)/i);
+    if (refComm) {
+      // Take first token (first commercial reference before " - " or newline)
+      const first = refComm[1].replace(/\s+/g,' ').trim().split(/\s+-\s+/)[0];
+      if (first && first.length >= 3 && first.length <= 80) f.des = first;
+      f._desRefs = refComm[1].replace(/\s+/g,' ').trim(); // all refs for note
+    }
   }
 
   // ── Norme ──
