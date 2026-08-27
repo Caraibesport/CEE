@@ -385,14 +385,20 @@ function loadHidden() {
 function saveHidden() {
   try { localStorage.setItem('cee_hidden', JSON.stringify([...hiddenKeys])); } catch(e) {}
 }
+function baseForProduct(p) {
+  // Find BASE entry: exact key match, then same ref
+  const byKey = BASE.find(b => rowKey(b) === rowKey(p));
+  if (byKey) return byKey;
+  return BASE.find(b => b.ref === p.ref) || null;
+}
 function allProducts() {
-  const baseMap = new Map(BASE.map(b => [rowKey(b), b]));
   const extraKeys = new Set(extraProducts.map(p => rowKey(p)));
   const mergedExtra = extraProducts.map(ep => {
-    if ((ep.cfgs || []).length > 0) return ep;
-    const base = baseMap.get(rowKey(ep));
-    if (!base || !(base.cfgs || []).length) return ep;
-    return { ...ep, cfgs: base.cfgs };
+    const base = baseForProduct(ep);
+    const cfgs = (ep.cfgs || []).length > 0 ? ep.cfgs : (base && (base.cfgs||[]).length ? base.cfgs : ep.cfgs || []);
+    const lam  = ep.lam || (base && base.lam) || '';
+    if (cfgs === (ep.cfgs||[]) && lam === (ep.lam||'')) return ep;
+    return { ...ep, cfgs, lam };
   });
   return [
     ...BASE.filter(p => !extraKeys.has(rowKey(p)) && !hiddenKeys.has(rowKey(p))),
@@ -735,22 +741,26 @@ function calcMinR(lamStr, seuil) {
   return Math.round(e / (lam * 1000) * 100) / 100;
 }
 
-// Compute effective fiche eligibility from λD + domaine d'emploi ACERMI (cfgs).
-// Règle : R ≥ seuil ET domaine d'emploi validé pour l'application toiture/combles.
-// Sans cfgs confirmées → on conserve la valeur stockée (ok:true si validé manuellement,
-// ok:false si pas encore vérifié) sans jamais calculer d'éligibilité à partir du seul λD.
 function effectiveFiches(p) {
   const fd = {};
-  const pCfgs = p.cfgs || [];
+  let pCfgs = p.cfgs || [];
+  let pLam  = p.lam  || '';
+  // If key data is missing, fill from BASE (handles stale extraProducts)
+  if (!pCfgs.length || !pLam) {
+    const base = baseForProduct(p);
+    if (base) {
+      if (!pCfgs.length && (base.cfgs||[]).length) pCfgs = base.cfgs;
+      if (!pLam && base.lam) pLam = base.lam;
+    }
+  }
+  const pFiches = p.fiches || {};
   FICHES.forEach(fc => {
     const domainOk = fc.cfgDomains && fc.cfgDomains.some(c => pCfgs.includes(c));
-    if (fc.type === 'R' && p.lam && domainOk) {
-      // Domaine confirmé → calcul live depuis λD
-      const r = calcMinR(p.lam, fc.thr);
+    if (fc.type === 'R' && pLam && domainOk) {
+      const r = calcMinR(pLam, fc.thr);
       fd[fc.code] = r !== null ? { ok: true, v: r } : { ok: false, v: null };
     } else {
-      // FS, λD absent, ou domaine non confirmé → valeur stockée (manuelle ou vide)
-      fd[fc.code] = p.fiches[fc.code] || { ok: false, v: null };
+      fd[fc.code] = pFiches[fc.code] || { ok: false, v: null };
     }
   });
   return fd;
