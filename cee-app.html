@@ -325,6 +325,14 @@ tr.detail-row td{padding:0;border-bottom:1px solid var(--s3)}
     </div>
     <div class="modal-footer-simple">
       <span class="extract-note" id="extractNote"></span>
+      <div id="cfgsPanel" style="display:none;margin:.3rem 0 0;padding:.3rem .45rem;background:var(--bg2);border-radius:5px;border:1px solid var(--bdr)">
+        <div style="font-size:.58rem;font-weight:600;color:var(--ink2);margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.04em">Configurations de pose — cocher avant d'appliquer</div>
+        <div id="cfgsCbs" style="display:flex;flex-wrap:wrap;gap:.18rem .5rem"></div>
+      </div>
+      <div id="applyBar" style="display:none;align-items:center;gap:.5rem;margin-top:.3rem">
+        <button class="btn btn-primary btn-sm" id="btnApplyImport">Appliquer au référentiel</button>
+        <span id="applyNote" style="font-size:.58rem;color:var(--ink3)"></span>
+      </div>
       <details class="debug-panel-inline" id="debugDetails" style="display:none">
         <summary>Texte extrait (diagnostic)</summary>
         <pre id="debugText"></pre>
@@ -607,12 +615,18 @@ function render() {
         setTimeout(() => { btn.textContent = '↻ R min depuis λD'; }, 1400);
         return;
       }
+      const rowCfgs = CONFIGS.map(c => c.id).filter(id => {
+        const cfgCb = row.querySelector('.de-cfg-cb[data-cfg="'+id+'"]');
+        return cfgCb && cfgCb.checked;
+      });
       let filled = 0;
       FICHES.forEach(fc => {
         if (fc.type !== 'R') return;
         const cb  = row.querySelector('.de-fiche-cb[data-code="'+fc.code+'"]');
         const inp = row.querySelector('.de-fiche-val[data-code="'+fc.code+'"]');
         if (!cb || !inp) return;
+        const domainOk = !fc.cfgDomains || rowCfgs.length === 0 || fc.cfgDomains.some(c => rowCfgs.includes(c));
+        if (!domainOk) return;
         const r = calcMinR(lamVal, fc.thr);
         if (r === null) return;
         inp.value = String(r).replace('.', ',');
@@ -843,6 +857,7 @@ let pdfQueue = [];
 let pdfQueueIdx = 0;
 
 let pdfBlobUrl = null;
+let pendingImportFields = null;
 
 function resetModalState() {
   const note = document.getElementById('extractNote');
@@ -851,6 +866,13 @@ function resetModalState() {
   if (dbg) dbg.style.display = 'none';
   const dbgT = document.getElementById('debugText');
   if (dbgT) dbgT.textContent = '';
+  const cfgsPanel = document.getElementById('cfgsPanel');
+  if (cfgsPanel) cfgsPanel.style.display = 'none';
+  const applyBar = document.getElementById('applyBar');
+  if (applyBar) applyBar.style.display = 'none';
+  const btnApply = document.getElementById('btnApplyImport');
+  if (btnApply) { btnApply.disabled = false; btnApply.textContent = 'Appliquer au référentiel'; }
+  pendingImportFields = null;
 }
 
 function updateQueueUI() {
@@ -906,7 +928,30 @@ function loadQueueItem(idx) {
         note.textContent = lines.join('\n');
         note.style.color = 'var(--a)';
         note.style.whiteSpace = 'pre-wrap';
-        applyToRow(fields);
+        // Show interactive cfgs selector before applying
+        pendingImportFields = fields;
+        const cfgsPanel = document.getElementById('cfgsPanel');
+        const cfgsCbs   = document.getElementById('cfgsCbs');
+        if (cfgsPanel && cfgsCbs) {
+          cfgsCbs.innerHTML = CONFIGS.map(c =>
+            '<label style="display:flex;align-items:center;gap:.2rem;font-size:.6rem;cursor:pointer;white-space:nowrap">'+
+            '<input type="checkbox" data-cfg="'+c.id+'"'+((fields.cfgs||[]).includes(c.id)?' checked':'')+'>'+
+            esc(c.label)+'</label>'
+          ).join('');
+          cfgsPanel.style.display = '';
+        }
+        const applyBar  = document.getElementById('applyBar');
+        const applyNote = document.getElementById('applyNote');
+        const btnApply  = document.getElementById('btnApplyImport');
+        if (applyBar) applyBar.style.display = 'flex';
+        if (btnApply) { btnApply.disabled = false; btnApply.textContent = 'Appliquer au référentiel'; }
+        if (applyNote) {
+          const det = (fields.cfgs||[]).length;
+          applyNote.textContent = det > 0
+            ? det+' configuration'+(det>1?'s':'')+' auto-détectée'+(det>1?'s':'')+' — vérifier puis appliquer'
+            : 'Aucune configuration détectée — cocher les domaines applicables puis appliquer';
+          applyNote.style.color = det > 0 ? 'var(--ink3)' : 'var(--w)';
+        }
       } else {
         note.textContent = 'Aucune donnée structurée — PDF probablement scanné (image). Utilisez un PDF avec couche texte ou saisissez manuellement.';
         note.style.color = 'var(--w)';
@@ -956,6 +1001,21 @@ document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modalCancel').addEventListener('click', closeModal);
 document.getElementById('modalSkip').addEventListener('click', advanceQueue);
 document.getElementById('modalBg').addEventListener('click', e => { if (e.target===document.getElementById('modalBg')) closeModal(); });
+document.getElementById('btnApplyImport').addEventListener('click', () => {
+  if (!pendingImportFields) return;
+  const cfgsCbs = document.getElementById('cfgsCbs');
+  if (cfgsCbs) {
+    const selected = Array.from(cfgsCbs.querySelectorAll('input[type=checkbox]'))
+      .filter(cb => cb.checked).map(cb => cb.dataset.cfg);
+    pendingImportFields = { ...pendingImportFields, cfgs: selected };
+  }
+  applyToRow(pendingImportFields);
+  pendingImportFields = null;
+  const btnApply  = document.getElementById('btnApplyImport');
+  const applyNote = document.getElementById('applyNote');
+  if (btnApply) { btnApply.disabled = true; btnApply.textContent = '✓ Appliqué'; }
+  if (applyNote) { applyNote.textContent = '→ Référentiel mis à jour'; applyNote.style.color = 'var(--a)'; }
+});
 
 /* ── PDF EXTRACTION ── */
 
