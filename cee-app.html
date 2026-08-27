@@ -104,6 +104,8 @@ td{padding:.45rem .6rem;border-bottom:1px solid var(--s2);vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:color-mix(in srgb,var(--s2) 60%,transparent)}
 tr.vigi td{border-left:3px solid var(--w)}
+@keyframes row-flash{0%{background:color-mix(in srgb,var(--a) 18%,transparent)}100%{background:transparent}}
+tr.row-flash td{animation:row-flash 1.2s ease-out}
 tr.vigi:first-child td:first-child{border-radius:0}
 
 /* sticky cols */
@@ -1280,14 +1282,16 @@ function applyToRow(fields) {
     firstKey = rowKey(newProd);
   }
 
-  if (firstKey) expanded.add(firstKey);
   saveExtra();
   render();
 
   setTimeout(() => {
-    let target = null;
-    document.querySelectorAll('[data-key]').forEach(el => { if (el.dataset.key === firstKey) target = el; });
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const target = [...document.querySelectorAll('tr[data-ref]')].find(el => el.dataset.ref === firstKey);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.classList.add('row-flash');
+      setTimeout(() => target.classList.remove('row-flash'), 1200);
+    }
   }, 80);
 }
 
