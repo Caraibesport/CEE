@@ -887,16 +887,28 @@ function loadQueueItem(idx) {
       const fields = await extractPDFFields(e.target.result);
       const counted = ['ref','val','lam','feu','mrq','des','certType','nrm'].filter(k => fields[k]).length;
       if (counted > 0) {
-        let msg = counted + ' champ'+(counted>1?'s':'')+' identifié'+(counted>1?'s':'');
-        if (fields._desRefs) msg += '\nRéférences : ' + fields._desRefs.slice(0, 120) + (fields._desRefs.length > 120 ? '…' : '');
-        if (fields.cfgs && fields.cfgs.length) msg += '\nConfigurations : ' + fields.cfgs.join(', ');
-        msg += '\n→ Référentiel mis à jour automatiquement — vérifiez dans le tableau';
-        note.textContent = msg;
+        const lines = [];
+        if (fields.ref) lines.push('Réf. ACERMI : ' + fields.ref);
+        if (fields.mrq) lines.push('Marque : ' + fields.mrq);
+        if (fields.lam) lines.push('λD : ' + fields.lam + ' W/(m·K)');
+        if (fields.feu) lines.push('Feu : ' + fields.feu);
+        if (fields.cfgs && fields.cfgs.length) lines.push('Configurations : ' + fields.cfgs.join(', '));
+        else lines.push('Configurations : aucune détectée');
+        // Show what was matched/updated
+        const matches = fields.ref && fields.ref !== '—'
+          ? allProducts().filter(p => p.ref === fields.ref && !p._new)
+          : [];
+        if (matches.length > 0) {
+          lines.push('→ ' + matches.length + ' produit(s) mis à jour : ' + matches.map(p => p.des).join(', '));
+        } else if (fields.ref) {
+          lines.push('→ Aucun produit trouvé pour réf. ' + fields.ref + ' — nouveau produit créé');
+        }
+        note.textContent = lines.join('\n');
         note.style.color = 'var(--a)';
         note.style.whiteSpace = 'pre-wrap';
         applyToRow(fields);
       } else {
-        note.textContent = 'Aucune donnée structurée — PDF peut-être scanné ou protégé';
+        note.textContent = 'Aucune donnée structurée — PDF probablement scanné (image). Utilisez un PDF avec couche texte ou saisissez manuellement.';
         note.style.color = 'var(--w)';
       }
       if (fields._raw) {
@@ -904,7 +916,7 @@ function loadQueueItem(idx) {
         document.getElementById('debugText').textContent = fields._raw;
       }
     } catch(err) {
-      note.textContent = 'Analyse échouée';
+      note.textContent = 'Erreur analyse : ' + (err && err.message ? err.message : String(err));
       note.style.color = 'var(--w)';
     }
   };
@@ -912,7 +924,7 @@ function loadQueueItem(idx) {
 }
 
 function openModal(files) {
-  const pdfs = files ? Array.from(files).filter(f => f.type === 'application/pdf') : [];
+  const pdfs = files ? Array.from(files).filter(f => f.type === 'application/pdf' || f.type === 'application/x-pdf' || f.name.toLowerCase().endsWith('.pdf')) : [];
   pdfQueue = pdfs;
   pdfQueueIdx = 0;
   resetModalState();
