@@ -778,11 +778,9 @@ function effectiveFiches(p) {
     }
   }
   const pFiches = p.fiches || {};
-  const feuResult = feuPassesMinimum(p.feu);
-  const feuOk = feuResult !== false; // null (inconnu) ne bloque pas
   FICHES.forEach(fc => {
     const domainOk = fc.cfgDomains && fc.cfgDomains.some(c => pCfgs.includes(c));
-    if (fc.type === 'R' && pLam && domainOk && feuOk) {
+    if (fc.type === 'R' && pLam && domainOk) {
       const r = calcMinR(pLam, fc.thr);
       fd[fc.code] = r !== null ? { ok: true, v: r } : { ok: false, v: null };
     } else {
@@ -1323,16 +1321,14 @@ function applyToRow(fields) {
   const dataKeys = ['ref','val','lam','feu','mrq','des','nrm'];
   if (!fields || !dataKeys.some(k => fields[k])) return;
 
-  // Build fiche eligibility from λD + domaine d'emploi + classement feu — même règle que effectiveFiches()
-  function buildFiches(existingFiches, existingLam, cfgs, feuStr) {
+  // Build fiche eligibility from λD + domaine d'emploi — même règle que effectiveFiches()
+  function buildFiches(existingFiches, existingLam, cfgs) {
     const lamStr = fields.lam || existingLam || '';
     const pCfgs  = cfgs || [];
-    const feuResult = feuPassesMinimum(feuStr);
-    const feuOk = feuResult !== false; // null (inconnu) ne bloque pas
     const fd = {};
     FICHES.forEach(fc => {
       const domainOk = fc.cfgDomains && fc.cfgDomains.some(c => pCfgs.includes(c));
-      if (fc.type === 'R' && lamStr && domainOk && feuOk) {
+      if (fc.type === 'R' && lamStr && domainOk) {
         const r = calcMinR(lamStr, fc.thr);
         fd[fc.code] = r !== null ? { ok: true, v: r } : (existingFiches?.[fc.code] || { ok: false, v: null });
       } else {
@@ -1366,7 +1362,8 @@ function applyToRow(fields) {
         feu:      fields.feu      || existing.feu,
         lam:      fields.lam      || existing.lam,
         cfgs:     mergeCfgs(existing.cfgs, fields.cfgs),
-        fiches:   buildFiches(existing.fiches, existing.lam, mergeCfgs(existing.cfgs, fields.cfgs), fields.feu || existing.feu),
+        fiches:   buildFiches(existing.fiches, existing.lam, mergeCfgs(existing.cfgs, fields.cfgs)),
+        parReq:   feuPassesMinimum(fields.feu || existing.feu) === false ? 'oui' : (existing.parReq || ''),
         _updated: Date.now(),
       };
       extraProducts = extraProducts.filter(p => rowKey(p) !== rowKey(existing));
@@ -1385,12 +1382,12 @@ function applyToRow(fields) {
       nrm:      fields.nrm      || '',
       feu:      fields.feu      || '',
       par:      '',
-      parReq:   '',
+      parReq:   feuPassesMinimum(fields.feu) === false ? 'oui' : '',
       parReqTxt:'',
       lam:      fields.lam      || '',
       obs:      '',
       cfgs:     fields.cfgs     || [],
-      fiches:   buildFiches(null, fields.lam, fields.cfgs || [], fields.feu),
+      fiches:   buildFiches(null, fields.lam, fields.cfgs || []),
       vigi:     false,
       todo:     [],
       _updated: Date.now(),
