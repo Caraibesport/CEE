@@ -1274,18 +1274,32 @@ async function extractPDFFields(buf) {
   }
 
   // ── Domaine d'emploi → configurations de pose ──
+  // Source 1: bloc "domaine d'emploi"
   const domaineBlock = fullText.match(/domaine\s+d[''']?emploi[^:]*:([\s\S]{10,1000}?)(?:\n{3,}|\bclassement\b|\bcertificat\b|\bvalable\b)/i);
-  const domTxt = (domaineBlock ? domaineBlock[1] : fullText);
+  // Source 2: tableau récapitulatif / usages visés / usages certifiés
+  const tableauBlock = fullText.match(/(?:tableau\s+r[eé]capitulatif|usages?\s+(?:vis[eé]s?|certifi[eé]s?|valid[eé]s?))[^:]*:([\s\S]{10,2000}?)(?:\n{3,}|(?:classement|certif|r[eé]sultat|valeur|performance|observations?)\b)/i);
+  // Source 3: titre / désignation produit (f.des déjà extrait)
+  const titleTxt = (f.des || '') + ' ' + fullText.slice(0, 800);
+  const domTxt = [
+    domaineBlock ? domaineBlock[1] : '',
+    tableauBlock ? tableauBlock[1] : '',
+    titleTxt
+  ].join('\n');
   const cfgs = [];
-  if (/\bcombles?\b/i.test(domTxt)) cfgs.push('combles');
+  if (/\bcombles?\s*(?:perdus?|am[eé]nag[eé]s?)?/i.test(domTxt)) cfgs.push('combles');
   if (/entre\s+solives?|plancher\s+(?:en\s+)?bois|solives?\s+de\s+plancher/i.test(domTxt)) cfgs.push('solives');
   if (/plafond\s+(?:en\s+)?plaque\s+de\s+pl[âa]tre|plafond\s+suspendu|sous\s+plafond|\bplafond\b/i.test(domTxt)) cfgs.push('plafond_pp');
   if (/nervur[eé]|t[ôo]le|couverture\s+en\s+plaques?/i.test(domTxt)) cfgs.push('couv_nerv');
   if (/rampant|entre\s+et\s+sous\s+chevron|int[eé]rieur.{0,20}inclin/i.test(domTxt)) cfgs.push('rampant');
   if (/toiture\s+inclin[eé]e?\s+avec|toiture\s+inclin.{0,20}associ/i.test(domTxt)) cfgs.push('toiture_inc');
   if (/ossature\s+bois|mur\s+[àa]\s+ossature/i.test(domTxt)) cfgs.push('mur_osbois');
-  if (/doublage.{0,30}(?:fa[cç]ade|pignon)|mur.{0,20}(?:fa[cç]ade|pignon)|isolation.{0,20}murs?\b|fa[cç]ade|pignon/i.test(domTxt)) cfgs.push('mur_facade');
-  if (/plancher\s+bas|dalle\s+bass|sous\s+dalle/i.test(domTxt)) cfgs.push('plancher_bas');
+  if (/doublage.{0,40}(?:fa[cç]ade|pignon)|mur.{0,30}(?:fa[cç]ade|pignon)|isolation.{0,30}murs?\b|\bfa[cç]ade\b|\bpignon\b|\bdoublage\b/i.test(domTxt)) cfgs.push('mur_facade');
+  if (/plancher\s+bas|dalle\s+bas|sous\s+dalle/i.test(domTxt)) cfgs.push('plancher_bas');
+  // Fallback sur le titre si aucune config détectée — un certificat "toiture" → combles par défaut
+  if (cfgs.length === 0) {
+    if (/\btoiture\b/i.test(titleTxt)) cfgs.push('combles');
+    else if (/\b(?:mur|doublage|fa[cç]ade|pignon)\b/i.test(titleTxt)) cfgs.push('mur_facade');
+  }
   if (cfgs.length) f.cfgs = cfgs;
 
   return f;
