@@ -1,0 +1,274 @@
+{
+  "version": 1,
+  "historyId": "c977c651-e161-4d2a-9f28-95bd84d24d85",
+  "currentRevision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/1b/1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "CLAUDE.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/1b/1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "hyperframes.json": {
+      "hash": "e5da816b77f863aa4798d974bc68d65805329ca4d39ebcf353967c5b47e677a6",
+      "content": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/e5/e5da816b77f863aa4798d974bc68d65805329ca4d39ebcf353967c5b47e677a6"
+    },
+    "index.html": {
+      "hash": "361cb87f386d6ac31d461249ac9d4882346ba78c1d12793de4780d38cfaf0ffb",
+      "content": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/36/361cb87f386d6ac31d461249ac9d4882346ba78c1d12793de4780d38cfaf0ffb"
+    },
+    "meta.json": {
+      "hash": "fea4f99a75c6e66d68ee93dbd1b40af7748f0e2e6c7ebdd2bcc9f6bcf0eccd63",
+      "content": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/fe/fea4f99a75c6e66d68ee93dbd1b40af7748f0e2e6c7ebdd2bcc9f6bcf0eccd63"
+    },
+    "package.json": {
+      "hash": "822bc40f3c71bdac4cc01aee8d09090f3897782ba8c95fcebcbdbf3696f59d59",
+      "content": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/82/822bc40f3c71bdac4cc01aee8d09090f3897782ba8c95fcebcbdbf3696f59d59"
+    },
+    "shot-plan.json": {
+      "hash": "dcbb60fdef2fa944c158749e2f99502cbe495d962982215ffdf553f58392a63c",
+      "content": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/dc/dcbb60fdef2fa944c158749e2f99502cbe495d962982215ffdf553f58392a63c"
+    }
+  },
+  "revisions": {
+    "4cf36749-b59b-4059-b4fe-e588e60e4303": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793570030983,
+      "endedAt": 1793570030984,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/8a/8a077194842359797c3dbad33907dca66701fbbd13a6a54ee6fd0a5655370894",
+          "after": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/73/73ff691bf4a407b65039ab3b6d6960c706d56601d3cbad1de451b0fd25dfa0ba"
+        }
+      }
+    },
+    "bd03b0eb-c9ee-4732-98b0-64bd93d71bac": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793570082458,
+      "endedAt": 1793570082460,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/73/73ff691bf4a407b65039ab3b6d6960c706d56601d3cbad1de451b0fd25dfa0ba",
+          "after": "/root/.cache/hyperframes/history/c977c651-e161-4d2a-9f28-95bd84d24d85/blobs/36/361cb87f386d6ac31d461249ac9d4882346ba78c1d12793de4780d38cfaf0ffb"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+      "id": "60515379-c7ff-42dd-aabc-11fc10acb4f8"
+    },
+    "revisions": {
+      "4cf36749-b59b-4059-b4fe-e588e60e4303": [
+        {
+          "id": "d074aa89-875b-4247-866f-7d4decab82bc",
+          "scope": "project",
+          "report": "/home/user/CEE/videos/martinik-cup/.hyperframes/artifacts/checks/d074aa89-875b-4247-866f-7d4decab82bc.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793570033361,
+          "contentHash": "6f6c764606085265b7bfe4b02d5f665cb60c45e6a9a02e3c34afc4833543109b",
+          "revision": "4cf36749-b59b-4059-b4fe-e588e60e4303",
+          "inputFingerprint": "200ffbbe78ac63c0f43121dcad2774882f89b33d8d8ff19b66df7bd14efba65d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "bd03b0eb-c9ee-4732-98b0-64bd93d71bac": [
+        {
+          "id": "60515379-c7ff-42dd-aabc-11fc10acb4f8",
+          "scope": "project",
+          "report": "/home/user/CEE/videos/martinik-cup/.hyperframes/artifacts/checks/60515379-c7ff-42dd-aabc-11fc10acb4f8.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793570084658,
+          "contentHash": "e863a65795bec5fcff3ab2d369ae65f9cb2eb116967a9b9aa489abcaf02f5029",
+          "revision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+          "inputFingerprint": "58346da3ab5fa6f77ec5d7fbab6de57a2c66629e61a1fd244f684dffd53c9c96",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "26017732-6b90-48ca-9bf6-865baec615fb",
+        "scope": "project",
+        "report": "/home/user/CEE/videos/martinik-cup/.hyperframes/artifacts/checks/26017732-6b90-48ca-9bf6-865baec615fb.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": true,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 10000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1793570004537,
+        "contentHash": "867be9618e36e9a3b29ef60f6c3caacb87eede03fccdccab3fe691a7ea117bbd",
+        "revision": null,
+        "inputFingerprint": "82b1da8d90a7a1094c3c1f35e084a0215ed3c4c8cba32b130b1a629d0b51cacf",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+      "id": "1b05b795-8583-4962-a195-86860e7fb47d-4"
+    },
+    "revisions": {
+      "bd03b0eb-c9ee-4732-98b0-64bd93d71bac": [
+        {
+          "scope": "full",
+          "id": "1b05b795-8583-4962-a195-86860e7fb47d-0",
+          "image": "/home/user/CEE/videos/martinik-cup/.hyperframes/artifacts/snapshots/f5af3510-71ec-473e-8b61-b35f178495e3/frame-00-at-0s.png",
+          "time": 0,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793570096206,
+          "contentHash": "694d862bed6f2651e47501ab63ae39c7d807f7f58b7ec8883a2ba168a59fe04c",
+          "revision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+          "inputFingerprint": "58346da3ab5fa6f77ec5d7fbab6de57a2c66629e61a1fd244f684dffd53c9c96",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1b05b795-8583-4962-a195-86860e7fb47d-1",
+          "image": "/home/user/CEE/videos/martinik-cup/.hyperframes/artifacts/snapshots/f5af3510-71ec-473e-8b61-b35f178495e3/frame-01-at-2s.png",
+          "time": 2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793570096206,
+          "contentHash": "09c2c707a90c98ca5e4decf5a4a3b8e687a0a6d09e4268cbf379aefdae53fe56",
+          "revision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+          "inputFingerprint": "58346da3ab5fa6f77ec5d7fbab6de57a2c66629e61a1fd244f684dffd53c9c96",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1b05b795-8583-4962-a195-86860e7fb47d-2",
+          "image": "/home/user/CEE/videos/martinik-cup/.hyperframes/artifacts/snapshots/f5af3510-71ec-473e-8b61-b35f178495e3/frame-02-at-4s.png",
+          "time": 4,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793570096206,
+          "contentHash": "8e9cd7037ea856b08656de08b81745ccaf23a62665ba175667c62cfde4ac2b37",
+          "revision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+          "inputFingerprint": "58346da3ab5fa6f77ec5d7fbab6de57a2c66629e61a1fd244f684dffd53c9c96",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1b05b795-8583-4962-a195-86860e7fb47d-3",
+          "image": "/home/user/CEE/videos/martinik-cup/.hyperframes/artifacts/snapshots/f5af3510-71ec-473e-8b61-b35f178495e3/frame-03-at-6s.png",
+          "time": 6,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793570096206,
+          "contentHash": "653f23db3917dd1d0a6e8981a63241c7ddb60abc400332e9fad9fe427bf5c6f3",
+          "revision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+          "inputFingerprint": "58346da3ab5fa6f77ec5d7fbab6de57a2c66629e61a1fd244f684dffd53c9c96",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "1b05b795-8583-4962-a195-86860e7fb47d-4",
+          "image": "/home/user/CEE/videos/martinik-cup/.hyperframes/artifacts/snapshots/f5af3510-71ec-473e-8b61-b35f178495e3/frame-04-at-7.76s.png",
+          "time": 7.76,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793570096206,
+          "contentHash": "e16f4bf11d3ba6639d743e2e06eb1ae1758cd464b685c1286d517338c993dcba",
+          "revision": "bd03b0eb-c9ee-4732-98b0-64bd93d71bac",
+          "inputFingerprint": "58346da3ab5fa6f77ec5d7fbab6de57a2c66629e61a1fd244f684dffd53c9c96",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "category": "kinetic-type",
+  "duration_s": 8,
+  "fps": 30,
+  "canvas": { "w": 1080, "h": 1920, "aspect": "9:16" },
+  "style": "Dark Caribbean sports broadcast générique. Deep navy-black background, gold uppercase MARTINIK, white mega-scale CUP, teal accent bar. One dominant motif: impact slam on the beat. Bold, authoritative, no ambiguity — tournament announcement.",
+  "palette": ["#07090F", "#F5C500", "#FFFFFF", "#00B4A6", "#7A7A90"],
+  "font": "Anton",
+  "beats": [0.2, 0.65, 1.8, 3.0, 3.4, 4.2],
+  "export": "mp4",
+  "asset_needs": [],
+  "block": null,
+  "customize": {},
+  "content": {
+    "scenes": [
+      {
+        "id": "hook",
+        "start": 0,
+        "end": 1.8,
+        "text": "MARTINIK",
+        "emphasis_words": ["MARTINIK"],
+        "emotion": "power",
+        "motion": "slam from top (y:-160→0, opacity 0→1, ease power4.out at t=0.2s); underline_sweep gold (scaleX 0→1 at t=0.65s)",
+        "beats": [0.2, 0.65]
+      },
+      {
+        "id": "punch",
+        "start": 1.8,
+        "end": 4.0,
+        "text": "CUP",
+        "emphasis_words": ["CUP"],
+        "emotion": "impact",
+        "motion": "scale_punch (scale 0.35→1, back.out(2.0) at t=1.8s); scale_pulse at t=3.0s",
+        "beats": [1.8, 3.0]
+      },
+      {
+        "id": "resolve",
+        "start": 4.0,
+        "end": 8.0,
+        "text": "MARTINIK CUP · MARTINIQUE 2025",
+        "emphasis_words": ["CUP"],
+        "emotion": "authority",
+        "motion": "accent bar_wipe teal (scaleX 0→1 at t=3.4s); tagline slide_bottom+fade at t=4.2s; fade_out all at t=7.0s",
+        "beats": [3.4, 4.2, 7.0]
+      }
+    ]
+  }
+}
