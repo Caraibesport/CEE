@@ -1,0 +1,74 @@
+{
+ "sport": "HANDBALL",
+ "tag": "HANDBALL · SUPERCOUPE",
+ "introChip": "L'INTERVIEW <b>·</b> HANDBALL",
+ "bugLabel": "HANDBALL · SUPERCOUPE",
+ "outroLine": "HANDBALL <b>·</b> SUPERCOUPE",
+ "score": null,
+ "music": "audio/strike-force.mp3",
+ "tightFraming": true,
+ "speakers": {
+  "itw": {
+   "name": "BRUNO PATRICK",
+   "role": "Entraîneur"
+  }
+ },
+ "fix": {
+  "apothéos,": "apothéose,",
+  "Réunion,": "réunion,"
+ },
+ "callouts": [
+  {
+   "clip": "itw",
+   "src": 21.5,
+   "d": 2.6,
+   "big": "L'ARBITRAGE",
+   "small": "pas en notre faveur"
+  },
+  {
+   "clip": "itw",
+   "src": 35.3,
+   "d": 2.4,
+   "big": "L'INTRÉPIDE",
+   "small": "a joué son jeu"
+  },
+  {
+   "clip": "itw",
+   "src": 68.7,
+   "d": 2.4,
+   "big": "UNE VRAIE FIESTA",
+   "small": "pour finir la compétition"
+  },
+  {
+   "clip": "itw",
+   "src": 71.4,
+   "d": 2.6,
+   "big": "À LEURS FRAIS",
+   "small": "les clubs viennent de loin"
+  },
+  {
+   "clip": "itw",
+   "src": 93.6,
+   "d": 2.8,
+   "big": "PLUS HAUT NIVEAU",
+   "small": "pour les joueurs locaux"
+  }
+ ],
+ "teaser": [
+  {
+   "clip": "itw",
+   "a": 20.9,
+   "b": 26.08
+  },
+  {
+   "clip": "itw",
+   "a": 65.08,
+   "b": 69.27
+  },
+  {
+   "clip": "itw",
+   "a": 90.66,
+   "b": 94.76
+  }
+ ]
+}

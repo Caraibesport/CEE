@@ -1,0 +1,14 @@
+# Source and proxy videos (trop volumineux pour git)
+assets/*.mp4
+raw/
+audio/*.aac
+audio/*.mp3
+audio/*.wav
+# Renders
+renders/
+# Transcriptions (générées)
+wx/
+# Snapshots
+snapshots/
+# Node modules
+node_modules/
