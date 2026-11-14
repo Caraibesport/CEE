@@ -1,0 +1,55 @@
+[
+ {
+  "clip": "v1",
+  "from": 29.74,
+  "to": 56.84,
+  "chapter": "LA DÉFAITE",
+  "min": 29.74,
+  "max": 57.1
+ },
+ {
+  "clip": "v1",
+  "from": 58.62,
+  "to": 68.50,
+  "min": 58.5,
+  "max": 68.6
+ },
+ {
+  "clip": "v1",
+  "from": 69.36,
+  "to": 82.98,
+  "min": 69.3,
+  "max": 83.1
+ },
+ {
+  "clip": "v2",
+  "from": 6.84,
+  "to": 22.96,
+  "chapter": "LA VICTOIRE",
+  "min": 6.84,
+  "max": 23.1
+ },
+ {
+  "clip": "v2",
+  "from": 23.58,
+  "to": 42.48,
+  "min": 23.5,
+  "max": 42.6
+ },
+ {
+  "clip": "v3",
+  "from": 17.12,
+  "to": 38.94,
+  "chapter": "LE RESSENTI",
+  "min": 17.1,
+  "max": 39.0
+ },
+ {
+  "clip": "v3",
+  "from": 49.20,
+  "to": 62.06,
+  "chapter": "LA SUPERCOUPE",
+  "min": 49.1,
+  "max": 62.2
+ }
+]

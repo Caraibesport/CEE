@@ -1,0 +1,69 @@
+{
+ "sport": "HANDBALL",
+ "tag": "HANDBALL · SUPERCOUPE",
+ "introChip": "RÉSUMÉ <b>·</b> HANDBALL",
+ "bugLabel": "HANDBALL · SUPERCOUPE",
+ "outroLine": "HANDBALL <b>·</b> SUPERCOUPE ANTILLES GUYANE",
+ "score": null,
+ "music": "audio/music.mp3",
+ "tightFraming": true,
+ "speakers": {
+  "v1": {
+   "name": "DIVISA DANIEL",
+   "role": "Coach · Réveil Sportif du Gros Morne"
+  },
+  "v2": {
+   "name": "SOPHIE CAROLIN",
+   "role": "Coach principal"
+  },
+  "v3": {
+   "name": "SOPHIE",
+   "role": "Arrière droit · Sierra de Mont-Correa"
+  }
+ },
+ "fix": {
+  "gargain.": "droit.",
+  "veuve.": "voûte.",
+  "anti-réalique": "antillaise"
+ },
+ "callouts": [
+  {
+   "clip": "v1",
+   "src": 67.92,
+   "d": 2.6,
+   "big": "9 POINTS",
+   "small": "l'écart final"
+  },
+  {
+   "clip": "v2",
+   "src": 29.42,
+   "d": 2.4,
+   "big": "LE MENTAL",
+   "small": "plus de détermination"
+  },
+  {
+   "clip": "v3",
+   "src": 53.44,
+   "d": 2.6,
+   "big": "OUTRE-MER",
+   "small": "compétition entre nous"
+  }
+ ],
+ "teaser": [
+  {
+   "clip": "v1",
+   "a": 65.04,
+   "b": 68.50
+  },
+  {
+   "clip": "v2",
+   "a": 27.02,
+   "b": 33.74
+  },
+  {
+   "clip": "v3",
+   "a": 31.22,
+   "b": 34.44
+  }
+ ]
+}
