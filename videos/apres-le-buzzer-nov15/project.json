@@ -1,0 +1,35 @@
+{
+  "sport": "HANDBALL",
+  "tag": "HANDBALL · SUPERCOUPE",
+  "introChip": "INTERVIEW <b>·</b> HANDBALL",
+  "bugLabel": "HANDBALL · SUPERCOUPE",
+  "outroLine": "HANDBALL <b>·</b> SUPERCOUPE ANTILLES GUYANE",
+  "score": null,
+  "music": "audio/music.mp3",
+  "tightFraming": true,
+  "speakers": {
+    "itw_coach": { "name": "LAURENT CARRIEL", "role": "Entraîneur · UJR" }
+  },
+  "fix": {
+    "type": "titre",
+    "anti": "Antilles",
+    "-Guyane,": "Guyane,",
+    "-Guyane": "Guyane",
+    "-groupe,": "Coupe,",
+    "-groupe": "Coupe",
+    "vestissent.": "apprêtent."
+  },
+  "teaser": [
+    { "clip": "itw_coach", "a": 22.26, "b": 25.92 },
+    { "clip": "itw_coach", "a": 95.86, "b": 100.50 },
+    { "clip": "itw_coach", "a": 165.42, "b": 169.06 }
+  ],
+  "callouts": [
+    { "clip": "itw_coach", "src": 111.0, "d": 1.5, "big": "LA MEILLEURE", "small": "équipe du tournoi" }
+  ],
+  "broll": [
+    { "id": "br1", "clip": "broll_v1", "out": 29.0, "dur": 6.0 },
+    { "id": "br2", "clip": "broll_v2", "out": 55.0, "dur": 5.0 },
+    { "id": "br3", "clip": "broll_v3", "out": 76.0, "dur": 14.0 }
+  ]
+}
