@@ -1,42 +1,64 @@
 [
  {
-  "clip": "itw",
-  "from": 8.99,
-  "to": 24.19,
+  "clip": "itw_21h50",
+  "from": 16.8,
+  "to": 29.3,
   "chapter": "LA DÉFAITE",
-  "min": 8.95,
-  "max": 24.3
+  "min": 16.7,
+  "max": 29.4
  },
  {
-  "clip": "itw",
+  "clip": "itw_21h50",
+  "from": 61.1,
+  "to": 68.5,
+  "min": 61.0,
+  "max": 68.6
+ },
+ {
+  "clip": "itw_21h52",
+  "from": 6.8,
+  "to": 23.0,
+  "chapter": "LA VICTOIRE",
+  "min": 6.75,
+  "max": 23.1
+ },
+ {
+  "clip": "itw_21h52",
+  "from": 25.9,
+  "to": 42.5,
+  "min": 25.8,
+  "max": 42.6
+ },
+ {
+  "clip": "itw_21h53",
+  "from": 17.1,
+  "to": 38.9,
+  "chapter": "LE RESSENTI",
+  "min": 17.0,
+  "max": 39.0
+ },
+ {
+  "clip": "itw_21h53",
+  "from": 49.2,
+  "to": 62.1,
+  "chapter": "LA SUPERCOUPE",
+  "min": 49.1,
+  "max": 62.2
+ },
+ {
+  "clip": "itw_21h55",
   "from": 26.95,
   "to": 38.03,
-  "chapter": "LE SCÉNARIO",
+  "chapter": "L'AUTRE CÔTÉ",
   "min": 26.9,
   "max": 38.1
  },
  {
-  "clip": "itw",
-  "from": 48.95,
-  "to": 65.95,
-  "chapter": "LE REBOND",
-  "min": 48.9,
-  "max": 66.1
- },
- {
-  "clip": "itw",
+  "clip": "itw_21h55",
   "from": 73.51,
   "to": 99.85,
-  "chapter": "LA SUPERCOUPE",
+  "chapter": "LE FORMAT",
   "min": 73.4,
   "max": 100.0
- },
- {
-  "clip": "itw",
-  "from": 110.79,
-  "to": 141.97,
-  "chapter": "LE PUBLIC",
-  "min": 110.7,
-  "max": 142.1
  }
 ]

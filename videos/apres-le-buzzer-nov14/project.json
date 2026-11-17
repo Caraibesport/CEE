@@ -8,54 +8,25 @@
  "music": "audio/music.mp3",
  "tightFraming": true,
  "speakers": {
-  "itw": {
-   "name": "À CONFIRMER",
-   "role": "Ailière · Réveil Sportif"
-  }
+  "itw_21h50": { "name": "DIVISA DANIEL", "role": "Coach · Réveil Sportif" },
+  "itw_21h52": { "name": "SOPHIE CAROLIN", "role": "Coach principal" },
+  "itw_21h53": { "name": "SOPHIE", "role": "Arrière droit · Sierra de Mont-Correa" },
+  "itw_21h55": { "name": "À CONFIRMER", "role": "Ailière · Réveil Sportif" }
  },
  "fix": {
-  "espirait.": "espérions.",
-  "sur-so,": "sursaut,",
-  "anti-augullanais,": "antillais,"
+  "espirait.": "espérait.",
+  "anti-augullanais,": "antillaises,",
+  "derrière droit,": "arrière droit,"
  },
  "callouts": [
-  {
-   "clip": "itw",
-   "src": 51.2,
-   "d": 2.4,
-   "big": "ON NE LÂCHE",
-   "small": "jamais"
-  },
-  {
-   "clip": "itw",
-   "src": 89.5,
-   "d": 2.6,
-   "big": "INCONCEVABLE",
-   "small": "moins de 24h de récupération"
-  },
-  {
-   "clip": "itw",
-   "src": 95.8,
-   "d": 2.8,
-   "big": "PAS BONNE",
-   "small": "la programmation des matchs"
-  }
+  { "clip": "itw_21h50", "src": 67.9, "d": 1.5, "big": "NEUF POINTS", "small": "l'écart final" },
+  { "clip": "itw_21h52", "src": 29.4, "d": 2.4, "big": "LE MENTAL", "small": "plus de détermination" },
+  { "clip": "itw_21h53", "src": 49.2, "d": 2.5, "big": "BELLE INITIATIVE", "small": "compétition outre-mer" },
+  { "clip": "itw_21h55", "src": 88.1, "d": 2.6, "big": "INCONCEVABLE", "small": "moins de 24h de récupération" }
  ],
  "teaser": [
-  {
-   "clip": "itw",
-   "a": 9.0,
-   "b": 12.4
-  },
-  {
-   "clip": "itw",
-   "a": 49.0,
-   "b": 53.5
-  },
-  {
-   "clip": "itw",
-   "a": 88.1,
-   "b": 91.6
-  }
+  { "clip": "itw_21h55", "a": 9.0, "b": 12.4 },
+  { "clip": "itw_21h53", "a": 31.2, "b": 33.2 },
+  { "clip": "itw_21h55", "a": 88.1, "b": 91.6 }
  ]
 }

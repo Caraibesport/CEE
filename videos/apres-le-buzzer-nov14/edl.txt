@@ -1,0 +1,11 @@
+1	TEASER	itw_21h55	src 9-12.4	out 0	
+2	TEASER	itw_21h53	src 31.2-33.2	out 3.4	
+3	TEASER	itw_21h55	src 88.1-91.6	out 5.4	
+4		itw_21h50	src 16.74-29.38	out 12.5	LA DÉFAITE
+5		itw_21h50	src 61.02-68.6	out 25.14	
+6		itw_21h52	src 6.78-23.1	out 32.72	LA VICTOIRE
+7		itw_21h52	src 25.8-42.56	out 49.04	
+8		itw_21h53	src 17.08-38.96	out 65.8	LE RESSENTI
+9		itw_21h53	src 49.16-62	out 87.68	LA SUPERCOUPE
+10		itw_21h55	src 26.91-38.1	out 100.52	L'AUTRE CÔTÉ
+11		itw_21h55	src 73.47-99.87	out 111.71	LE FORMAT

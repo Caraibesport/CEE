@@ -1,20 +1,73 @@
 [
  {
-  "clip": "itw",
-  "from": 8.99,
-  "to": 24.19,
+  "clip": "itw_21h50",
+  "from": 16.8,
+  "to": 29.3,
   "chapter": "LA DÉFAITE",
-  "min": 8.95,
-  "max": 24.3,
-  "a": 8.95,
-  "b": 24.3,
-  "text": "On est forcément déçus, c 'est pas le résultat qu 'on espirait. Là, on a clairement manqué une carte -touche, notamment avec les camps qu 'il y a ce soir. Mais il reste encore un match à jouer, on va se remobiliser et puis soigner les petits bobos pour donner un meilleur visage demain."
+  "min": 16.7,
+  "max": 29.4,
+  "a": 16.74,
+  "b": 29.38,
+  "text": "Alors, la soirée a été un peu difficile. On a senti l 'équipe de la Gouane qui est en place. Et un réveil sportif qui pour le plus n 'a pas pu faire la distance ce soir."
  },
  {
-  "clip": "itw",
+  "clip": "itw_21h50",
+  "from": 61.1,
+  "to": 68.5,
+  "min": 61.0,
+  "max": 68.6,
+  "a": 61.02,
+  "b": 68.6,
+  "text": "On savait que ce serait un match compliqué. Et là, ça s 'est vu. On perd. Je n 'ai même pas vu le score. Neuf points."
+ },
+ {
+  "clip": "itw_21h52",
+  "from": 6.8,
+  "to": 23.0,
+  "chapter": "LA VICTOIRE",
+  "min": 6.75,
+  "max": 23.1,
+  "a": 6.78,
+  "b": 23.1,
+  "text": "Oui, comme j 'ai dit à votre confrère, on avait à coeur de revenir avec un autre visage. Parce qu 'on s 'est complètement loupé sur le premier match face à l 'étoile, où on a complètement loupé notre début de deuxième mi -temps. Donc on a dû courir après le score, ce n 'était pas chose évidente."
+ },
+ {
+  "clip": "itw_21h52",
+  "from": 25.9,
+  "to": 42.5,
+  "min": 25.8,
+  "max": 42.6,
+  "a": 25.8,
+  "b": 42.56,
+  "text": "Et puis voilà, moi félicitations aux filles parce qu 'elles ont su avoir le mental pour revenir ce soir avec plus de détermination, plus de conviction, plus de croyances aussi aux consignes. Donc ce n 'est pas chose évidente mais voilà, félicitations et puis belle victoire."
+ },
+ {
+  "clip": "itw_21h53",
+  "from": 17.1,
+  "to": 38.9,
+  "chapter": "LE RESSENTI",
+  "min": 17.0,
+  "max": 39.0,
+  "a": 17.08,
+  "b": 38.96,
+  "text": "Ben oui, on avait beaucoup de regrets par rapport au premier match parce qu 'on n 'a pas réussi à s 'exprimer. Peut -être aussi le premier événement pour beaucoup. C 'est la première fois que le club joue une compétition comme ça. Donc, du coup, je pense qu 'il y avait beaucoup de stress. Donc, on avait quand même beaucoup de regrets. Et là, on a réussi à se libérer. Donc, nous sommes contentes, nous sommes contentes parce qu 'il y a la victoire déjà et parce qu 'on n 'a plus un peu s 'exprimer sans notre jeu."
+ },
+ {
+  "clip": "itw_21h53",
+  "from": 49.2,
+  "to": 62.1,
+  "chapter": "LA SUPERCOUPE",
+  "min": 49.1,
+  "max": 62.2,
+  "a": 49.16,
+  "b": 62.0,
+  "text": "Déjà, c 'est une très belle initiative parce qu 'en fait, nous sommes là, nous sommes pas très loin. Nous sommes la territoire d 'outre -mer et c 'est important que nous fassons ce type de compétition entre nous. Même quand nous tirer vers le haut, voilà. Donc franchement, on apprécie, on apprécie."
+ },
+ {
+  "clip": "itw_21h55",
   "from": 26.95,
   "to": 38.03,
-  "chapter": "LE SCÉNARIO",
+  "chapter": "L'AUTRE CÔTÉ",
   "min": 26.9,
   "max": 38.1,
   "a": 26.91,
@@ -22,36 +75,14 @@
   "text": "On sait déjà que quand le réveil sportif commence mal, ça finit mal. Du coup, c 'est ça, un mauvais entrain de match et puis on a perdu le fil et on n 'a jamais su le retrouver."
  },
  {
-  "clip": "itw",
-  "from": 48.95,
-  "to": 65.95,
-  "chapter": "LE REBOND",
-  "min": 48.9,
-  "max": 66.1,
-  "a": 48.91,
-  "b": 65.77,
-  "text": "Il y a eu un sur -so, forcément, on est une équipe combative, on ne lâche jamais. Après, c 'est vrai qu 'on a eu beaucoup de blessés ce soir, donc le turnover était difficile. Donc, je pense que ça aussi, ça a joué. Mais l 'idée, c 'est demain de revenir dans de meilleures dispositions."
- },
- {
-  "clip": "itw",
+  "clip": "itw_21h55",
   "from": 73.51,
   "to": 99.85,
-  "chapter": "LA SUPERCOUPE",
+  "chapter": "LE FORMAT",
   "min": 73.4,
   "max": 100.0,
   "a": 73.47,
   "b": 99.87,
   "text": "Bon, mon avis est mitigé, c 'est toujours bien de faire une compétition avec trois matchs. Donc, rajouter une équipe supplémentaire pour moi, c 'est le match de trop. Ce soir, on joue à 20 heures, mais on joue à 15 heures, moins de 24 heures de récupération. Pour moi, en tant que sportive, c 'est inconcevable. Donc, je pense qu 'il faudrait avoir la formule. L 'idée de départ est bonne, mais la programmation des matchs n 'est pas bonne du tout."
- },
- {
-  "clip": "itw",
-  "from": 110.79,
-  "to": 141.97,
-  "chapter": "LE PUBLIC",
-  "min": 110.7,
-  "max": 142.1,
-  "a": 110.75,
-  "b": 142.1,
-  "text": "Ben, bel prix, forcément. On est dans le contexte de vie chère. Les matchs sont extrêmement chers. Il y a des gens qui veulent voir deux rencontres. Mais bon, quand ils arrivent autour, il faut reprendre notre ticket. Ça, pour moi, c 'est à revoir aussi. Je ne suis pas réellement conseillée parce qu 'on est acteur. Mais pour les gens qui viennent à 5, à 6 pour une famille complète, ça fait quand même un budget. Je pense que l 'idée de promouvoir le handball anti -augullanais, maintenant, c 'est un attractif motif forcément le public à se déplacer."
  }
 ]
