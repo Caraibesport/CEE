@@ -1,0 +1,3500 @@
+{
+ "segments": [
+  {
+   "start": 4.62,
+   "end": 6.82,
+   "text": "Laurent Carriel, entraîneur de l'UJR.",
+   "words": [
+    {
+     "word": "Laurent",
+     "start": 4.62,
+     "end": 4.88
+    },
+    {
+     "word": "Carriel,",
+     "start": 4.88,
+     "end": 5.44
+    },
+    {
+     "word": "entraîneur",
+     "start": 5.56,
+     "end": 6.02
+    },
+    {
+     "word": "de",
+     "start": 6.02,
+     "end": 6.18
+    },
+    {
+     "word": "l",
+     "start": 6.18,
+     "end": 6.34
+    },
+    {
+     "word": "'UJR.",
+     "start": 6.34,
+     "end": 6.82
+    }
+   ]
+  },
+  {
+   "start": 8.36,
+   "end": 13.54,
+   "text": "Ok, alors, je vais vous annuler déjà à une grosse préparation, à un beau travail.",
+   "words": [
+    {
+     "word": "Ok,",
+     "start": 8.36,
+     "end": 8.76
+    },
+    {
+     "word": "alors,",
+     "start": 9.22,
+     "end": 9.56
+    },
+    {
+     "word": "je",
+     "start": 10.64,
+     "end": 10.84
+    },
+    {
+     "word": "vais",
+     "start": 10.84,
+     "end": 10.96
+    },
+    {
+     "word": "vous",
+     "start": 10.96,
+     "end": 11.04
+    },
+    {
+     "word": "annuler",
+     "start": 11.04,
+     "end": 11.28
+    },
+    {
+     "word": "déjà",
+     "start": 11.28,
+     "end": 11.68
+    },
+    {
+     "word": "à",
+     "start": 11.68,
+     "end": 11.9
+    },
+    {
+     "word": "une",
+     "start": 11.9,
+     "end": 11.96
+    },
+    {
+     "word": "grosse",
+     "start": 11.96,
+     "end": 12.14
+    },
+    {
+     "word": "préparation,",
+     "start": 12.14,
+     "end": 12.78
+    },
+    {
+     "word": "à",
+     "start": 12.96,
+     "end": 12.96
+    },
+    {
+     "word": "un",
+     "start": 12.96,
+     "end": 13.02
+    },
+    {
+     "word": "beau",
+     "start": 13.02,
+     "end": 13.02
+    },
+    {
+     "word": "travail.",
+     "start": 13.02,
+     "end": 13.54
+    }
+   ]
+  },
+  {
+   "start": 14.62,
+   "end": 18.54,
+   "text": "Au cours de ces quatre jours, l'UJR remporte cette première boucle.",
+   "words": [
+    {
+     "word": "Au",
+     "start": 14.62,
+     "end": 15.02
+    },
+    {
+     "word": "cours",
+     "start": 15.02,
+     "end": 15.12
+    },
+    {
+     "word": "de",
+     "start": 15.12,
+     "end": 15.26
+    },
+    {
+     "word": "ces",
+     "start": 15.26,
+     "end": 15.4
+    },
+    {
+     "word": "quatre",
+     "start": 15.4,
+     "end": 15.62
+    },
+    {
+     "word": "jours,",
+     "start": 15.62,
+     "end": 15.98
+    },
+    {
+     "word": "l",
+     "start": 16.14,
+     "end": 16.22
+    },
+    {
+     "word": "'UJR",
+     "start": 16.22,
+     "end": 16.66
+    },
+    {
+     "word": "remporte",
+     "start": 16.66,
+     "end": 17.22
+    },
+    {
+     "word": "cette",
+     "start": 17.22,
+     "end": 17.74
+    },
+    {
+     "word": "première",
+     "start": 17.74,
+     "end": 18.1
+    },
+    {
+     "word": "boucle.",
+     "start": 18.1,
+     "end": 18.54
+    }
+   ]
+  },
+  {
+   "start": 19.0,
+   "end": 21.72,
+   "text": "Comment les choses sont-elles vécues de l'intérieur ?",
+   "words": [
+    {
+     "word": "Comment",
+     "start": 19.0,
+     "end": 19.28
+    },
+    {
+     "word": "les",
+     "start": 19.28,
+     "end": 19.8
+    },
+    {
+     "word": "choses",
+     "start": 19.8,
+     "end": 20.02
+    },
+    {
+     "word": "sont",
+     "start": 20.02,
+     "end": 20.24
+    },
+    {
+     "word": "-elles",
+     "start": 20.24,
+     "end": 20.4
+    },
+    {
+     "word": "vécues",
+     "start": 20.4,
+     "end": 20.74
+    },
+    {
+     "word": "de",
+     "start": 20.74,
+     "end": 20.84
+    },
+    {
+     "word": "l",
+     "start": 20.84,
+     "end": 20.94
+    },
+    {
+     "word": "'intérieur",
+     "start": 20.94,
+     "end": 21.18
+    },
+    {
+     "word": "?",
+     "start": 21.18,
+     "end": 21.72
+    }
+   ]
+  },
+  {
+   "start": 22.26,
+   "end": 25.92,
+   "text": "Déjà, c'est une grosse satisfaction parce que c'est le premier type de l'UJR garçon.",
+   "words": [
+    {
+     "word": "Déjà,",
+     "start": 22.26,
+     "end": 22.66
+    },
+    {
+     "word": "c",
+     "start": 22.78,
+     "end": 22.84
+    },
+    {
+     "word": "'est",
+     "start": 22.84,
+     "end": 22.88
+    },
+    {
+     "word": "une",
+     "start": 22.88,
+     "end": 23.0
+    },
+    {
+     "word": "grosse",
+     "start": 23.0,
+     "end": 23.1
+    },
+    {
+     "word": "satisfaction",
+     "start": 23.1,
+     "end": 23.7
+    },
+    {
+     "word": "parce",
+     "start": 23.7,
+     "end": 24.06
+    },
+    {
+     "word": "que",
+     "start": 24.06,
+     "end": 24.18
+    },
+    {
+     "word": "c",
+     "start": 24.18,
+     "end": 24.32
+    },
+    {
+     "word": "'est",
+     "start": 24.32,
+     "end": 24.36
+    },
+    {
+     "word": "le",
+     "start": 24.36,
+     "end": 24.48
+    },
+    {
+     "word": "premier",
+     "start": 24.48,
+     "end": 24.76
+    },
+    {
+     "word": "type",
+     "start": 24.76,
+     "end": 24.96
+    },
+    {
+     "word": "de",
+     "start": 24.96,
+     "end": 25.1
+    },
+    {
+     "word": "l",
+     "start": 25.1,
+     "end": 25.22
+    },
+    {
+     "word": "'UJR",
+     "start": 25.22,
+     "end": 25.48
+    },
+    {
+     "word": "garçon.",
+     "start": 25.48,
+     "end": 25.92
+    }
+   ]
+  },
+  {
+   "start": 26.2,
+   "end": 28.06,
+   "text": "On connaissait beaucoup plus l'UJR fille.",
+   "words": [
+    {
+     "word": "On",
+     "start": 26.2,
+     "end": 26.58
+    },
+    {
+     "word": "connaissait",
+     "start": 26.58,
+     "end": 26.96
+    },
+    {
+     "word": "beaucoup",
+     "start": 26.96,
+     "end": 27.16
+    },
+    {
+     "word": "plus",
+     "start": 27.16,
+     "end": 27.42
+    },
+    {
+     "word": "l",
+     "start": 27.42,
+     "end": 27.58
+    },
+    {
+     "word": "'UJR",
+     "start": 27.58,
+     "end": 27.86
+    },
+    {
+     "word": "fille.",
+     "start": 27.86,
+     "end": 28.06
+    }
+   ]
+  },
+  {
+   "start": 28.64,
+   "end": 31.78,
+   "text": "Là, les gars, ils sont très inscrits au long de l'eau, au palmarès, ils sont très contents.",
+   "words": [
+    {
+     "word": "Là,",
+     "start": 28.64,
+     "end": 28.8
+    },
+    {
+     "word": "les",
+     "start": 28.9,
+     "end": 29.08
+    },
+    {
+     "word": "gars,",
+     "start": 29.08,
+     "end": 29.24
+    },
+    {
+     "word": "ils",
+     "start": 29.36,
+     "end": 29.38
+    },
+    {
+     "word": "sont",
+     "start": 29.38,
+     "end": 29.54
+    },
+    {
+     "word": "très",
+     "start": 29.54,
+     "end": 29.78
+    },
+    {
+     "word": "inscrits",
+     "start": 29.78,
+     "end": 30.16
+    },
+    {
+     "word": "au",
+     "start": 30.16,
+     "end": 30.28
+    },
+    {
+     "word": "long",
+     "start": 30.28,
+     "end": 30.38
+    },
+    {
+     "word": "de",
+     "start": 30.38,
+     "end": 30.56
+    },
+    {
+     "word": "l",
+     "start": 30.56,
+     "end": 30.56
+    },
+    {
+     "word": "'eau,",
+     "start": 30.56,
+     "end": 30.6
+    },
+    {
+     "word": "au",
+     "start": 30.72,
+     "end": 30.74
+    },
+    {
+     "word": "palmarès,",
+     "start": 30.74,
+     "end": 31.16
+    },
+    {
+     "word": "ils",
+     "start": 31.3,
+     "end": 31.3
+    },
+    {
+     "word": "sont",
+     "start": 31.3,
+     "end": 31.36
+    },
+    {
+     "word": "très",
+     "start": 31.36,
+     "end": 31.44
+    },
+    {
+     "word": "contents.",
+     "start": 31.44,
+     "end": 31.78
+    }
+   ]
+  },
+  {
+   "start": 33.0,
+   "end": 38.54,
+   "text": "Superbe compétition parce que moi qui suis fermement défenseur de la zone anti-Guyane,",
+   "words": [
+    {
+     "word": "Superbe",
+     "start": 33.0,
+     "end": 33.44
+    },
+    {
+     "word": "compétition",
+     "start": 33.44,
+     "end": 33.88
+    },
+    {
+     "word": "parce",
+     "start": 33.88,
+     "end": 34.14
+    },
+    {
+     "word": "que",
+     "start": 34.14,
+     "end": 34.4
+    },
+    {
+     "word": "moi",
+     "start": 34.4,
+     "end": 35.32
+    },
+    {
+     "word": "qui",
+     "start": 35.32,
+     "end": 35.5
+    },
+    {
+     "word": "suis",
+     "start": 35.5,
+     "end": 35.64
+    },
+    {
+     "word": "fermement",
+     "start": 35.64,
+     "end": 36.22
+    },
+    {
+     "word": "défenseur",
+     "start": 36.22,
+     "end": 37.02
+    },
+    {
+     "word": "de",
+     "start": 37.02,
+     "end": 37.5
+    },
+    {
+     "word": "la",
+     "start": 37.5,
+     "end": 37.62
+    },
+    {
+     "word": "zone",
+     "start": 37.62,
+     "end": 37.9
+    },
+    {
+     "word": "anti",
+     "start": 37.9,
+     "end": 38.14
+    },
+    {
+     "word": "-Guyane,",
+     "start": 38.14,
+     "end": 38.54
+    }
+   ]
+  },
+  {
+   "start": 39.08,
+   "end": 44.6,
+   "text": "le fait de faire revenir la super-groupe, en tout cas de créer la super-groupe anti-Guyane, c'est très important.",
+   "words": [
+    {
+     "word": "le",
+     "start": 39.08,
+     "end": 39.3
+    },
+    {
+     "word": "fait",
+     "start": 39.3,
+     "end": 39.48
+    },
+    {
+     "word": "de",
+     "start": 39.48,
+     "end": 39.64
+    },
+    {
+     "word": "faire",
+     "start": 39.64,
+     "end": 39.8
+    },
+    {
+     "word": "revenir",
+     "start": 39.8,
+     "end": 40.32
+    },
+    {
+     "word": "la",
+     "start": 40.32,
+     "end": 41.08
+    },
+    {
+     "word": "super",
+     "start": 41.08,
+     "end": 41.36
+    },
+    {
+     "word": "-groupe,",
+     "start": 41.36,
+     "end": 41.62
+    },
+    {
+     "word": "en",
+     "start": 41.66,
+     "end": 41.78
+    },
+    {
+     "word": "tout",
+     "start": 41.78,
+     "end": 41.9
+    },
+    {
+     "word": "cas",
+     "start": 41.9,
+     "end": 41.98
+    },
+    {
+     "word": "de",
+     "start": 41.98,
+     "end": 42.1
+    },
+    {
+     "word": "créer",
+     "start": 42.1,
+     "end": 42.34
+    },
+    {
+     "word": "la",
+     "start": 42.34,
+     "end": 42.5
+    },
+    {
+     "word": "super",
+     "start": 42.5,
+     "end": 42.74
+    },
+    {
+     "word": "-groupe",
+     "start": 42.74,
+     "end": 42.98
+    },
+    {
+     "word": "anti",
+     "start": 42.98,
+     "end": 43.18
+    },
+    {
+     "word": "-Guyane,",
+     "start": 43.18,
+     "end": 43.5
+    },
+    {
+     "word": "c",
+     "start": 43.74,
+     "end": 44.02
+    },
+    {
+     "word": "'est",
+     "start": 44.02,
+     "end": 44.06
+    },
+    {
+     "word": "très",
+     "start": 44.06,
+     "end": 44.2
+    },
+    {
+     "word": "important.",
+     "start": 44.2,
+     "end": 44.6
+    }
+   ]
+  },
+  {
+   "start": 44.8,
+   "end": 49.58,
+   "text": "On a vu les forces en présence, que ce soit au niveau de la Guadeloupe ou de la Guyane, c'est très intéressant.",
+   "words": [
+    {
+     "word": "On",
+     "start": 44.8,
+     "end": 44.86
+    },
+    {
+     "word": "a",
+     "start": 44.86,
+     "end": 44.98
+    },
+    {
+     "word": "vu",
+     "start": 44.98,
+     "end": 45.2
+    },
+    {
+     "word": "les",
+     "start": 45.2,
+     "end": 45.88
+    },
+    {
+     "word": "forces",
+     "start": 45.88,
+     "end": 46.16
+    },
+    {
+     "word": "en",
+     "start": 46.16,
+     "end": 46.34
+    },
+    {
+     "word": "présence,",
+     "start": 46.34,
+     "end": 46.74
+    },
+    {
+     "word": "que",
+     "start": 46.88,
+     "end": 47.18
+    },
+    {
+     "word": "ce",
+     "start": 47.18,
+     "end": 47.28
+    },
+    {
+     "word": "soit",
+     "start": 47.28,
+     "end": 47.44
+    },
+    {
+     "word": "au",
+     "start": 47.44,
+     "end": 47.56
+    },
+    {
+     "word": "niveau",
+     "start": 47.56,
+     "end": 47.66
+    },
+    {
+     "word": "de",
+     "start": 47.66,
+     "end": 47.78
+    },
+    {
+     "word": "la",
+     "start": 47.78,
+     "end": 47.84
+    },
+    {
+     "word": "Guadeloupe",
+     "start": 47.84,
+     "end": 48.18
+    },
+    {
+     "word": "ou",
+     "start": 48.18,
+     "end": 48.32
+    },
+    {
+     "word": "de",
+     "start": 48.32,
+     "end": 48.38
+    },
+    {
+     "word": "la",
+     "start": 48.38,
+     "end": 48.44
+    },
+    {
+     "word": "Guyane,",
+     "start": 48.44,
+     "end": 48.74
+    },
+    {
+     "word": "c",
+     "start": 48.82,
+     "end": 48.88
+    },
+    {
+     "word": "'est",
+     "start": 48.88,
+     "end": 48.94
+    },
+    {
+     "word": "très",
+     "start": 48.94,
+     "end": 49.1
+    },
+    {
+     "word": "intéressant.",
+     "start": 49.1,
+     "end": 49.58
+    }
+   ]
+  },
+  {
+   "start": 49.98,
+   "end": 54.56,
+   "text": "Maintenant, le groupe, on est très satisfait. On se prépare, les gars se vestissent.",
+   "words": [
+    {
+     "word": "Maintenant,",
+     "start": 49.98,
+     "end": 50.4
+    },
+    {
+     "word": "le",
+     "start": 50.48,
+     "end": 50.56
+    },
+    {
+     "word": "groupe,",
+     "start": 50.56,
+     "end": 50.76
+    },
+    {
+     "word": "on",
+     "start": 50.8,
+     "end": 50.92
+    },
+    {
+     "word": "est",
+     "start": 50.92,
+     "end": 51.06
+    },
+    {
+     "word": "très",
+     "start": 51.06,
+     "end": 51.18
+    },
+    {
+     "word": "satisfait.",
+     "start": 51.18,
+     "end": 51.74
+    },
+    {
+     "word": "On",
+     "start": 52.06,
+     "end": 52.44
+    },
+    {
+     "word": "se",
+     "start": 52.44,
+     "end": 52.58
+    },
+    {
+     "word": "prépare,",
+     "start": 52.58,
+     "end": 53.06
+    },
+    {
+     "word": "les",
+     "start": 53.6,
+     "end": 53.66
+    },
+    {
+     "word": "gars",
+     "start": 53.66,
+     "end": 53.84
+    },
+    {
+     "word": "se",
+     "start": 53.84,
+     "end": 54.12
+    },
+    {
+     "word": "vestissent.",
+     "start": 54.12,
+     "end": 54.56
+    }
+   ]
+  },
+  {
+   "start": 55.04,
+   "end": 58.0,
+   "text": "On se donne vraiment les moyens pour être performant cette année.",
+   "words": [
+    {
+     "word": "On",
+     "start": 55.04,
+     "end": 55.24
+    },
+    {
+     "word": "se",
+     "start": 55.24,
+     "end": 55.38
+    },
+    {
+     "word": "donne",
+     "start": 55.38,
+     "end": 55.6
+    },
+    {
+     "word": "vraiment",
+     "start": 55.6,
+     "end": 55.88
+    },
+    {
+     "word": "les",
+     "start": 55.88,
+     "end": 56.06
+    },
+    {
+     "word": "moyens",
+     "start": 56.06,
+     "end": 56.46
+    },
+    {
+     "word": "pour",
+     "start": 56.46,
+     "end": 56.76
+    },
+    {
+     "word": "être",
+     "start": 56.76,
+     "end": 56.96
+    },
+    {
+     "word": "performant",
+     "start": 56.96,
+     "end": 57.52
+    },
+    {
+     "word": "cette",
+     "start": 57.52,
+     "end": 57.76
+    },
+    {
+     "word": "année.",
+     "start": 57.76,
+     "end": 58.0
+    }
+   ]
+  },
+  {
+   "start": 58.32,
+   "end": 62.0,
+   "text": "Ça passe par un premier titre, mais bon, on sait, ce titre-là, il est honorifique.",
+   "words": [
+    {
+     "word": "Ça",
+     "start": 58.32,
+     "end": 58.6
+    },
+    {
+     "word": "passe",
+     "start": 58.6,
+     "end": 58.86
+    },
+    {
+     "word": "par",
+     "start": 58.86,
+     "end": 59.02
+    },
+    {
+     "word": "un",
+     "start": 59.02,
+     "end": 59.16
+    },
+    {
+     "word": "premier",
+     "start": 59.16,
+     "end": 59.44
+    },
+    {
+     "word": "titre,",
+     "start": 59.44,
+     "end": 59.72
+    },
+    {
+     "word": "mais",
+     "start": 59.84,
+     "end": 59.92
+    },
+    {
+     "word": "bon,",
+     "start": 59.92,
+     "end": 60.08
+    },
+    {
+     "word": "on",
+     "start": 60.16,
+     "end": 60.3
+    },
+    {
+     "word": "sait,",
+     "start": 60.3,
+     "end": 60.48
+    },
+    {
+     "word": "ce",
+     "start": 60.94,
+     "end": 61.14
+    },
+    {
+     "word": "titre",
+     "start": 61.14,
+     "end": 61.38
+    },
+    {
+     "word": "-là,",
+     "start": 61.38,
+     "end": 61.5
+    },
+    {
+     "word": "il",
+     "start": 61.58,
+     "end": 61.62
+    },
+    {
+     "word": "est",
+     "start": 61.62,
+     "end": 61.7
+    },
+    {
+     "word": "honorifique.",
+     "start": 61.7,
+     "end": 62.0
+    }
+   ]
+  },
+  {
+   "start": 63.08,
+   "end": 67.08,
+   "text": "Il n'y a rien de particulier pour l'instant, c'est un trophée, c'est toujours rien de le gagner.",
+   "words": [
+    {
+     "word": "Il",
+     "start": 63.08,
+     "end": 63.28
+    },
+    {
+     "word": "n",
+     "start": 63.28,
+     "end": 63.34
+    },
+    {
+     "word": "'y",
+     "start": 63.34,
+     "end": 63.34
+    },
+    {
+     "word": "a",
+     "start": 63.34,
+     "end": 63.34
+    },
+    {
+     "word": "rien",
+     "start": 63.34,
+     "end": 63.54
+    },
+    {
+     "word": "de",
+     "start": 63.54,
+     "end": 63.66
+    },
+    {
+     "word": "particulier",
+     "start": 63.66,
+     "end": 64.14
+    },
+    {
+     "word": "pour",
+     "start": 64.14,
+     "end": 64.44
+    },
+    {
+     "word": "l",
+     "start": 64.44,
+     "end": 64.56
+    },
+    {
+     "word": "'instant,",
+     "start": 64.56,
+     "end": 64.76
+    },
+    {
+     "word": "c",
+     "start": 64.88,
+     "end": 64.94
+    },
+    {
+     "word": "'est",
+     "start": 64.94,
+     "end": 64.98
+    },
+    {
+     "word": "un",
+     "start": 64.98,
+     "end": 65.12
+    },
+    {
+     "word": "trophée,",
+     "start": 65.12,
+     "end": 65.48
+    },
+    {
+     "word": "c",
+     "start": 65.58,
+     "end": 65.64
+    },
+    {
+     "word": "'est",
+     "start": 65.64,
+     "end": 65.74
+    },
+    {
+     "word": "toujours",
+     "start": 65.74,
+     "end": 66.04
+    },
+    {
+     "word": "rien",
+     "start": 66.04,
+     "end": 66.58
+    },
+    {
+     "word": "de",
+     "start": 66.58,
+     "end": 66.72
+    },
+    {
+     "word": "le",
+     "start": 66.72,
+     "end": 66.84
+    },
+    {
+     "word": "gagner.",
+     "start": 66.84,
+     "end": 67.08
+    }
+   ]
+  },
+  {
+   "start": 67.46,
+   "end": 70.18,
+   "text": "Le plus important, c'est la suite, c'est la coupe, c'est le championnat.",
+   "words": [
+    {
+     "word": "Le",
+     "start": 67.46,
+     "end": 67.74
+    },
+    {
+     "word": "plus",
+     "start": 67.74,
+     "end": 67.94
+    },
+    {
+     "word": "important,",
+     "start": 67.94,
+     "end": 68.26
+    },
+    {
+     "word": "c",
+     "start": 68.48,
+     "end": 68.5
+    },
+    {
+     "word": "'est",
+     "start": 68.5,
+     "end": 68.54
+    },
+    {
+     "word": "la",
+     "start": 68.54,
+     "end": 68.68
+    },
+    {
+     "word": "suite,",
+     "start": 68.68,
+     "end": 68.92
+    },
+    {
+     "word": "c",
+     "start": 69.06,
+     "end": 69.1
+    },
+    {
+     "word": "'est",
+     "start": 69.1,
+     "end": 69.1
+    },
+    {
+     "word": "la",
+     "start": 69.1,
+     "end": 69.22
+    },
+    {
+     "word": "coupe,",
+     "start": 69.22,
+     "end": 69.42
+    },
+    {
+     "word": "c",
+     "start": 69.54,
+     "end": 69.56
+    },
+    {
+     "word": "'est",
+     "start": 69.56,
+     "end": 69.58
+    },
+    {
+     "word": "le",
+     "start": 69.58,
+     "end": 69.66
+    },
+    {
+     "word": "championnat.",
+     "start": 69.66,
+     "end": 70.18
+    }
+   ]
+  },
+  {
+   "start": 70.68,
+   "end": 73.16,
+   "text": "Et là, on continue à se préparer pour être performant pour la suite.",
+   "words": [
+    {
+     "word": "Et",
+     "start": 70.68,
+     "end": 70.72
+    },
+    {
+     "word": "là,",
+     "start": 70.72,
+     "end": 70.82
+    },
+    {
+     "word": "on",
+     "start": 70.86,
+     "end": 70.94
+    },
+    {
+     "word": "continue",
+     "start": 70.94,
+     "end": 71.26
+    },
+    {
+     "word": "à",
+     "start": 71.26,
+     "end": 71.38
+    },
+    {
+     "word": "se",
+     "start": 71.38,
+     "end": 71.5
+    },
+    {
+     "word": "préparer",
+     "start": 71.5,
+     "end": 72.0
+    },
+    {
+     "word": "pour",
+     "start": 72.0,
+     "end": 72.16
+    },
+    {
+     "word": "être",
+     "start": 72.16,
+     "end": 72.28
+    },
+    {
+     "word": "performant",
+     "start": 72.28,
+     "end": 72.7
+    },
+    {
+     "word": "pour",
+     "start": 72.7,
+     "end": 72.82
+    },
+    {
+     "word": "la",
+     "start": 72.82,
+     "end": 72.92
+    },
+    {
+     "word": "suite.",
+     "start": 72.92,
+     "end": 73.16
+    }
+   ]
+  },
+  {
+   "start": 73.82,
+   "end": 80.08,
+   "text": "Le groupe, il est aujourd'hui formé, il est sur de bonnes bases, sur un bon travail de fond.",
+   "words": [
+    {
+     "word": "Le",
+     "start": 73.82,
+     "end": 74.26
+    },
+    {
+     "word": "groupe,",
+     "start": 74.26,
+     "end": 74.52
+    },
+    {
+     "word": "il",
+     "start": 74.52,
+     "end": 74.7
+    },
+    {
+     "word": "est",
+     "start": 74.7,
+     "end": 74.94
+    },
+    {
+     "word": "aujourd",
+     "start": 74.94,
+     "end": 75.28
+    },
+    {
+     "word": "'hui",
+     "start": 75.28,
+     "end": 75.44
+    },
+    {
+     "word": "formé,",
+     "start": 75.44,
+     "end": 75.94
+    },
+    {
+     "word": "il",
+     "start": 76.2,
+     "end": 76.28
+    },
+    {
+     "word": "est",
+     "start": 76.28,
+     "end": 76.56
+    },
+    {
+     "word": "sur",
+     "start": 76.56,
+     "end": 76.8
+    },
+    {
+     "word": "de",
+     "start": 76.8,
+     "end": 76.9
+    },
+    {
+     "word": "bonnes",
+     "start": 76.9,
+     "end": 77.16
+    },
+    {
+     "word": "bases,",
+     "start": 77.16,
+     "end": 77.4
+    },
+    {
+     "word": "sur",
+     "start": 77.6,
+     "end": 78.86
+    },
+    {
+     "word": "un",
+     "start": 78.86,
+     "end": 79.3
+    },
+    {
+     "word": "bon",
+     "start": 79.3,
+     "end": 79.38
+    },
+    {
+     "word": "travail",
+     "start": 79.38,
+     "end": 79.68
+    },
+    {
+     "word": "de",
+     "start": 79.68,
+     "end": 79.86
+    },
+    {
+     "word": "fond.",
+     "start": 79.86,
+     "end": 80.08
+    }
+   ]
+  },
+  {
+   "start": 80.62,
+   "end": 84.4,
+   "text": "Ouais, ça fait deux ans qu'on a commencé à travailler, on s'est renforcé avec des joueurs majeurs,",
+   "words": [
+    {
+     "word": "Ouais,",
+     "start": 80.62,
+     "end": 80.84
+    },
+    {
+     "word": "ça",
+     "start": 81.06,
+     "end": 81.1
+    },
+    {
+     "word": "fait",
+     "start": 81.1,
+     "end": 81.26
+    },
+    {
+     "word": "deux",
+     "start": 81.26,
+     "end": 81.46
+    },
+    {
+     "word": "ans",
+     "start": 81.46,
+     "end": 81.64
+    },
+    {
+     "word": "qu",
+     "start": 81.64,
+     "end": 81.76
+    },
+    {
+     "word": "'on",
+     "start": 81.76,
+     "end": 81.88
+    },
+    {
+     "word": "a",
+     "start": 81.88,
+     "end": 82.04
+    },
+    {
+     "word": "commencé",
+     "start": 82.04,
+     "end": 82.3
+    },
+    {
+     "word": "à",
+     "start": 82.3,
+     "end": 82.44
+    },
+    {
+     "word": "travailler,",
+     "start": 82.44,
+     "end": 82.76
+    },
+    {
+     "word": "on",
+     "start": 82.88,
+     "end": 82.94
+    },
+    {
+     "word": "s",
+     "start": 82.94,
+     "end": 83.06
+    },
+    {
+     "word": "'est",
+     "start": 83.06,
+     "end": 83.08
+    },
+    {
+     "word": "renforcé",
+     "start": 83.08,
+     "end": 83.46
+    },
+    {
+     "word": "avec",
+     "start": 83.46,
+     "end": 83.64
+    },
+    {
+     "word": "des",
+     "start": 83.64,
+     "end": 83.78
+    },
+    {
+     "word": "joueurs",
+     "start": 83.78,
+     "end": 84.0
+    },
+    {
+     "word": "majeurs,",
+     "start": 84.0,
+     "end": 84.4
+    }
+   ]
+  },
+  {
+   "start": 84.52,
+   "end": 89.74,
+   "text": "qui apportent vraiment leurs pierres à l'édifice, que ce soit Soane dans les buts, ou Manu, ou bien Juan.",
+   "words": [
+    {
+     "word": "qui",
+     "start": 84.52,
+     "end": 84.94
+    },
+    {
+     "word": "apportent",
+     "start": 84.94,
+     "end": 85.34
+    },
+    {
+     "word": "vraiment",
+     "start": 85.34,
+     "end": 85.58
+    },
+    {
+     "word": "leurs",
+     "start": 85.58,
+     "end": 86.02
+    },
+    {
+     "word": "pierres",
+     "start": 86.02,
+     "end": 86.28
+    },
+    {
+     "word": "à",
+     "start": 86.28,
+     "end": 86.34
+    },
+    {
+     "word": "l",
+     "start": 86.34,
+     "end": 86.42
+    },
+    {
+     "word": "'édifice,",
+     "start": 86.42,
+     "end": 86.8
+    },
+    {
+     "word": "que",
+     "start": 87.14,
+     "end": 87.26
+    },
+    {
+     "word": "ce",
+     "start": 87.26,
+     "end": 87.4
+    },
+    {
+     "word": "soit",
+     "start": 87.4,
+     "end": 87.66
+    },
+    {
+     "word": "Soane",
+     "start": 87.66,
+     "end": 88.0
+    },
+    {
+     "word": "dans",
+     "start": 88.0,
+     "end": 88.14
+    },
+    {
+     "word": "les",
+     "start": 88.14,
+     "end": 88.3
+    },
+    {
+     "word": "buts,",
+     "start": 88.3,
+     "end": 88.62
+    },
+    {
+     "word": "ou",
+     "start": 88.62,
+     "end": 88.7
+    },
+    {
+     "word": "Manu,",
+     "start": 88.7,
+     "end": 89.1
+    },
+    {
+     "word": "ou",
+     "start": 89.26,
+     "end": 89.28
+    },
+    {
+     "word": "bien",
+     "start": 89.28,
+     "end": 89.48
+    },
+    {
+     "word": "Juan.",
+     "start": 89.48,
+     "end": 89.74
+    }
+   ]
+  },
+  {
+   "start": 90.16,
+   "end": 92.36,
+   "text": "Donc vraiment, on est en train de consolider notre groupe.",
+   "words": [
+    {
+     "word": "Donc",
+     "start": 90.16,
+     "end": 90.3
+    },
+    {
+     "word": "vraiment,",
+     "start": 90.3,
+     "end": 90.58
+    },
+    {
+     "word": "on",
+     "start": 90.68,
+     "end": 90.8
+    },
+    {
+     "word": "est",
+     "start": 90.8,
+     "end": 90.96
+    },
+    {
+     "word": "en",
+     "start": 90.96,
+     "end": 91.04
+    },
+    {
+     "word": "train",
+     "start": 91.04,
+     "end": 91.14
+    },
+    {
+     "word": "de",
+     "start": 91.14,
+     "end": 91.32
+    },
+    {
+     "word": "consolider",
+     "start": 91.32,
+     "end": 91.94
+    },
+    {
+     "word": "notre",
+     "start": 91.94,
+     "end": 92.14
+    },
+    {
+     "word": "groupe.",
+     "start": 92.14,
+     "end": 92.36
+    }
+   ]
+  },
+  {
+   "start": 92.78,
+   "end": 95.86,
+   "text": "On commence à être beaucoup plus performant qu'avant.",
+   "words": [
+    {
+     "word": "On",
+     "start": 92.78,
+     "end": 92.96
+    },
+    {
+     "word": "commence",
+     "start": 92.96,
+     "end": 93.34
+    },
+    {
+     "word": "à",
+     "start": 93.34,
+     "end": 93.74
+    },
+    {
+     "word": "être",
+     "start": 93.74,
+     "end": 94.56
+    },
+    {
+     "word": "beaucoup",
+     "start": 94.56,
+     "end": 94.78
+    },
+    {
+     "word": "plus",
+     "start": 94.78,
+     "end": 94.96
+    },
+    {
+     "word": "performant",
+     "start": 94.96,
+     "end": 95.42
+    },
+    {
+     "word": "qu",
+     "start": 95.42,
+     "end": 95.68
+    },
+    {
+     "word": "'avant.",
+     "start": 95.68,
+     "end": 95.86
+    }
+   ]
+  },
+  {
+   "start": 95.86,
+   "end": 100.68,
+   "text": "Maintenant, c'est le mental, parce que quand même, sous ce tournoi-là, on perd le premier match.",
+   "words": [
+    {
+     "word": "Maintenant,",
+     "start": 95.86,
+     "end": 96.42
+    },
+    {
+     "word": "c",
+     "start": 96.58,
+     "end": 96.58
+    },
+    {
+     "word": "'est",
+     "start": 96.58,
+     "end": 96.64
+    },
+    {
+     "word": "le",
+     "start": 96.64,
+     "end": 96.72
+    },
+    {
+     "word": "mental,",
+     "start": 96.72,
+     "end": 97.02
+    },
+    {
+     "word": "parce",
+     "start": 97.2,
+     "end": 97.24
+    },
+    {
+     "word": "que",
+     "start": 97.24,
+     "end": 97.44
+    },
+    {
+     "word": "quand",
+     "start": 97.44,
+     "end": 97.56
+    },
+    {
+     "word": "même,",
+     "start": 97.56,
+     "end": 97.74
+    },
+    {
+     "word": "sous",
+     "start": 97.88,
+     "end": 98.16
+    },
+    {
+     "word": "ce",
+     "start": 98.16,
+     "end": 98.34
+    },
+    {
+     "word": "tournoi",
+     "start": 98.34,
+     "end": 98.78
+    },
+    {
+     "word": "-là,",
+     "start": 98.78,
+     "end": 98.94
+    },
+    {
+     "word": "on",
+     "start": 99.44,
+     "end": 99.86
+    },
+    {
+     "word": "perd",
+     "start": 99.86,
+     "end": 100.04
+    },
+    {
+     "word": "le",
+     "start": 100.04,
+     "end": 100.2
+    },
+    {
+     "word": "premier",
+     "start": 100.2,
+     "end": 100.44
+    },
+    {
+     "word": "match.",
+     "start": 100.44,
+     "end": 100.68
+    }
+   ]
+  },
+  {
+   "start": 100.76,
+   "end": 104.66,
+   "text": "On est en vie grâce à la victoire de l'Intrépide sur justement le club sport.",
+   "words": [
+    {
+     "word": "On",
+     "start": 100.76,
+     "end": 100.84
+    },
+    {
+     "word": "est",
+     "start": 100.84,
+     "end": 100.96
+    },
+    {
+     "word": "en",
+     "start": 100.96,
+     "end": 101.1
+    },
+    {
+     "word": "vie",
+     "start": 101.1,
+     "end": 101.24
+    },
+    {
+     "word": "grâce",
+     "start": 101.24,
+     "end": 101.5
+    },
+    {
+     "word": "à",
+     "start": 101.5,
+     "end": 101.6
+    },
+    {
+     "word": "la",
+     "start": 101.6,
+     "end": 101.7
+    },
+    {
+     "word": "victoire",
+     "start": 101.7,
+     "end": 102.0
+    },
+    {
+     "word": "de",
+     "start": 102.0,
+     "end": 102.12
+    },
+    {
+     "word": "l",
+     "start": 102.12,
+     "end": 102.2
+    },
+    {
+     "word": "'Intrépide",
+     "start": 102.2,
+     "end": 102.62
+    },
+    {
+     "word": "sur",
+     "start": 102.62,
+     "end": 103.38
+    },
+    {
+     "word": "justement",
+     "start": 103.38,
+     "end": 104.04
+    },
+    {
+     "word": "le",
+     "start": 104.04,
+     "end": 104.24
+    },
+    {
+     "word": "club",
+     "start": 104.24,
+     "end": 104.42
+    },
+    {
+     "word": "sport.",
+     "start": 104.42,
+     "end": 104.66
+    }
+   ]
+  },
+  {
+   "start": 105.08,
+   "end": 109.2,
+   "text": "Après, on fait le taf contre l'Intrépide et puis contre la Guyane, donc ça nous permet de gagner.",
+   "words": [
+    {
+     "word": "Après,",
+     "start": 105.08,
+     "end": 105.3
+    },
+    {
+     "word": "on",
+     "start": 105.36,
+     "end": 105.4
+    },
+    {
+     "word": "fait",
+     "start": 105.4,
+     "end": 105.52
+    },
+    {
+     "word": "le",
+     "start": 105.52,
+     "end": 105.64
+    },
+    {
+     "word": "taf",
+     "start": 105.64,
+     "end": 105.88
+    },
+    {
+     "word": "contre",
+     "start": 105.88,
+     "end": 106.02
+    },
+    {
+     "word": "l",
+     "start": 106.02,
+     "end": 106.12
+    },
+    {
+     "word": "'Intrépide",
+     "start": 106.12,
+     "end": 106.52
+    },
+    {
+     "word": "et",
+     "start": 106.52,
+     "end": 106.68
+    },
+    {
+     "word": "puis",
+     "start": 106.68,
+     "end": 106.78
+    },
+    {
+     "word": "contre",
+     "start": 106.78,
+     "end": 107.08
+    },
+    {
+     "word": "la",
+     "start": 107.08,
+     "end": 107.18
+    },
+    {
+     "word": "Guyane,",
+     "start": 107.18,
+     "end": 107.44
+    },
+    {
+     "word": "donc",
+     "start": 107.52,
+     "end": 107.66
+    },
+    {
+     "word": "ça",
+     "start": 107.66,
+     "end": 108.02
+    },
+    {
+     "word": "nous",
+     "start": 108.02,
+     "end": 108.16
+    },
+    {
+     "word": "permet",
+     "start": 108.16,
+     "end": 108.44
+    },
+    {
+     "word": "de",
+     "start": 108.44,
+     "end": 108.76
+    },
+    {
+     "word": "gagner.",
+     "start": 108.76,
+     "end": 109.2
+    }
+   ]
+  },
+  {
+   "start": 109.4,
+   "end": 113.24,
+   "text": "Mais c'est vrai que, d'une façon générale, on peut dire qu'on a été la meilleure équipe du tournoi.",
+   "words": [
+    {
+     "word": "Mais",
+     "start": 109.4,
+     "end": 109.48
+    },
+    {
+     "word": "c",
+     "start": 109.48,
+     "end": 109.66
+    },
+    {
+     "word": "'est",
+     "start": 109.66,
+     "end": 109.72
+    },
+    {
+     "word": "vrai",
+     "start": 109.72,
+     "end": 109.86
+    },
+    {
+     "word": "que,",
+     "start": 109.86,
+     "end": 110.08
+    },
+    {
+     "word": "d",
+     "start": 110.16,
+     "end": 110.62
+    },
+    {
+     "word": "'une",
+     "start": 110.62,
+     "end": 110.72
+    },
+    {
+     "word": "façon",
+     "start": 110.72,
+     "end": 111.0
+    },
+    {
+     "word": "générale,",
+     "start": 111.0,
+     "end": 111.54
+    },
+    {
+     "word": "on",
+     "start": 111.58,
+     "end": 111.7
+    },
+    {
+     "word": "peut",
+     "start": 111.7,
+     "end": 111.8
+    },
+    {
+     "word": "dire",
+     "start": 111.8,
+     "end": 111.94
+    },
+    {
+     "word": "qu",
+     "start": 111.94,
+     "end": 112.04
+    },
+    {
+     "word": "'on",
+     "start": 112.04,
+     "end": 112.1
+    },
+    {
+     "word": "a",
+     "start": 112.1,
+     "end": 112.22
+    },
+    {
+     "word": "été",
+     "start": 112.22,
+     "end": 112.3
+    },
+    {
+     "word": "la",
+     "start": 112.3,
+     "end": 112.44
+    },
+    {
+     "word": "meilleure",
+     "start": 112.44,
+     "end": 112.68
+    },
+    {
+     "word": "équipe",
+     "start": 112.68,
+     "end": 112.82
+    },
+    {
+     "word": "du",
+     "start": 112.82,
+     "end": 112.96
+    },
+    {
+     "word": "tournoi.",
+     "start": 112.96,
+     "end": 113.24
+    }
+   ]
+  },
+  {
+   "start": 113.68,
+   "end": 119.24,
+   "text": "Très bien. Donc, il faudra compter avec l'UJR cette année, où les as pour toutes les bonnes compétitions coupent tout ce qu'il faut.",
+   "words": [
+    {
+     "word": "Très",
+     "start": 113.68,
+     "end": 113.88
+    },
+    {
+     "word": "bien.",
+     "start": 113.88,
+     "end": 114.02
+    },
+    {
+     "word": "Donc,",
+     "start": 114.14,
+     "end": 114.26
+    },
+    {
+     "word": "il",
+     "start": 114.46,
+     "end": 114.52
+    },
+    {
+     "word": "faudra",
+     "start": 114.52,
+     "end": 114.64
+    },
+    {
+     "word": "compter",
+     "start": 114.64,
+     "end": 114.86
+    },
+    {
+     "word": "avec",
+     "start": 114.86,
+     "end": 115.02
+    },
+    {
+     "word": "l",
+     "start": 115.02,
+     "end": 115.14
+    },
+    {
+     "word": "'UJR",
+     "start": 115.14,
+     "end": 115.42
+    },
+    {
+     "word": "cette",
+     "start": 115.42,
+     "end": 115.6
+    },
+    {
+     "word": "année,",
+     "start": 115.6,
+     "end": 115.96
+    },
+    {
+     "word": "où",
+     "start": 116.14,
+     "end": 116.6
+    },
+    {
+     "word": "les",
+     "start": 116.6,
+     "end": 116.74
+    },
+    {
+     "word": "as",
+     "start": 116.74,
+     "end": 117.12
+    },
+    {
+     "word": "pour",
+     "start": 117.12,
+     "end": 117.48
+    },
+    {
+     "word": "toutes",
+     "start": 117.48,
+     "end": 117.64
+    },
+    {
+     "word": "les",
+     "start": 117.64,
+     "end": 117.74
+    },
+    {
+     "word": "bonnes",
+     "start": 117.74,
+     "end": 117.88
+    },
+    {
+     "word": "compétitions",
+     "start": 117.88,
+     "end": 118.34
+    },
+    {
+     "word": "coupent",
+     "start": 118.34,
+     "end": 118.72
+    },
+    {
+     "word": "tout",
+     "start": 118.72,
+     "end": 118.9
+    },
+    {
+     "word": "ce",
+     "start": 118.9,
+     "end": 118.98
+    },
+    {
+     "word": "qu",
+     "start": 118.98,
+     "end": 119.06
+    },
+    {
+     "word": "'il",
+     "start": 119.06,
+     "end": 119.08
+    },
+    {
+     "word": "faut.",
+     "start": 119.08,
+     "end": 119.24
+    }
+   ]
+  },
+  {
+   "start": 119.44,
+   "end": 122.04,
+   "text": "Ah ben oui, on a envie d'y participer parce que c'est toujours intéressant.",
+   "words": [
+    {
+     "word": "Ah",
+     "start": 119.44,
+     "end": 119.6
+    },
+    {
+     "word": "ben",
+     "start": 119.6,
+     "end": 119.68
+    },
+    {
+     "word": "oui,",
+     "start": 119.68,
+     "end": 119.82
+    },
+    {
+     "word": "on",
+     "start": 119.86,
+     "end": 119.98
+    },
+    {
+     "word": "a",
+     "start": 119.98,
+     "end": 120.06
+    },
+    {
+     "word": "envie",
+     "start": 120.06,
+     "end": 120.24
+    },
+    {
+     "word": "d",
+     "start": 120.24,
+     "end": 120.34
+    },
+    {
+     "word": "'y",
+     "start": 120.34,
+     "end": 120.38
+    },
+    {
+     "word": "participer",
+     "start": 120.38,
+     "end": 120.9
+    },
+    {
+     "word": "parce",
+     "start": 120.9,
+     "end": 121.08
+    },
+    {
+     "word": "que",
+     "start": 121.08,
+     "end": 121.18
+    },
+    {
+     "word": "c",
+     "start": 121.18,
+     "end": 121.3
+    },
+    {
+     "word": "'est",
+     "start": 121.3,
+     "end": 121.36
+    },
+    {
+     "word": "toujours",
+     "start": 121.36,
+     "end": 121.56
+    },
+    {
+     "word": "intéressant.",
+     "start": 121.56,
+     "end": 122.04
+    }
+   ]
+  },
+  {
+   "start": 122.2,
+   "end": 123.74,
+   "text": "Maintenant, il y a des équipes, des forces en plaisance.",
+   "words": [
+    {
+     "word": "Maintenant,",
+     "start": 122.2,
+     "end": 122.34
+    },
+    {
+     "word": "il",
+     "start": 122.44,
+     "end": 122.48
+    },
+    {
+     "word": "y",
+     "start": 122.48,
+     "end": 122.52
+    },
+    {
+     "word": "a",
+     "start": 122.52,
+     "end": 122.54
+    },
+    {
+     "word": "des",
+     "start": 122.54,
+     "end": 122.7
+    },
+    {
+     "word": "équipes,",
+     "start": 122.7,
+     "end": 122.94
+    },
+    {
+     "word": "des",
+     "start": 123.08,
+     "end": 123.1
+    },
+    {
+     "word": "forces",
+     "start": 123.1,
+     "end": 123.32
+    },
+    {
+     "word": "en",
+     "start": 123.32,
+     "end": 123.42
+    },
+    {
+     "word": "plaisance.",
+     "start": 123.42,
+     "end": 123.74
+    }
+   ]
+  },
+  {
+   "start": 124.1,
+   "end": 129.08,
+   "text": "L'US et Citron, que ce soit Rochecarré, Clubs 4 eux-mêmes, même la Gauloise.",
+   "words": [
+    {
+     "word": "L",
+     "start": 124.1,
+     "end": 124.42
+    },
+    {
+     "word": "'US",
+     "start": 124.42,
+     "end": 124.56
+    },
+    {
+     "word": "et",
+     "start": 124.56,
+     "end": 124.74
+    },
+    {
+     "word": "Citron,",
+     "start": 124.74,
+     "end": 125.14
+    },
+    {
+     "word": "que",
+     "start": 125.64,
+     "end": 125.66
+    },
+    {
+     "word": "ce",
+     "start": 125.66,
+     "end": 125.78
+    },
+    {
+     "word": "soit",
+     "start": 125.78,
+     "end": 126.0
+    },
+    {
+     "word": "Rochecarré,",
+     "start": 126.0,
+     "end": 126.88
+    },
+    {
+     "word": "Clubs",
+     "start": 127.22,
+     "end": 127.44
+    },
+    {
+     "word": "4",
+     "start": 127.44,
+     "end": 127.66
+    },
+    {
+     "word": "eux",
+     "start": 127.66,
+     "end": 127.88
+    },
+    {
+     "word": "-mêmes,",
+     "start": 127.88,
+     "end": 128.08
+    },
+    {
+     "word": "même",
+     "start": 128.42,
+     "end": 128.56
+    },
+    {
+     "word": "la",
+     "start": 128.56,
+     "end": 128.76
+    },
+    {
+     "word": "Gauloise.",
+     "start": 128.76,
+     "end": 129.08
+    }
+   ]
+  },
+  {
+   "start": 129.16,
+   "end": 130.22,
+   "text": "Non, c'est un championnat intense.",
+   "words": [
+    {
+     "word": "Non,",
+     "start": 129.16,
+     "end": 129.22
+    },
+    {
+     "word": "c",
+     "start": 129.3,
+     "end": 129.38
+    },
+    {
+     "word": "'est",
+     "start": 129.38,
+     "end": 129.42
+    },
+    {
+     "word": "un",
+     "start": 129.42,
+     "end": 129.48
+    },
+    {
+     "word": "championnat",
+     "start": 129.48,
+     "end": 129.88
+    },
+    {
+     "word": "intense.",
+     "start": 129.88,
+     "end": 130.22
+    }
+   ]
+  },
+  {
+   "start": 130.98,
+   "end": 133.22,
+   "text": "Maintenant, c'est à nous d'être performants chaque week-end,",
+   "words": [
+    {
+     "word": "Maintenant,",
+     "start": 130.98,
+     "end": 131.3
+    },
+    {
+     "word": "c",
+     "start": 131.42,
+     "end": 131.46
+    },
+    {
+     "word": "'est",
+     "start": 131.46,
+     "end": 131.52
+    },
+    {
+     "word": "à",
+     "start": 131.52,
+     "end": 131.64
+    },
+    {
+     "word": "nous",
+     "start": 131.64,
+     "end": 131.84
+    },
+    {
+     "word": "d",
+     "start": 131.84,
+     "end": 132.04
+    },
+    {
+     "word": "'être",
+     "start": 132.04,
+     "end": 132.12
+    },
+    {
+     "word": "performants",
+     "start": 132.12,
+     "end": 132.64
+    },
+    {
+     "word": "chaque",
+     "start": 132.64,
+     "end": 132.84
+    },
+    {
+     "word": "week",
+     "start": 132.84,
+     "end": 133.06
+    },
+    {
+     "word": "-end,",
+     "start": 133.06,
+     "end": 133.22
+    }
+   ]
+  },
+  {
+   "start": 133.56,
+   "end": 136.16,
+   "text": "continuer à progresser pour que le moment clé, on le connaît,",
+   "words": [
+    {
+     "word": "continuer",
+     "start": 133.56,
+     "end": 133.88
+    },
+    {
+     "word": "à",
+     "start": 133.88,
+     "end": 134.04
+    },
+    {
+     "word": "progresser",
+     "start": 134.04,
+     "end": 134.6
+    },
+    {
+     "word": "pour",
+     "start": 134.6,
+     "end": 135.02
+    },
+    {
+     "word": "que",
+     "start": 135.02,
+     "end": 135.14
+    },
+    {
+     "word": "le",
+     "start": 135.14,
+     "end": 135.26
+    },
+    {
+     "word": "moment",
+     "start": 135.26,
+     "end": 135.5
+    },
+    {
+     "word": "clé,",
+     "start": 135.5,
+     "end": 135.68
+    },
+    {
+     "word": "on",
+     "start": 135.72,
+     "end": 135.82
+    },
+    {
+     "word": "le",
+     "start": 135.82,
+     "end": 135.92
+    },
+    {
+     "word": "connaît,",
+     "start": 135.92,
+     "end": 136.16
+    }
+   ]
+  },
+  {
+   "start": 136.22,
+   "end": 138.48,
+   "text": "la fête du hand-martiniquais, ça reste quand même la pôle désastre.",
+   "words": [
+    {
+     "word": "la",
+     "start": 136.22,
+     "end": 136.42
+    },
+    {
+     "word": "fête",
+     "start": 136.42,
+     "end": 136.56
+    },
+    {
+     "word": "du",
+     "start": 136.56,
+     "end": 136.68
+    },
+    {
+     "word": "hand",
+     "start": 136.68,
+     "end": 136.78
+    },
+    {
+     "word": "-martiniquais,",
+     "start": 136.78,
+     "end": 137.38
+    },
+    {
+     "word": "ça",
+     "start": 137.44,
+     "end": 137.52
+    },
+    {
+     "word": "reste",
+     "start": 137.52,
+     "end": 137.68
+    },
+    {
+     "word": "quand",
+     "start": 137.68,
+     "end": 137.8
+    },
+    {
+     "word": "même",
+     "start": 137.8,
+     "end": 137.9
+    },
+    {
+     "word": "la",
+     "start": 137.9,
+     "end": 138.02
+    },
+    {
+     "word": "pôle",
+     "start": 138.02,
+     "end": 138.18
+    },
+    {
+     "word": "désastre.",
+     "start": 138.18,
+     "end": 138.48
+    }
+   ]
+  },
+  {
+   "start": 139.5,
+   "end": 144.92,
+   "text": "Ok. Si on doit faire un bilan de cette supercoupe, qu'elle est positif ?",
+   "words": [
+    {
+     "word": "Ok.",
+     "start": 139.5,
+     "end": 139.82
+    },
+    {
+     "word": "Si",
+     "start": 140.16,
+     "end": 140.36
+    },
+    {
+     "word": "on",
+     "start": 140.36,
+     "end": 140.48
+    },
+    {
+     "word": "doit",
+     "start": 140.48,
+     "end": 140.56
+    },
+    {
+     "word": "faire",
+     "start": 140.56,
+     "end": 140.7
+    },
+    {
+     "word": "un",
+     "start": 140.7,
+     "end": 140.82
+    },
+    {
+     "word": "bilan",
+     "start": 140.82,
+     "end": 141.04
+    },
+    {
+     "word": "de",
+     "start": 141.04,
+     "end": 141.18
+    },
+    {
+     "word": "cette",
+     "start": 141.18,
+     "end": 141.34
+    },
+    {
+     "word": "supercoupe,",
+     "start": 141.34,
+     "end": 141.88
+    },
+    {
+     "word": "qu",
+     "start": 142.54,
+     "end": 142.62
+    },
+    {
+     "word": "'elle",
+     "start": 142.62,
+     "end": 142.74
+    },
+    {
+     "word": "est",
+     "start": 142.74,
+     "end": 142.98
+    },
+    {
+     "word": "positif",
+     "start": 142.98,
+     "end": 143.98
+    },
+    {
+     "word": "?",
+     "start": 143.98,
+     "end": 144.92
+    }
+   ]
+  },
+  {
+   "start": 144.92,
+   "end": 145.78,
+   "text": "Que ferait-il ?",
+   "words": [
+    {
+     "word": "Que",
+     "start": 144.92,
+     "end": 145.14
+    },
+    {
+     "word": "ferait",
+     "start": 145.14,
+     "end": 145.42
+    },
+    {
+     "word": "-il",
+     "start": 145.42,
+     "end": 145.6
+    },
+    {
+     "word": "?",
+     "start": 145.6,
+     "end": 145.78
+    }
+   ]
+  },
+  {
+   "start": 145.78,
+   "end": 149.74,
+   "text": "Sur le point positif, je disais, c'est de se rencontrer au niveau anti-Guyane,",
+   "words": [
+    {
+     "word": "Sur",
+     "start": 145.78,
+     "end": 146.02
+    },
+    {
+     "word": "le",
+     "start": 146.02,
+     "end": 146.14
+    },
+    {
+     "word": "point",
+     "start": 146.14,
+     "end": 146.3
+    },
+    {
+     "word": "positif,",
+     "start": 146.3,
+     "end": 146.8
+    },
+    {
+     "word": "je",
+     "start": 146.88,
+     "end": 146.94
+    },
+    {
+     "word": "disais,",
+     "start": 146.94,
+     "end": 147.28
+    },
+    {
+     "word": "c",
+     "start": 147.38,
+     "end": 147.46
+    },
+    {
+     "word": "'est",
+     "start": 147.46,
+     "end": 147.5
+    },
+    {
+     "word": "de",
+     "start": 147.5,
+     "end": 147.6
+    },
+    {
+     "word": "se",
+     "start": 147.6,
+     "end": 147.72
+    },
+    {
+     "word": "rencontrer",
+     "start": 147.72,
+     "end": 148.18
+    },
+    {
+     "word": "au",
+     "start": 148.18,
+     "end": 148.74
+    },
+    {
+     "word": "niveau",
+     "start": 148.74,
+     "end": 148.98
+    },
+    {
+     "word": "anti",
+     "start": 148.98,
+     "end": 149.22
+    },
+    {
+     "word": "-Guyane,",
+     "start": 149.22,
+     "end": 149.74
+    }
+   ]
+  },
+  {
+   "start": 149.94,
+   "end": 151.4,
+   "text": "de se retrouver, autre chose.",
+   "words": [
+    {
+     "word": "de",
+     "start": 149.94,
+     "end": 150.16
+    },
+    {
+     "word": "se",
+     "start": 150.16,
+     "end": 150.3
+    },
+    {
+     "word": "retrouver,",
+     "start": 150.3,
+     "end": 150.74
+    },
+    {
+     "word": "autre",
+     "start": 151.04,
+     "end": 151.16
+    },
+    {
+     "word": "chose.",
+     "start": 151.16,
+     "end": 151.4
+    }
+   ]
+  },
+  {
+   "start": 151.94,
+   "end": 153.58,
+   "text": "Techniquement, en tout cas, nous au niveau de l'UJR,",
+   "words": [
+    {
+     "word": "Techniquement,",
+     "start": 151.94,
+     "end": 152.26
+    },
+    {
+     "word": "en",
+     "start": 152.42,
+     "end": 152.44
+    },
+    {
+     "word": "tout",
+     "start": 152.44,
+     "end": 152.54
+    },
+    {
+     "word": "cas,",
+     "start": 152.54,
+     "end": 152.64
+    },
+    {
+     "word": "nous",
+     "start": 152.74,
+     "end": 152.88
+    },
+    {
+     "word": "au",
+     "start": 152.88,
+     "end": 153.02
+    },
+    {
+     "word": "niveau",
+     "start": 153.02,
+     "end": 153.12
+    },
+    {
+     "word": "de",
+     "start": 153.12,
+     "end": 153.26
+    },
+    {
+     "word": "l",
+     "start": 153.26,
+     "end": 153.32
+    },
+    {
+     "word": "'UJR,",
+     "start": 153.32,
+     "end": 153.58
+    }
+   ]
+  },
+  {
+   "start": 153.58,
+   "end": 154.54,
+   "text": "on a été très satisfait.",
+   "words": [
+    {
+     "word": "on",
+     "start": 153.58,
+     "end": 153.7
+    },
+    {
+     "word": "a",
+     "start": 153.7,
+     "end": 153.82
+    },
+    {
+     "word": "été",
+     "start": 153.82,
+     "end": 153.92
+    },
+    {
+     "word": "très",
+     "start": 153.92,
+     "end": 154.08
+    },
+    {
+     "word": "satisfait.",
+     "start": 154.08,
+     "end": 154.54
+    }
+   ]
+  },
+  {
+   "start": 154.74,
+   "end": 156.2,
+   "text": "Le point négatif, c'est le public.",
+   "words": [
+    {
+     "word": "Le",
+     "start": 154.74,
+     "end": 155.06
+    },
+    {
+     "word": "point",
+     "start": 155.06,
+     "end": 155.22
+    },
+    {
+     "word": "négatif,",
+     "start": 155.22,
+     "end": 155.64
+    },
+    {
+     "word": "c",
+     "start": 155.72,
+     "end": 155.74
+    },
+    {
+     "word": "'est",
+     "start": 155.74,
+     "end": 155.8
+    },
+    {
+     "word": "le",
+     "start": 155.8,
+     "end": 155.88
+    },
+    {
+     "word": "public.",
+     "start": 155.88,
+     "end": 156.2
+    }
+   ]
+  },
+  {
+   "start": 156.4,
+   "end": 159.66,
+   "text": "On a vu un peu plus de monde aujourd'hui,",
+   "words": [
+    {
+     "word": "On",
+     "start": 156.4,
+     "end": 156.66
+    },
+    {
+     "word": "a",
+     "start": 156.66,
+     "end": 156.78
+    },
+    {
+     "word": "vu",
+     "start": 156.78,
+     "end": 156.9
+    },
+    {
+     "word": "un",
+     "start": 156.9,
+     "end": 156.98
+    },
+    {
+     "word": "peu",
+     "start": 156.98,
+     "end": 157.08
+    },
+    {
+     "word": "plus",
+     "start": 157.08,
+     "end": 157.32
+    },
+    {
+     "word": "de",
+     "start": 157.32,
+     "end": 157.48
+    },
+    {
+     "word": "monde",
+     "start": 157.48,
+     "end": 157.76
+    },
+    {
+     "word": "aujourd",
+     "start": 157.76,
+     "end": 159.34
+    },
+    {
+     "word": "'hui,",
+     "start": 159.34,
+     "end": 159.66
+    }
+   ]
+  },
+  {
+   "start": 159.72,
+   "end": 163.0,
+   "text": "mais sur les quatre jours, on a un peu déçu le nombre de spectateurs.",
+   "words": [
+    {
+     "word": "mais",
+     "start": 159.72,
+     "end": 159.9
+    },
+    {
+     "word": "sur",
+     "start": 159.9,
+     "end": 160.4
+    },
+    {
+     "word": "les",
+     "start": 160.4,
+     "end": 160.52
+    },
+    {
+     "word": "quatre",
+     "start": 160.52,
+     "end": 160.68
+    },
+    {
+     "word": "jours,",
+     "start": 160.68,
+     "end": 160.9
+    },
+    {
+     "word": "on",
+     "start": 161.0,
+     "end": 161.06
+    },
+    {
+     "word": "a",
+     "start": 161.06,
+     "end": 161.16
+    },
+    {
+     "word": "un",
+     "start": 161.16,
+     "end": 161.32
+    },
+    {
+     "word": "peu",
+     "start": 161.32,
+     "end": 161.42
+    },
+    {
+     "word": "déçu",
+     "start": 161.42,
+     "end": 161.78
+    },
+    {
+     "word": "le",
+     "start": 161.78,
+     "end": 162.2
+    },
+    {
+     "word": "nombre",
+     "start": 162.2,
+     "end": 162.4
+    },
+    {
+     "word": "de",
+     "start": 162.4,
+     "end": 162.5
+    },
+    {
+     "word": "spectateurs.",
+     "start": 162.5,
+     "end": 163.0
+    }
+   ]
+  },
+  {
+   "start": 163.22,
+   "end": 164.92,
+   "text": "Il faudra se poser les bonnes questions sur ça.",
+   "words": [
+    {
+     "word": "Il",
+     "start": 163.22,
+     "end": 163.34
+    },
+    {
+     "word": "faudra",
+     "start": 163.34,
+     "end": 163.52
+    },
+    {
+     "word": "se",
+     "start": 163.52,
+     "end": 163.64
+    },
+    {
+     "word": "poser",
+     "start": 163.64,
+     "end": 163.88
+    },
+    {
+     "word": "les",
+     "start": 163.88,
+     "end": 164.02
+    },
+    {
+     "word": "bonnes",
+     "start": 164.02,
+     "end": 164.28
+    },
+    {
+     "word": "questions",
+     "start": 164.28,
+     "end": 164.44
+    },
+    {
+     "word": "sur",
+     "start": 164.44,
+     "end": 164.76
+    },
+    {
+     "word": "ça.",
+     "start": 164.76,
+     "end": 164.92
+    }
+   ]
+  },
+  {
+   "start": 165.42,
+   "end": 166.78,
+   "text": "Mais dans l'ensemble, il ne faut pas que ça meure.",
+   "words": [
+    {
+     "word": "Mais",
+     "start": 165.42,
+     "end": 165.5
+    },
+    {
+     "word": "dans",
+     "start": 165.5,
+     "end": 165.68
+    },
+    {
+     "word": "l",
+     "start": 165.68,
+     "end": 165.78
+    },
+    {
+     "word": "'ensemble,",
+     "start": 165.78,
+     "end": 166.02
+    },
+    {
+     "word": "il",
+     "start": 166.14,
+     "end": 166.16
+    },
+    {
+     "word": "ne",
+     "start": 166.16,
+     "end": 166.18
+    },
+    {
+     "word": "faut",
+     "start": 166.18,
+     "end": 166.24
+    },
+    {
+     "word": "pas",
+     "start": 166.24,
+     "end": 166.36
+    },
+    {
+     "word": "que",
+     "start": 166.36,
+     "end": 166.44
+    },
+    {
+     "word": "ça",
+     "start": 166.44,
+     "end": 166.56
+    },
+    {
+     "word": "meure.",
+     "start": 166.56,
+     "end": 166.78
+    }
+   ]
+  },
+  {
+   "start": 167.06,
+   "end": 169.06,
+   "text": "Il faut que ça continue l'année prochaine en Guyane, pareil.",
+   "words": [
+    {
+     "word": "Il",
+     "start": 167.06,
+     "end": 167.16
+    },
+    {
+     "word": "faut",
+     "start": 167.16,
+     "end": 167.22
+    },
+    {
+     "word": "que",
+     "start": 167.22,
+     "end": 167.28
+    },
+    {
+     "word": "ça",
+     "start": 167.28,
+     "end": 167.38
+    },
+    {
+     "word": "continue",
+     "start": 167.38,
+     "end": 167.78
+    },
+    {
+     "word": "l",
+     "start": 167.78,
+     "end": 167.92
+    },
+    {
+     "word": "'année",
+     "start": 167.92,
+     "end": 168.02
+    },
+    {
+     "word": "prochaine",
+     "start": 168.02,
+     "end": 168.3
+    },
+    {
+     "word": "en",
+     "start": 168.3,
+     "end": 168.48
+    },
+    {
+     "word": "Guyane,",
+     "start": 168.48,
+     "end": 168.76
+    },
+    {
+     "word": "pareil.",
+     "start": 168.94,
+     "end": 169.06
+    }
+   ]
+  },
+  {
+   "start": 169.5,
+   "end": 172.8,
+   "text": "Il faut que ça continue, qu'on continue à fédérer la zone anti-Guyane",
+   "words": [
+    {
+     "word": "Il",
+     "start": 169.5,
+     "end": 169.62
+    },
+    {
+     "word": "faut",
+     "start": 169.62,
+     "end": 169.7
+    },
+    {
+     "word": "que",
+     "start": 169.7,
+     "end": 169.78
+    },
+    {
+     "word": "ça",
+     "start": 169.78,
+     "end": 169.88
+    },
+    {
+     "word": "continue,",
+     "start": 169.88,
+     "end": 170.32
+    },
+    {
+     "word": "qu",
+     "start": 170.4,
+     "end": 170.46
+    },
+    {
+     "word": "'on",
+     "start": 170.46,
+     "end": 170.56
+    },
+    {
+     "word": "continue",
+     "start": 170.56,
+     "end": 170.82
+    },
+    {
+     "word": "à",
+     "start": 170.82,
+     "end": 170.94
+    },
+    {
+     "word": "fédérer",
+     "start": 170.94,
+     "end": 171.38
+    },
+    {
+     "word": "la",
+     "start": 171.38,
+     "end": 171.9
+    },
+    {
+     "word": "zone",
+     "start": 171.9,
+     "end": 172.2
+    },
+    {
+     "word": "anti",
+     "start": 172.2,
+     "end": 172.44
+    },
+    {
+     "word": "-Guyane",
+     "start": 172.44,
+     "end": 172.8
+    }
+   ]
+  },
+  {
+   "start": 172.8,
+   "end": 174.14,
+   "text": "pour continuer à être bien formés.",
+   "words": [
+    {
+     "word": "pour",
+     "start": 172.8,
+     "end": 173.14
+    },
+    {
+     "word": "continuer",
+     "start": 173.14,
+     "end": 173.44
+    },
+    {
+     "word": "à",
+     "start": 173.44,
+     "end": 173.56
+    },
+    {
+     "word": "être",
+     "start": 173.56,
+     "end": 173.64
+    },
+    {
+     "word": "bien",
+     "start": 173.64,
+     "end": 173.78
+    },
+    {
+     "word": "formés.",
+     "start": 173.78,
+     "end": 174.14
+    }
+   ]
+  },
+  {
+   "start": 174.26,
+   "end": 174.38,
+   "text": "Merci.",
+   "words": [
+    {
+     "word": "Merci.",
+     "start": 174.26,
+     "end": 174.38
+    }
+   ]
+  },
+  {
+   "start": 174.38,
+   "end": 174.48,
+   "text": "Merci.",
+   "words": [
+    {
+     "word": "Merci.",
+     "start": 174.38,
+     "end": 174.48
+    }
+   ]
+  },
+  {
+   "start": 174.64,
+   "end": 174.84,
+   "text": "Merci.",
+   "words": [
+    {
+     "word": "Merci.",
+     "start": 174.64,
+     "end": 174.84
+    }
+   ]
+  }
+ ],
+ "language": "fr"
+}

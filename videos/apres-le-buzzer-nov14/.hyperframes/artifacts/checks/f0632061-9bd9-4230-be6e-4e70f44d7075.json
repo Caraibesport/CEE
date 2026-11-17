@@ -1,0 +1,2231 @@
+{
+  "ok": false,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 9,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "composition_file_too_large",
+        "severity": "warning",
+        "message": "This HTML composition file has 1028 lines. Smaller sub-compositions are easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/CEE/videos/apres-le-buzzer-nov14/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Split coherent scenes or layers into separate .html files under compositions/, then mount them from the parent with data-composition-src so each file stays small enough to inspect, revise, and validate independently."
+      },
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "This HTML file has 6 timed elements. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/CEE/videos/apres-le-buzzer-nov14/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"bug\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#bug",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/CEE/videos/apres-le-buzzer-nov14/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"bug\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"gfx\"> is a timeline element that contains nested <div id=\"ch3\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#gfx",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/CEE/videos/apres-le-buzzer-nov14/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"gfx\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"caps\"> is a timeline element that contains nested <div id=\"cg0\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#caps",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/CEE/videos/apres-le-buzzer-nov14/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"caps\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"intro\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#intro",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/CEE/videos/apres-le-buzzer-nov14/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"intro\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<div id=\"outro\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#outro",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/CEE/videos/apres-le-buzzer-nov14/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <div id=\"outro\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "audio_src_not_found",
+        "severity": "error",
+        "message": "<audio> element references file(s) not found in the project: audio/music.mp3, sfx/buzzer.wav, sfx/impact.mp3, sfx/riser.mp3, sfx/whoosh.mp3. The rendered video will be silent.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/home/user/CEE/videos/apres-le-buzzer-nov14/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add the missing files to the project directory, or update the src attributes to point to existing files."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Audible clips overlap on Studio track 15: sfx/whoosh.mp3 at 32.42-32.99s and sfx/whoosh.mp3 at 32.02-32.59s. Both play at once whatever their track (the render mixes every audible clip; data-track-index only picks the Studio lane), and Studio draws them over each other in that lane.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "If both should sound (a whoosh into a hit), give one its own data-track-index; the mix does not change. If one is a leftover duplicate, remove it or move it so the windows do not overlap."
+      },
+      {
+        "code": "duplicate_audio_track",
+        "severity": "warning",
+        "message": "Audible clips overlap on Studio track 15: sfx/whoosh.mp3 at 87.38-87.95s and sfx/whoosh.mp3 at 87.72-88.29s. Both play at once whatever their track (the render mixes every audible clip; data-track-index only picks the Studio lane), and Studio draws them over each other in that lane.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "If both should sound (a whoosh into a hit), give one its own data-track-index; the mix does not change. If one is a leftover duplicate, remove it or move it so the windows do not overlap."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": false,
+    "errorCount": 57,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "request_failed",
+        "severity": "error",
+        "message": "Failed to load npm/gsap@3.14.2/dist/gsap.min.js: net::ERR_TUNNEL_CONNECTION_FAILED",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/riser.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/riser.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading fonts/Anton-Regular.ttf",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/fonts/Anton-Regular.ttf"
+      },
+      {
+        "code": "request_failed",
+        "severity": "error",
+        "message": "Failed to load fonts/Anton-Regular.ttf: net::ERR_ABORTED",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/fonts/Anton-Regular.ttf"
+      },
+      {
+        "code": "page_error",
+        "severity": "error",
+        "message": "Cannot read properties of undefined (reading 'timeline')",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/riser.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/riser.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading audio/music.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/audio/music.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/buzzer.wav",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/buzzer.wav"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/impact.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/impact.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/riser.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/riser.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "18 media element(s) failed to load (music-a, sfx-buzzer, sfx-slam, sfx-riser, sfx-w0, sfx-w1, sfx-w2, sfx-w3, sfx-w4, sfx-w5, sfx-w6, sfx-w7, sfx-w8, sfx-w9, sfx-w10, sfx-w11, sfx-w12, sfx-w13), so their slot vs. source fit was not checked. A longer --timeout will not help: check that the source exists and plays in Chrome.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading audio/music.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 23.785,
+        "url": "http://127.0.0.1:34659/audio/music.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading audio/music.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 55.498,
+        "url": "http://127.0.0.1:34659/audio/music.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/riser.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "url": "http://127.0.0.1:34659/sfx/riser.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 3.335,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 5.48,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 8.815,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/buzzer.wav",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 9.053,
+        "url": "http://127.0.0.1:34659/sfx/buzzer.wav"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading audio/music.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 10.006,
+        "url": "http://127.0.0.1:34659/audio/music.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/impact.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 10.006,
+        "url": "http://127.0.0.1:34659/sfx/impact.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 12.389,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 32.163,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 32.64,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 52.891,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 65.518,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 87.437,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 88.151,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 100.302,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 111.5,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 126.509,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 138.183,
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/riser.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "timeRange": [
+          0,
+          5.581
+        ],
+        "url": "http://127.0.0.1:34659/sfx/riser.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 0,
+        "timeRange": [
+          0,
+          5.581
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 6.378,
+        "timeRange": [
+          6.378,
+          11.959
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 6.378,
+        "timeRange": [
+          6.378,
+          11.959
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/buzzer.wav",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 6.378,
+        "timeRange": [
+          6.378,
+          11.959
+        ],
+        "url": "http://127.0.0.1:34659/sfx/buzzer.wav"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/impact.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 6.378,
+        "timeRange": [
+          6.378,
+          11.959
+        ],
+        "url": "http://127.0.0.1:34659/sfx/impact.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading audio/music.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 12.756,
+        "timeRange": [
+          12.756,
+          18.337
+        ],
+        "url": "http://127.0.0.1:34659/audio/music.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 12.756,
+        "timeRange": [
+          12.756,
+          18.337
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 31.891,
+        "timeRange": [
+          31.891,
+          37.471
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 82.915,
+        "timeRange": [
+          82.915,
+          88.496
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 108.428,
+        "timeRange": [
+          108.428,
+          114.009
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 121.184,
+        "timeRange": [
+          121.184,
+          126.765
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      },
+      {
+        "code": "http_error",
+        "severity": "error",
+        "message": "404 loading sfx/whoosh.mp3",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-width": "1080",
+          "data-height": "1920",
+          "data-duration": "142.71"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "time": 133.94,
+        "timeRange": [
+          133.94,
+          139.521
+        ],
+        "url": "http://127.0.0.1:34659/sfx/whoosh.mp3"
+      }
+    ]
+  },
+  "layout": {
+    "ok": false,
+    "errorCount": 5,
+    "warningCount": 3,
+    "infoCount": 6,
+    "findings": [
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.567,
+        "selector": "div.sb-score",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 194.98,
+          "top": 729,
+          "right": 885,
+          "bottom": 1033,
+          "width": 690.02,
+          "height": 304
+        },
+        "containerSelector": "div.in-chip",
+        "text": "00:00",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 194.98,
+          "y": 729,
+          "width": 690.02,
+          "height": 304
+        },
+        "firstSeen": 9.567,
+        "lastSeen": 11.959,
+        "occurrences": 4,
+        "heldMs": 2391.9999999999995,
+        "times": [
+          9.567,
+          10.364,
+          11.162,
+          11.959
+        ]
+      },
+      {
+        "code": "content_overlap",
+        "severity": "error",
+        "time": 9.567,
+        "selector": "div.sb-end",
+        "message": "Two text blocks overlap and may render unreadable.",
+        "rect": {
+          "left": 324,
+          "top": 1190,
+          "right": 756,
+          "bottom": 1243,
+          "width": 432,
+          "height": 53
+        },
+        "containerSelector": "div.in-mask.in-l2 > div:nth-of-type(1)",
+        "text": "FIN DU MATCH",
+        "fixHint": "Give each block its own zone, or put data-layout-allow-overlap on the text or on a container inside the scene. A marker on the scene root does not apply. Decoration nobody needs to read can take data-layout-ignore.",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 324,
+          "y": 1190,
+          "width": 432,
+          "height": 53
+        },
+        "firstSeen": 9.567,
+        "lastSeen": 11.959,
+        "occurrences": 4,
+        "heldMs": 2391.9999999999995,
+        "times": [
+          9.567,
+          10.364,
+          11.162,
+          11.959
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 23.785,
+        "selector": "div.bg-mark",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 83.94,
+          "top": 116.5,
+          "right": 114.06,
+          "bottom": 164.5,
+          "width": 30.13,
+          "height": 48
+        },
+        "containerSelector": "#wipeA",
+        "text": "AB",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "lifetime": {
+          "start": 13.1,
+          "end": 138.11
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 83.94,
+          "y": 116.5,
+          "width": 30.13,
+          "height": 48
+        },
+        "firstSeen": 23.785,
+        "lastSeen": 134.782,
+        "occurrences": 8,
+        "heldMs": 0,
+        "times": [
+          23.785,
+          39.642,
+          55.498,
+          71.355,
+          87.212,
+          103.068,
+          118.925,
+          134.782
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 23.785,
+        "selector": "div.bg-brand",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 146,
+          "top": 104,
+          "right": 341.17,
+          "bottom": 150,
+          "width": 195.17,
+          "height": 46
+        },
+        "containerSelector": "#wipeA",
+        "text": "APRÈS LE BUZZER",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "lifetime": {
+          "start": 13.1,
+          "end": 138.11
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 146,
+          "y": 104,
+          "width": 195.17,
+          "height": 46
+        },
+        "firstSeen": 23.785,
+        "lastSeen": 134.782,
+        "occurrences": 8,
+        "heldMs": 0,
+        "times": [
+          23.785,
+          39.642,
+          55.498,
+          71.355,
+          87.212,
+          103.068,
+          118.925,
+          134.782
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "error",
+        "time": 23.785,
+        "selector": "div.bg-lab",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 146,
+          "top": 150,
+          "right": 435.81,
+          "bottom": 173,
+          "width": 289.81,
+          "height": 23
+        },
+        "containerSelector": "#wipeA",
+        "text": "HANDBALL · SUPERCOUPE",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 1,
+        "lifetime": {
+          "start": 13.1,
+          "end": 138.11
+        },
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 146,
+          "y": 150,
+          "width": 289.81,
+          "height": 23
+        },
+        "firstSeen": 23.785,
+        "lastSeen": 134.782,
+        "occurrences": 8,
+        "heldMs": 0,
+        "times": [
+          23.785,
+          39.642,
+          55.498,
+          71.355,
+          87.212,
+          103.068,
+          118.925,
+          134.782
+        ]
+      },
+      {
+        "selector": "div.bg-mark",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 83.94,
+          "y": 116.5,
+          "width": 30.12,
+          "height": 48
+        },
+        "time": 23.785,
+        "rect": {
+          "left": 83.94,
+          "top": 116.5,
+          "right": 114.06,
+          "bottom": 164.5,
+          "width": 30.12,
+          "height": 48
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "AB",
+        "message": "<div> \"AB\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 23.785,
+        "lastSeen": 134.782,
+        "occurrences": 8,
+        "heldMs": 0,
+        "times": [
+          23.785,
+          39.642,
+          55.498,
+          71.355,
+          87.212,
+          103.068,
+          118.925,
+          134.782
+        ]
+      },
+      {
+        "selector": "div.bg-brand",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 146,
+          "y": 104,
+          "width": 195.17,
+          "height": 46
+        },
+        "time": 23.785,
+        "rect": {
+          "left": 146,
+          "top": 104,
+          "right": 341.17,
+          "bottom": 150,
+          "width": 195.17,
+          "height": 46
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "APRÈS LE BUZZER",
+        "message": "<div> \"APRÈS LE BUZZER\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 23.785,
+        "lastSeen": 134.782,
+        "occurrences": 8,
+        "heldMs": 0,
+        "times": [
+          23.785,
+          39.642,
+          55.498,
+          71.355,
+          87.212,
+          103.068,
+          118.925,
+          134.782
+        ]
+      },
+      {
+        "selector": "div.bg-lab",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 146,
+          "y": 150,
+          "width": 289.81,
+          "height": 23
+        },
+        "time": 23.785,
+        "rect": {
+          "left": 146,
+          "top": 150,
+          "right": 435.81,
+          "bottom": 173,
+          "width": 289.81,
+          "height": 23
+        },
+        "code": "outside_safe_zone",
+        "severity": "warning",
+        "text": "HANDBALL · SUPERCOUPE",
+        "message": "<div> \"HANDBALL · SUPERCOUPE\" is outside the safe area: TikTok (top edge), Instagram Reels (top edge), YouTube Shorts (top edge).",
+        "fixHint": "Move the text inside the safe area, or mark text meant to sit there with data-layout-allow-safe-zone.",
+        "firstSeen": 23.785,
+        "lastSeen": 134.782,
+        "occurrences": 8,
+        "heldMs": 0,
+        "times": [
+          23.785,
+          39.642,
+          55.498,
+          71.355,
+          87.212,
+          103.068,
+          118.925,
+          134.782
+        ]
+      },
+      {
+        "code": "canvas_covered",
+        "severity": "info",
+        "time": 23.785,
+        "selector": "#v4",
+        "message": "An opaque element covers the canvas above every other visible clip, so the frame shows only it.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "fixHint": "Move the full-frame element below the content (earlier in the DOM or a lower z-index / track), or mark a deliberate full-frame card with data-layout-allow-occlusion.",
+        "dataAttributes": {
+          "data-hf-render-id": "v4",
+          "data-start": "12.5",
+          "data-media-start": "16.74",
+          "data-duration": "12.64",
+          "data-track-index": "0",
+          "data-end": "25.14",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 23.785,
+        "lastSeen": 23.785,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          23.785
+        ]
+      },
+      {
+        "code": "canvas_covered",
+        "severity": "info",
+        "time": 39.642,
+        "selector": "#v6",
+        "message": "An opaque element covers the canvas above every other visible clip, so the frame shows only it.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "fixHint": "Move the full-frame element below the content (earlier in the DOM or a lower z-index / track), or mark a deliberate full-frame card with data-layout-allow-occlusion.",
+        "dataAttributes": {
+          "data-hf-render-id": "v6",
+          "data-start": "32.72",
+          "data-media-start": "6.78",
+          "data-duration": "16.32",
+          "data-track-index": "0",
+          "data-end": "49.04",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 39.642,
+        "lastSeen": 39.642,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          39.642
+        ]
+      },
+      {
+        "code": "canvas_covered",
+        "severity": "info",
+        "time": 55.498,
+        "selector": "#v7",
+        "message": "An opaque element covers the canvas above every other visible clip, so the frame shows only it.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "fixHint": "Move the full-frame element below the content (earlier in the DOM or a lower z-index / track), or mark a deliberate full-frame card with data-layout-allow-occlusion.",
+        "dataAttributes": {
+          "data-hf-render-id": "v7",
+          "data-start": "49.04",
+          "data-media-start": "25.8",
+          "data-duration": "16.76",
+          "data-track-index": "0",
+          "data-end": "65.8",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 55.498,
+        "lastSeen": 55.498,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          55.498
+        ]
+      },
+      {
+        "code": "canvas_covered",
+        "severity": "info",
+        "time": 71.355,
+        "selector": "#v8",
+        "message": "An opaque element covers the canvas above every other visible clip, so the frame shows only it.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "fixHint": "Move the full-frame element below the content (earlier in the DOM or a lower z-index / track), or mark a deliberate full-frame card with data-layout-allow-occlusion.",
+        "dataAttributes": {
+          "data-hf-render-id": "v8",
+          "data-start": "65.8",
+          "data-media-start": "17.08",
+          "data-duration": "21.88",
+          "data-track-index": "0",
+          "data-end": "87.67999999999999",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 71.355,
+        "lastSeen": 87.212,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          71.355,
+          87.212
+        ]
+      },
+      {
+        "code": "canvas_covered",
+        "severity": "info",
+        "time": 103.068,
+        "selector": "#v10",
+        "message": "An opaque element covers the canvas above every other visible clip, so the frame shows only it.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "fixHint": "Move the full-frame element below the content (earlier in the DOM or a lower z-index / track), or mark a deliberate full-frame card with data-layout-allow-occlusion.",
+        "dataAttributes": {
+          "data-hf-render-id": "v10",
+          "data-start": "100.52",
+          "data-media-start": "26.91",
+          "data-duration": "11.19",
+          "data-track-index": "0",
+          "data-end": "111.71",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 103.068,
+        "lastSeen": 103.068,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          103.068
+        ]
+      },
+      {
+        "code": "canvas_covered",
+        "severity": "info",
+        "time": 118.925,
+        "selector": "#v11",
+        "message": "An opaque element covers the canvas above every other visible clip, so the frame shows only it.",
+        "rect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "fixHint": "Move the full-frame element below the content (earlier in the DOM or a lower z-index / track), or mark a deliberate full-frame card with data-layout-allow-occlusion.",
+        "dataAttributes": {
+          "data-hf-render-id": "v11",
+          "data-start": "111.71",
+          "data-media-start": "73.47",
+          "data-duration": "26.4",
+          "data-track-index": "0",
+          "data-end": "138.10999999999999",
+          "data-has-audio": "false",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1920
+        },
+        "firstSeen": 118.925,
+        "lastSeen": 134.782,
+        "occurrences": 2,
+        "heldMs": 0,
+        "times": [
+          118.925,
+          134.782
+        ]
+      }
+    ],
+    "duration": 142.71,
+    "samples": [
+      7.928,
+      23.785,
+      39.642,
+      55.498,
+      71.355,
+      87.212,
+      103.068,
+      118.925,
+      134.782
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 14,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": false,
+    "errorCount": 1,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "error",
+        "message": "Contrast is 3.05:1; WCAG AA requires 4.5:1.",
+        "text": "HANDBALL · SUPERCOUPE",
+        "fg": "rgb(216,210,200)",
+        "bg": "rgb(227,38,43)",
+        "ratio": 3.05,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(253,253,252)",
+        "large": false,
+        "selector": "div > div:nth-of-type(14) > div:nth-of-type(2) > div:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 146,
+          "y": 150,
+          "width": 289.8125,
+          "height": 23
+        },
+        "time": 39.642,
+        "times": [
+          39.642,
+          71.355,
+          103.068,
+          134.782
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      7.928,
+      39.642,
+      71.355,
+      103.068,
+      134.782
+    ],
+    "checked": 12,
+    "passed": 8
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 2,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "dead_stretch",
+        "severity": "warning",
+        "message": "Nothing on screen changes for 3.34 s (9.05–12.39 s): start the next move within 3 s, or put data-hold on the element whose stillness is deliberate; see references/motion.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 9.053,
+        "seconds": 3.336,
+        "floorSeconds": 3,
+        "until": 12.389
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and \"HANDBALL · SUPERCOUPE\" renders at 18 px for 125.08 s: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "HANDBALL · SUPERCOUPE",
+        "selector": "div.bg-lab",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 146,
+          "y": 150,
+          "width": 289.81,
+          "height": 23
+        },
+        "time": 13.104,
+        "times": [
+          13.104
+        ],
+        "fontPx": 18,
+        "floorPx": 28,
+        "seconds": 125.079,
+        "elements": [
+          {
+            "selector": "div.bg-lab",
+            "text": "HANDBALL · SUPERCOUPE",
+            "fontPx": 18,
+            "time": 13.104,
+            "seconds": 125.079
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.23799999999999955,
+    "samples": 599
+  },
+  "audio": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

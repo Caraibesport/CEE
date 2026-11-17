@@ -1,0 +1,7 @@
+1	TEASER	itw_coach	src 22.26-25.92	out 0	
+2	TEASER	itw_coach	src 95.86-100.5	out 3.66	
+3	TEASER	itw_coach	src 165.42-169.06	out 8.3	
+4		itw_coach	src 22.2-31.98	out 15.54	LA SATISFACTION
+5		itw_coach	src 32.9-58.2	out 25.32	
+6		itw_coach	src 95.74-113.22	out 50.62	LE MENTAL
+7		itw_coach	src 145.74-174.04	out 68.1	LE BILAN
