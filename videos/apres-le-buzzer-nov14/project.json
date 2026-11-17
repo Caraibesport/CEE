@@ -1,0 +1,61 @@
+{
+ "sport": "HANDBALL",
+ "tag": "HANDBALL · SUPERCOUPE",
+ "introChip": "RÉSUMÉ <b>·</b> HANDBALL",
+ "bugLabel": "HANDBALL · SUPERCOUPE",
+ "outroLine": "HANDBALL <b>·</b> SUPERCOUPE ANTILLES GUYANE",
+ "score": null,
+ "music": "audio/music.mp3",
+ "tightFraming": true,
+ "speakers": {
+  "itw": {
+   "name": "À CONFIRMER",
+   "role": "Ailière · Réveil Sportif"
+  }
+ },
+ "fix": {
+  "espirait.": "espérions.",
+  "sur-so,": "sursaut,",
+  "anti-augullanais,": "antillais,"
+ },
+ "callouts": [
+  {
+   "clip": "itw",
+   "src": 51.2,
+   "d": 2.4,
+   "big": "ON NE LÂCHE",
+   "small": "jamais"
+  },
+  {
+   "clip": "itw",
+   "src": 89.5,
+   "d": 2.6,
+   "big": "INCONCEVABLE",
+   "small": "moins de 24h de récupération"
+  },
+  {
+   "clip": "itw",
+   "src": 95.8,
+   "d": 2.8,
+   "big": "PAS BONNE",
+   "small": "la programmation des matchs"
+  }
+ ],
+ "teaser": [
+  {
+   "clip": "itw",
+   "a": 9.0,
+   "b": 12.4
+  },
+  {
+   "clip": "itw",
+   "a": 49.0,
+   "b": 53.5
+  },
+  {
+   "clip": "itw",
+   "a": 88.1,
+   "b": 91.6
+  }
+ ]
+}
