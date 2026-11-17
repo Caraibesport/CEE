@@ -923,13 +923,14 @@
   },
   "renders": {
     "latest": {
-      "id": "5ddcaccf-ed74-4b6a-8485-e1820ca92de4",
-      "completedAt": 1794926310544,
+      "id": "86b7c747-bfc7-494a-9272-a50e4e70fef3",
+      "completedAt": 1794939825502,
       "output": "/home/user/CEE/videos/apres-le-buzzer-nov14/renders/apres-le-buzzer-supercoupe-hand.mp4",
       "status": "completed",
-      "revision": "e557c768-8aac-43b0-b454-1b31ffff87ab"
+      "revision": "9c645481-d96c-4319-acc0-103d513eb5f9"
     },
     "retainedRevisions": [
+      "9c645481-d96c-4319-acc0-103d513eb5f9",
       "e557c768-8aac-43b0-b454-1b31ffff87ab"
     ]
   },
