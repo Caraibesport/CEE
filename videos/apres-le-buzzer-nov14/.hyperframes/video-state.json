@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa",
-  "currentRevision": "e557c768-8aac-43b0-b454-1b31ffff87ab",
+  "currentRevision": "df205832-b048-4cb2-8dd5-5ad9b62355ee",
   "pendingChanges": false,
   "files": {
     "audio/v1.wav": {
@@ -41,8 +41,8 @@
       "content": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/d1/d155e6e135ffc72d4ad7340b5d14d26db579b439b529e413efa309901baec86c"
     },
     "index.html": {
-      "hash": "4985c8cd972145b74d726bd64f921e49018f7c45fb07289c7d2bdbf2f43be996",
-      "content": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/49/4985c8cd972145b74d726bd64f921e49018f7c45fb07289c7d2bdbf2f43be996"
+      "hash": "de2794a9a00aaa222e439933a18ac1635853bb726926100d3e740a31620db7af",
+      "content": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/de/de2794a9a00aaa222e439933a18ac1635853bb726926100d3e740a31620db7af"
     },
     "package-lock.json": {
       "hash": "c363eb1387e9680a7228d5a40415dca802c0bfa682b163e5fb957e73e7076460",
@@ -193,8 +193,8 @@
       "content": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/92/92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb"
     },
     "audio/music.mp3": {
-      "hash": "fd2d58ad09079ce9c225d05a2652d24ecb2589f06f4b6504c71973489844d0e5",
-      "content": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/fd/fd2d58ad09079ce9c225d05a2652d24ecb2589f06f4b6504c71973489844d0e5"
+      "hash": "497576f79a42d0f430c4047164a58b355abe7f88cdd6f4ec527a0569bf73a2ad",
+      "content": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/49/497576f79a42d0f430c4047164a58b355abe7f88cdd6f4ec527a0569bf73a2ad"
     }
   },
   "revisions": {
@@ -275,6 +275,25 @@
         "audio/music.mp3": {
           "before": null,
           "after": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/fd/fd2d58ad09079ce9c225d05a2652d24ecb2589f06f4b6504c71973489844d0e5"
+        }
+      }
+    },
+    "df205832-b048-4cb2-8dd5-5ad9b62355ee": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794937932894,
+      "endedAt": 1794937932902,
+      "files": {
+        "audio/music.mp3": {
+          "before": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/fd/fd2d58ad09079ce9c225d05a2652d24ecb2589f06f4b6504c71973489844d0e5",
+          "after": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/49/497576f79a42d0f430c4047164a58b355abe7f88cdd6f4ec527a0569bf73a2ad"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/49/4985c8cd972145b74d726bd64f921e49018f7c45fb07289c7d2bdbf2f43be996",
+          "after": "/root/.cache/hyperframes/history/f24ea557-e5f8-4f95-b0ff-d6f57a94d6fa/blobs/de/de2794a9a00aaa222e439933a18ac1635853bb726926100d3e740a31620db7af"
         }
       }
     }
